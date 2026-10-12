@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Guitar Edge",
+  "params": {
+    "input": 6.0,
+    "output": -2.0,
+    "attack": 300.0,
+    "release": 150.0,
+    "ratio": 1,
+    "mix": 100.0,
+    "character": 2
+  }
+}

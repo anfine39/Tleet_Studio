@@ -4,9 +4,14 @@ target_sources(tleet_tests PRIVATE
     TestMain.cpp
     SharedTests.cpp
     AshTests.cpp
+    BiteTests.cpp
+    BiteGuiTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/BITE/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/BITE/PluginEditor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/BITE/dsp/BiteModel.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -22,6 +27,8 @@ target_link_libraries(tleet_tests PRIVATE
     tleet::shared
     ASH_Presets
     ASH_Skin
+    BITE_Presets
+    BITE_Skin
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 

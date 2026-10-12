@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Parallel Bite",
+  "params": {
+    "input": 12.0,
+    "output": 4.0,
+    "attack": 20.0,
+    "release": 80.0,
+    "ratio": 3,
+    "mix": 40.0,
+    "character": 1
+  }
+}

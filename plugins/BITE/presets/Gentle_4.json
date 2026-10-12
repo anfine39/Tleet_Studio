@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Gentle 4",
+  "params": {
+    "input": 2.0,
+    "output": 0.0,
+    "attack": 600.0,
+    "release": 400.0,
+    "ratio": 0,
+    "mix": 100.0,
+    "character": 0
+  }
+}

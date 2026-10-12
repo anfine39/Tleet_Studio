@@ -273,7 +273,9 @@ namespace tleet::ui
     bool Knob::keyPressed (const juce::KeyPress& key)
     {
         const bool fine = key.getModifiers().isShiftDown();
-        const float step = fine ? 0.005f : 0.025f;
+        // stepped parameters (choices) move one position per key press
+        const int steps = juce::jmax (2, (int) param.getNumSteps());
+        const float step = steps < 200 ? 1.0f / (float) (steps - 1) : (fine ? 0.005f : 0.025f);
         const int code = key.getKeyCode();
 
         if (code == juce::KeyPress::upKey || code == juce::KeyPress::rightKey)

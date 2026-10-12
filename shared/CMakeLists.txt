@@ -15,6 +15,7 @@ target_sources(tleet_shared INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/VUMeter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/SkinVU.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/LeverSwitch.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui/LampButtonGroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/Toolbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/AboutPanel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/TleetEditorBase.cpp)

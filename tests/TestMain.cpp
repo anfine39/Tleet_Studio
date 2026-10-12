@@ -8,6 +8,7 @@ namespace tleet::test
 {
     std::atomic<bool> countAllocations { false };
     std::atomic<long> allocationCount { 0 };
+    thread_local bool allocationCountingThread = false;
 
     std::vector<TestCase>& registry()
     {
@@ -44,7 +45,7 @@ namespace tleet::test
 // Global allocation hooks: count heap allocations while a counter is active.
 void* operator new (std::size_t size)
 {
-    if (tleet::test::countAllocations.load (std::memory_order_relaxed))
+    if (tleet::test::countAllocations.load (std::memory_order_relaxed) && tleet::test::allocationCountingThread)
         tleet::test::allocationCount.fetch_add (1, std::memory_order_relaxed);
     if (void* p = std::malloc (size == 0 ? 1 : size))
         return p;

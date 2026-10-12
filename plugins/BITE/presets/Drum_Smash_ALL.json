@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Drum Smash (ALL)",
+  "params": {
+    "input": 10.0,
+    "output": -6.0,
+    "attack": 800.0,
+    "release": 50.0,
+    "ratio": 4,
+    "mix": 100.0,
+    "character": 1
+  }
+}

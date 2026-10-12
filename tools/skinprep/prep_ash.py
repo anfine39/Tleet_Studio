@@ -31,41 +31,7 @@ OUT = os.path.join(ROOT, "assets", "processed", "ASH")
 UI_MAP = os.path.join(ROOT, "plugins", "ASH", "UI_MAP.json")
 
 
-NEEDLE_FILL_DEG = float(os.environ.get("NEEDLE_FILL_DEG", "6"))
-
-
-def rotate_fill(img, mask, centre, degrees, interpolation=cv2.INTER_LINEAR):
-    """Replace masked pixels with pixels at the same radius, `degrees` away."""
-    h, w = mask.shape
-    m = cv2.getRotationMatrix2D(centre, degrees, 1.0)
-    rotated = cv2.warpAffine(img, m, (w, h), flags=interpolation, borderMode=cv2.BORDER_REFLECT)
-    out = img.copy()
-    out[mask > 0] = rotated[mask > 0]
-    return out
-
-
-def match_illumination(original, filled, mask, sigma=3.0):
-    """Keep only the grain of `filled` inside `mask` and take the smooth
-    brightness from an inpainting of the surroundings, so a patch taken from
-    a brighter or darker part of the face does not show as a streak."""
-    grow = cv2.dilate(mask, np.ones((3, 3), np.uint8), iterations=2)
-    smooth = cv2.inpaint(original, grow, 7, cv2.INPAINT_TELEA).astype(np.float32)
-    low = cv2.GaussianBlur(smooth, (0, 0), sigma)
-    f = filled.astype(np.float32)
-    grain = f - cv2.GaussianBlur(f, (0, 0), sigma)
-    out = f.copy()
-    out[grow > 0] = (low + grain)[grow > 0]
-    return np.clip(out, 0, 255).astype(np.uint8)
-
-
-def feather_composite(base, patch, mask, feather=2):
-    alpha = cv2.GaussianBlur(mask.astype(np.float32) / 255.0, (0, 0), feather)[..., None]
-    return (base * (1 - alpha) + patch * alpha).astype(np.uint8)
-
-
-def orange_mask(img):
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    return ((hsv[..., 0] >= 6) & (hsv[..., 0] <= 34) & (hsv[..., 1] > 90) & (hsv[..., 2] > 150)).astype(np.uint8) * 255
+from skinlib import feather_composite, match_illumination, orange_mask, rotate_fill  # noqa: E402
 
 
 def main():

@@ -26,14 +26,17 @@ namespace tleet::test
         Registrar (const char* name, std::function<void()> fn) { registry().push_back ({ name, std::move (fn) }); }
     };
 
-    // Heap allocation counter (enabled only around code under test).
+    // Heap allocation counter (enabled only around code under test). Only the
+    // thread that owns the counter is counted: JUCE's timer thread keeps posting
+    // to the (never pumped) message queue meanwhile, and that growth is not ours.
     extern std::atomic<bool> countAllocations;
     extern std::atomic<long> allocationCount;
+    extern thread_local bool allocationCountingThread;
 
     struct ScopedAllocationCounter
     {
-        ScopedAllocationCounter()  { allocationCount = 0; countAllocations = true; }
-        ~ScopedAllocationCounter() { countAllocations = false; }
+        ScopedAllocationCounter()  { allocationCount = 0; allocationCountingThread = true; countAllocations = true; }
+        ~ScopedAllocationCounter() { countAllocations = false; allocationCountingThread = false; }
         long count() const { return allocationCount.load(); }
     };
 

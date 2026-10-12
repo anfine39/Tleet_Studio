@@ -22,6 +22,14 @@ namespace tleet::ui
             std::vector<std::pair<float, float>> scale; // (VU value, angle in radians), ascending
             juce::Point<float> modeLabelAnchor; // right edge/baseline of the mode caption
             float inkScale = 1.0f;
+
+            // Needle look. A dark ink needle casts a shadow on the face; a
+            // lamp-lit needle (light core with a halo) does not.
+            juce::Colour needleColour { 0xff1e1710 };
+            juce::Colour glowColour = juce::Colours::transparentBlack;
+            float needleWidth = 2.0f;           // in ink units
+            bool shadow = true;
+            juce::Colour captionColour { 0xff2a1f14 };
         };
 
         // Returns the target in VU units, or NaN when no new data arrived.
@@ -51,6 +59,7 @@ namespace tleet::ui
 
         float angleForVu (float vu) const noexcept;
         float getNeedleVu() const noexcept { return ballistics.position(); }
+        const juce::String& getModeCaption() const noexcept { return caption; }
 
     private:
         void timerCallback() override;

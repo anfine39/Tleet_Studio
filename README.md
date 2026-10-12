@@ -6,7 +6,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | Plugin | What it is | Status |
 |---|---|---|
 | **ASH** | Optical levelling amplifier (LA-2A family) | in progress |
-| BITE | FET compressor (1176 family) | planned |
+| **BITE** | FET limiting amplifier (1176 family) | in progress |
 | GLUE | VCA bus compressor | planned |
 | PUNCH | Drum compressor | planned |
 | WEIGHT | Variable-mu compressor | planned |

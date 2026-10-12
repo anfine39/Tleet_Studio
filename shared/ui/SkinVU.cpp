@@ -66,17 +66,27 @@ namespace tleet::ui
             const float a = angleForVu (ballistics.position());
             const auto dir = juce::Point<float> (std::sin (a), -std::cos (a));
             const auto tip = geo.pivot + dir * geo.needleLength;
-            const float w = 2.0f * geo.inkScale;
+            const float w = geo.needleWidth * geo.inkScale;
 
-            g.setColour (juce::Colours::black.withAlpha (0.18f));
-            g.drawLine ({ geo.pivot.translated (3.0f, 3.0f), tip.translated (3.0f, 3.0f) }, w * 1.6f);
-            g.setColour (juce::Colour (0xff1e1710));
+            if (geo.shadow)
+            {
+                g.setColour (juce::Colours::black.withAlpha (0.18f));
+                g.drawLine ({ geo.pivot.translated (3.0f, 3.0f), tip.translated (3.0f, 3.0f) }, w * 1.6f);
+            }
+            if (! geo.glowColour.isTransparent())
+            {
+                g.setColour (geo.glowColour.withMultipliedAlpha (0.22f));
+                g.drawLine ({ geo.pivot, tip }, w * 4.0f);
+                g.setColour (geo.glowColour.withMultipliedAlpha (0.6f));
+                g.drawLine ({ geo.pivot, tip }, w * 2.0f);
+            }
+            g.setColour (geo.needleColour);
             g.drawLine ({ geo.pivot, tip }, w);
         }
 
         if (caption.isNotEmpty())
         {
-            g.setColour (juce::Colour (0xff2a1f14));
+            g.setColour (geo.captionColour);
             g.setFont (TleetLookAndFeel::labelFont (13.0f * geo.inkScale));
             g.drawText (caption, juce::Rectangle<float> (120.0f * geo.inkScale, 18.0f * geo.inkScale)
                                      .withBottomY (geo.modeLabelAnchor.y).withRightX (geo.modeLabelAnchor.x),
