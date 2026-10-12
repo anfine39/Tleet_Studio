@@ -1,0 +1,108 @@
+#pragma once
+
+#include <juce_audio_processors/juce_audio_processors.h>
+
+// Pieces shared by the skinned editors that read their geometry from an
+// embedded UI_MAP.json (reference pixels of the mockup): live scale numbers,
+// one dot per real step of a stepped knob, and an LED gain-reduction bar.
+namespace tleet::ui::skin
+{
+    juce::Rectangle<float> rectFrom (const juce::var& v);
+    juce::Point<float> pointFrom (const juce::var& v);
+    const juce::var* findControl (const juce::var& map, const juce::String& id);
+
+    // 0 degrees = 12 o'clock, clockwise.
+    juce::Point<float> polar (juce::Point<float> centre, float radius, float degrees);
+
+    // Pointer angle of a knob control ("travelDegrees") at a normalised value.
+    float angleFor (const juce::var& control, float normalised);
+
+    // Font of the live scale numbers; `capHeight` is the printed digit height
+    // (the font's cap height is about 0.72 em).
+    juce::Font scaleFont (float capHeight);
+
+    // A number on a knob scale, drawn live at the angle where the parameter
+    // really has that value (reference pixels).
+    struct ScaleLabel
+    {
+        float value;                // plain parameter value
+        juce::String text;
+        float angleDegrees;         // 0 = 12 o'clock, clockwise
+        juce::Rectangle<float> box; // reference pixels
+    };
+
+    // One dot per real position of a stepped knob (reference pixels).
+    struct StepDot
+    {
+        juce::Point<float> centre;
+        float radius;
+        float angleDegrees;
+    };
+
+    // Text of a label: (plain value, step name or empty for continuous knobs).
+    using LabelTextFn = std::function<juce::String (float value, const juce::String& stepName)>;
+
+    // From a control's "scaleLabels" entry: {"values": [plain values] | "steps",
+    // "gap", "capHeight"}, placed just outside the dot circle ("scaleCentre",
+    // "dotRadius"). Each label's value goes through the parameter's own range.
+    std::vector<ScaleLabel> makeScaleLabels (const juce::var& control, juce::RangedAudioParameter&, const LabelTextFn&);
+
+    // From a control's "stepDots" entry: one dot per parameter step.
+    std::vector<StepDot> makeStepDots (const juce::var& control, juce::RangedAudioParameter&);
+
+    // Paints dots and labels (given in reference pixels) at `scale` from `origin`.
+    void paintScale (juce::Graphics&, const std::vector<StepDot>&, const std::vector<ScaleLabel>&,
+                     float capHeight, float scale, juce::Point<float> origin,
+                     juce::Colour dotInk, juce::Colour labelInk);
+
+    // LED gain-reduction bar. Segments are dB intervals between consecutive
+    // `boundaries`, each spanning the printed scale between its two marks
+    // (`scale`: (dB, x) pairs, piecewise linear), so the lit bar ends at the
+    // printed value of the actual gain reduction, to the nearest boundary.
+    // The value comes from the processor's GR telemetry (the applied gain);
+    // the only UI processing is the display's fall-back (instant rise,
+    // exponential fall).
+    class LedGainMeter : public juce::Component, private juce::Timer
+    {
+    public:
+        struct Geometry
+        {
+            std::vector<std::pair<float, float>> scale; // (dB, x) in component coordinates
+            std::vector<float> boundaries;              // dB; empty = 0, 1, ... 20
+            float rowTop = 0, rowBottom = 0, gap = 2;
+        };
+
+        static constexpr float fallSeconds = 0.12f;
+
+        explicit LedGainMeter (Geometry);
+
+        // Returns the deepest gain reduction (dB, >= 0) since the last call, or -1 if none.
+        void setSupplier (std::function<float()> f) { supplier = std::move (f); }
+
+        // Pull from the supplier and apply the display ballistics (timer; public for tests).
+        void refresh (float seconds = 1.0f / 30.0f);
+
+        float getDisplayedDb() const noexcept { return displayed; }
+        int getNumSegments() const noexcept { return (int) geo.boundaries.size() - 1; }
+        int getLitSegments() const noexcept { return litSegmentsFor (displayed); }
+        // A segment lights once the reduction reaches its middle.
+        int litSegmentsFor (float grDb) const noexcept;
+        float xForDb (float db) const noexcept;
+        juce::Rectangle<float> getSegmentBounds (int index) const noexcept;
+
+        void paint (juce::Graphics&) override;
+
+    private:
+        void timerCallback() override { refresh(); }
+
+        Geometry geo;
+        std::function<float()> supplier;
+        float displayed = 0.0f;
+        int paintedLit = -1;
+    };
+
+    // Reads an LED_METER control ("scale": {"dB": x}, "segmentRow", "segmentGap",
+    // optional "segmentBoundaries") into a geometry relative to `bounds`
+    // (reference pixels), at `scale` editor units per reference pixel.
+    LedGainMeter::Geometry meterGeometry (const juce::var& control, juce::Rectangle<float> bounds, float scale);
+}

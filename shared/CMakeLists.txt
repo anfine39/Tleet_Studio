@@ -11,6 +11,7 @@ target_sources(tleet_shared INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/core/TleetProcessorBase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/TleetLookAndFeel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/Knob.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ui/SkinKit.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/ChoiceSwitch.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/VUMeter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/SkinVU.cpp

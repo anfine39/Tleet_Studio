@@ -366,12 +366,12 @@ TEST ("GLUE GUI: the GR LED meter shows the gain reduction the VCA really applie
         MEASURE ("threshold " + juce::String (threshold) + " dB: measured GR (dB)", measured);
         MEASURE ("threshold " + juce::String (threshold) + " dB: shown GR (dB)", shown);
         CHECK_MSG (std::abs (shown - (float) measured) <= 0.3f, "shown " + juce::String (shown) + " vs measured " + juce::String (measured));
-        CHECK (meter.getLitSegments() == GrLedMeter::litSegmentsFor ((float) measured)
+        CHECK (meter.getLitSegments() == meter.litSegmentsFor ((float) measured)
                || std::abs (std::fmod ((float) measured, 1.0f) - 0.5f) < 0.1f); // ambiguous only at a segment edge
 
         // on screen: the last lit segment is bright, the next one dark
         const int lit = meter.getLitSegments();
-        if (lit > 0 && lit < GrLedMeter::numSegments)
+        if (lit > 0 && lit < meter.getNumSegments())
         {
             auto img = ed.createComponentSnapshot (ed.getLocalBounds(), true, 1.0f);
             const auto origin = meter.getBounds().getPosition().toFloat();

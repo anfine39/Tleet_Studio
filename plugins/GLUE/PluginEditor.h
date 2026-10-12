@@ -2,70 +2,17 @@
 
 #include "ui/TleetEditorBase.h"
 #include "ui/Knob.h"
+#include "ui/SkinKit.h"
 #include "PluginProcessor.h"
 
 namespace tleet::glue
 {
-    // A number on a knob scale, drawn live at the angle where the parameter
-    // really has that value (reference pixels).
-    struct ScaleLabel
-    {
-        float value;                // plain parameter value
-        juce::String text;
-        float angleDegrees;         // 0 = 12 o'clock, clockwise
-        juce::Rectangle<float> box; // reference pixels
-    };
+    using ScaleLabel = ui::skin::ScaleLabel;
+    using StepDot = ui::skin::StepDot;
 
-    // One dot per real position of a stepped knob (reference pixels).
-    struct StepDot
-    {
-        juce::Point<float> centre;
-        float radius;
-        float angleDegrees;
-    };
-
-    // Central LED gain-reduction meter. One segment per dB from 0 to 20 dB,
-    // each spanning the printed scale between its two dB marks, so the lit
-    // bar ends at the printed number of the actual gain reduction (rounded to
-    // the nearest dB). The value comes from the processor's grMeter, which is
-    // fed with the gain the VCA really applies; the only UI processing is the
-    // display's fall-back (instant rise, 120 ms fall).
-    class GrLedMeter : public juce::Component, private juce::Timer
-    {
-    public:
-        struct Geometry
-        {
-            std::vector<std::pair<float, float>> scale; // (dB, x) in component coordinates, sorted
-            float rowTop = 0, rowBottom = 0, gap = 2;
-        };
-
-        static constexpr int numSegments = 20;
-        static constexpr float fallSeconds = 0.12f;
-
-        explicit GrLedMeter (Geometry);
-
-        // Returns the deepest gain reduction (dB, >= 0) since the last call, or -1 if none.
-        void setSupplier (std::function<float()> f) { supplier = std::move (f); }
-
-        // Pull from the supplier and apply the display ballistics (timer; public for tests).
-        void refresh (float seconds = 1.0f / 30.0f);
-
-        float getDisplayedDb() const noexcept { return displayed; }
-        int getLitSegments() const noexcept { return litSegmentsFor (displayed); }
-        static int litSegmentsFor (float grDb) noexcept;
-        float xForDb (float db) const noexcept;
-        juce::Rectangle<float> getSegmentBounds (int index) const noexcept;
-
-        void paint (juce::Graphics&) override;
-
-    private:
-        void timerCallback() override { refresh(); }
-
-        Geometry geo;
-        std::function<float()> supplier;
-        float displayed = 0.0f;
-        int paintedLit = -1;
-    };
+    // Central LED gain-reduction meter: one segment per dB from 0 to 20 dB,
+    // fed with the gain the VCA really applies (ui::skin::LedGainMeter).
+    using GrLedMeter = ui::skin::LedGainMeter;
 
     // The lamp on the Character arc, lit at the selected position.
     class ArcLamp : public juce::Component
