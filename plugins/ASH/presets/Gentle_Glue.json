@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Gentle Glue",
+  "params": {
+    "peakReduction": 22,
+    "gain": 50,
+    "mode": 0,
+    "mix": 100,
+    "character": 40,
+    "output": 0
+  }
+}

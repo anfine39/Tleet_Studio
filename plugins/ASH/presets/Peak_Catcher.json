@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Peak Catcher",
+  "params": {
+    "peakReduction": 45,
+    "gain": 50,
+    "mode": 1,
+    "mix": 100,
+    "character": 40,
+    "output": 0
+  }
+}

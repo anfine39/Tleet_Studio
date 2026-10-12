@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Acoustic Smooth",
+  "params": {
+    "peakReduction": 35,
+    "gain": 51,
+    "mode": 0,
+    "mix": 85,
+    "character": 30,
+    "output": 0
+  }
+}

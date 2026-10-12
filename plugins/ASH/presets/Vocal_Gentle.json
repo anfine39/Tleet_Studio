@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Vocal Gentle",
+  "params": {
+    "peakReduction": 28,
+    "gain": 50,
+    "mode": 0,
+    "mix": 100,
+    "character": 35,
+    "output": 0
+  }
+}

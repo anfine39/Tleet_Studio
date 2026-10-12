@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Vocal Level",
+  "params": {
+    "peakReduction": 40,
+    "gain": 52,
+    "mode": 0,
+    "mix": 100,
+    "character": 50,
+    "output": 0
+  }
+}

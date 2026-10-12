@@ -1,0 +1,129 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows (VST3)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -B build -G "Visual Studio 17 2022" -A x64
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Tests
+        working-directory: build/tests
+        run: ./tleet_tests_artefacts/Release/tleet_tests.exe
+
+      - name: pluginval
+        shell: pwsh
+        run: |
+          Invoke-WebRequest https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pluginval.zip
+          Expand-Archive pluginval.zip -DestinationPath pluginval
+          Get-ChildItem build/plugins -Recurse -Filter *.vst3 -Directory | Where-Object { $_.Parent.Name -eq 'VST3' } | ForEach-Object {
+            ./pluginval/pluginval.exe --strictness-level 5 --validate-in-process --skip-gui-tests --output-dir pluginval-logs "$($_.FullName)"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+
+      - name: Collect plugins
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory dist | Out-Null
+          Get-ChildItem build/plugins -Recurse -Filter *.vst3 -Directory | Where-Object { $_.Parent.Name -eq 'VST3' } | Copy-Item -Destination dist -Recurse
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TLEET-windows-VST3
+          path: dist
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-output-windows
+          path: |
+            build/tests/test-output
+            pluginval-logs
+
+  macos:
+    name: macOS (VST3 + AU, universal)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -B build -G Xcode -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"
+
+      - name: Build
+        run: cmake --build build --config Release --parallel -- -quiet
+
+      - name: Tests
+        working-directory: build/tests
+        run: ./tleet_tests_artefacts/Release/tleet_tests
+
+      - name: pluginval
+        run: |
+          curl -sSL -o pluginval.zip https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_macOS.zip
+          unzip -q pluginval.zip -d pluginval
+          for p in build/plugins/*/*_artefacts/Release/VST3/*.vst3; do
+            pluginval/pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --skip-gui-tests --output-dir pluginval-logs "$p"
+          done
+
+      - name: Collect plugins
+        run: |
+          mkdir -p dist/VST3 dist/Components
+          cp -R build/plugins/*/*_artefacts/Release/VST3/*.vst3 dist/VST3/
+          cp -R build/plugins/*/*_artefacts/Release/AU/*.component dist/Components/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TLEET-macOS
+          path: dist
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-output-macos
+          path: |
+            build/tests/test-output
+            pluginval-logs
+
+  linux:
+    name: Linux (tests)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build xvfb libasound2-dev libfreetype-dev libfontconfig1-dev \
+            libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxcomposite-dev libgl1-mesa-dev \
+            libcurl4-openssl-dev
+
+      - name: Configure
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Tests
+        working-directory: build/tests
+        run: xvfb-run -a -s "-screen 0 3200x2400x24" ./tleet_tests_artefacts/Release/tleet_tests
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-output-linux
+          path: build/tests/test-output

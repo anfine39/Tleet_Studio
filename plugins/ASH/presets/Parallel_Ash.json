@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Parallel Ash",
+  "params": {
+    "peakReduction": 80,
+    "gain": 66,
+    "mode": 1,
+    "mix": 40,
+    "character": 70,
+    "output": -1
+  }
+}
