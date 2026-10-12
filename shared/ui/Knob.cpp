@@ -29,6 +29,8 @@ namespace tleet::ui
             h->notifyAccessibilityEvent (juce::AccessibilityEvent::valueChanged);
     }
 
+    juce::String Knob::getReadoutText() const { return valueText(); }
+
     juce::String Knob::valueText() const
     {
         auto text = param.getText (normalised, 16);
@@ -60,7 +62,8 @@ namespace tleet::ui
         if (hasSkin)
         {
             knobArea = getLocalBounds();
-            valueArea = getLocalBounds().removeFromBottom (22).withSizeKeepingCentre (juce::jmin (getWidth(), 110), 22);
+            valueArea = ! skin.readout.isEmpty() ? skin.readout.toNearestInt()
+                                                 : getLocalBounds().removeFromBottom (22).withSizeKeepingCentre (juce::jmin (getWidth(), 110), 22);
             labelArea = {};
             return;
         }
@@ -80,12 +83,12 @@ namespace tleet::ui
         const auto a = skin.centre + dir * skin.innerRadius;
         const auto b = skin.centre + dir * skin.outerRadius;
 
-        // glowing amber pointer, matching the lamp-lit pointers of the artwork
-        g.setColour (colours::accent.withAlpha (0.18f));
+        // glowing pointer, matching the lamp-lit pointers of the artwork
+        g.setColour (skin.glow.withAlpha (0.18f));
         g.drawLine ({ a, b }, skin.width * 2.8f);
-        g.setColour (colours::accent.withAlpha (0.55f));
+        g.setColour (skin.glow.withAlpha (0.55f));
         g.drawLine ({ a, b }, skin.width * 1.5f);
-        g.setColour (juce::Colour (0xffffd59a));
+        g.setColour (skin.core);
         g.drawLine ({ a, b }, skin.width * 0.6f);
 
         if (hasKeyboardFocus (false))
@@ -94,7 +97,18 @@ namespace tleet::ui
             g.drawEllipse (juce::Rectangle<float> (skin.outerRadius * 2.3f, skin.outerRadius * 2.3f).withCentre (skin.centre), 1.0f);
         }
 
-        if (dragging || hovering)
+        if (! skin.readout.isEmpty())
+        {
+            // readout window on the panel: always the live value, in the panel's lit ink
+            const auto text = getReadoutText();
+            const auto font = TleetLookAndFeel::labelFont (skin.readoutTextHeight, false).withHorizontalScale (0.86f);
+            g.setFont (font);
+            g.setColour (skin.readoutColour.withMultipliedAlpha (0.35f));
+            g.drawText (text, skin.readout.translated (0.0f, 0.5f).expanded (1.0f, 0.0f), juce::Justification::centred, false);
+            g.setColour (skin.readoutColour);
+            g.drawText (text, skin.readout, juce::Justification::centred, false);
+        }
+        else if (dragging || hovering)
         {
             auto pill = valueArea.toFloat();
             g.setColour (juce::Colours::black.withAlpha (0.72f));

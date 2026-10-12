@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Tight Vocal Double",
+  "params": {
+    "voices": 1,
+    "mode": 0,
+    "detune": 7.0,
+    "delay": 16.0,
+    "humanize": 35.0,
+    "width": 90.0,
+    "hpf": 110.0,
+    "lpf": 13000.0,
+    "monoSafe": 1,
+    "autoLevel": 1,
+    "mix": 40.0,
+    "output": 3.0
+  }
+}

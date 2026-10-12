@@ -6,12 +6,19 @@ target_sources(tleet_tests PRIVATE
     AshTests.cpp
     BiteTests.cpp
     BiteGuiTests.cpp
+    DoubleTests.cpp
+    DoubleGuiTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/BITE/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/BITE/PluginEditor.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/BITE/dsp/BiteModel.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/BITE/dsp/BiteModel.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/PluginEditor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/VoiceDisplay.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/FilterDisplay.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/dsp/DoubleEngine.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -29,6 +36,8 @@ target_link_libraries(tleet_tests PRIVATE
     ASH_Skin
     BITE_Presets
     BITE_Skin
+    DOUBLE_Presets
+    DOUBLE_Skin
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 

@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Mono Safe Widener",
+  "params": {
+    "voices": 1,
+    "mode": 0,
+    "detune": 8.0,
+    "delay": 12.0,
+    "humanize": 20.0,
+    "width": 150.0,
+    "hpf": 200.0,
+    "lpf": 16000.0,
+    "monoSafe": 1,
+    "autoLevel": 1,
+    "mix": 45.0,
+    "output": 3.0
+  }
+}

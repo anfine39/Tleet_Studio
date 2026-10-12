@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Subtle Thickener",
+  "params": {
+    "voices": 1,
+    "mode": 0,
+    "detune": 4.0,
+    "delay": 10.0,
+    "humanize": 25.0,
+    "width": 60.0,
+    "hpf": 100.0,
+    "lpf": 16000.0,
+    "monoSafe": 1,
+    "autoLevel": 1,
+    "mix": 25.0,
+    "output": 2.0
+  }
+}

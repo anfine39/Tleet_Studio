@@ -100,3 +100,47 @@ def match_illumination_far(original, filled, mask, gap=5, sigma=4.0, limit=None)
     sel = near > 0
     out[sel] = (low + detail)[sel]
     return np.clip(out, 0, 255).astype(np.uint8), near
+
+
+def inpaint_with_grain(img, mask, grain_src, radius=5, sigma=1.2, seed=1):
+    """Fill `mask` by inpainting (smooth brightness) and add back film grain
+    taken at random from `grain_src` (x, y, w, h), a clean patch of the same
+    surface, so the fill is not a flat smear."""
+    filled = cv2.inpaint(img, mask, radius, cv2.INPAINT_TELEA).astype(np.float32)
+    x, y, w, h = [int(v) for v in grain_src]
+    patch = img[y:y + h, x:x + w].astype(np.float32)
+    hp = patch - cv2.GaussianBlur(patch, (0, 0), sigma * 3)
+    rng = np.random.default_rng(seed)
+    ys, xs = np.nonzero(mask)
+    if len(ys) == 0:
+        return img.copy()
+    # tile the high-pass patch with a random offset per 16x16 block
+    grain = np.zeros_like(filled)
+    for by in range(ys.min() // 16 * 16, ys.max() + 1, 16):
+        for bx in range(xs.min() // 16 * 16, xs.max() + 1, 16):
+            ox = int(rng.integers(0, max(1, w - 16)))
+            oy = int(rng.integers(0, max(1, h - 16)))
+            bh = min(16, grain.shape[0] - by, h - oy)
+            bw = min(16, grain.shape[1] - bx, w - ox)
+            if bh > 0 and bw > 0:
+                grain[by:by + bh, bx:bx + bw] = hp[oy:oy + bh, ox:ox + bw]
+    out = img.astype(np.float32)
+    m = mask > 0
+    out[m] = filled[m] + grain[m]
+    return np.clip(out, 0, 255).astype(np.uint8)
+
+
+def text_alpha(face_img, offset=10.0, top_percentile=98.0):
+    """Soft alpha of light text on a darker face: 0 on the face, 1 on the
+    strokes, anti-aliased edges kept."""
+    lum = cv2.cvtColor(face_img, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    bg = float(np.median(lum))
+    top = float(np.percentile(lum, top_percentile))
+    a = (lum - bg - offset) / max(1.0, top - bg - offset)
+    return np.clip(a, 0.0, 1.0)
+
+
+def shift(img, dx, dy):
+    """Translate an image (sub-pixel), edges replicated."""
+    m = np.float32([[1, 0, dx], [0, 1, dy]])
+    return cv2.warpAffine(img, m, (img.shape[1], img.shape[0]), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)

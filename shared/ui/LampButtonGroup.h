@@ -19,6 +19,7 @@ namespace tleet::ui
             std::vector<juce::Rectangle<float>> hitboxes; // one per state, component coordinates
             std::vector<juce::Rectangle<float>> litBounds; // where the lit sprite goes for each state
             juce::Image lit;                               // pressed button with its lamp on
+            std::vector<juce::Image> litPerState;          // optional: one sprite per state (label baked in)
         };
 
         LampButtonGroup (juce::RangedAudioParameter& param, juce::String label, juce::StringArray states, Geometry g);

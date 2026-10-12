@@ -41,10 +41,14 @@ namespace tleet::ui
 
     void LampButtonGroup::paint (juce::Graphics& g)
     {
-        if (geo.lit.isValid() && selected >= 0 && selected < (int) geo.litBounds.size())
+        if (selected >= 0 && selected < (int) geo.litBounds.size())
         {
-            g.setImageResamplingQuality (juce::Graphics::highResamplingQuality);
-            g.drawImage (geo.lit, geo.litBounds[(size_t) selected], juce::RectanglePlacement::stretchToFit);
+            const auto& img = (size_t) selected < geo.litPerState.size() ? geo.litPerState[(size_t) selected] : geo.lit;
+            if (img.isValid())
+            {
+                g.setImageResamplingQuality (juce::Graphics::highResamplingQuality);
+                g.drawImage (img, geo.litBounds[(size_t) selected], juce::RectanglePlacement::stretchToFit);
+            }
         }
 
         if (hasKeyboardFocus (false))

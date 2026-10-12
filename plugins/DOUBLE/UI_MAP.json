@@ -1,0 +1,111 @@
+{
+  "plugin": "DOUBLE",
+  "reference": { "file": "assets/reference/DOUBLE.png", "width": 1536, "height": 1024 },
+  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1152 x 768 at 100 %)",
+  "notes": "Knobs are seen front-on: the pointer and the printed dots share one centre. Every number on the panel that depends on a value (readouts, filter axis) is drawn live.",
+  "controls": [
+    {
+      "id": "detune", "type": "ROTARY", "parameter": "detune",
+      "centre": [287.3, 550.6], "capRadius": 54, "pointer": { "inner": 13, "outer": 49, "width": 4.5 },
+      "travelDegrees": [-117.5, 117.5], "hitbox": [220, 482, 135, 169], "readout": [241, 617, 94, 29], "readoutTextHeight": 17.5,
+      "range": [-25, 25], "default": 8, "unit": "cents", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.detune"
+    },
+    {
+      "id": "delay", "type": "ROTARY", "parameter": "delay",
+      "centre": [607.4, 551.4], "capRadius": 54, "pointer": { "inner": 13, "outer": 49, "width": 4.5 },
+      "travelDegrees": [-117.5, 117.5], "hitbox": [540, 482, 135, 169], "readout": [561, 617, 94, 29], "readoutTextHeight": 17.5,
+      "range": [0, 40], "default": 15, "unit": "ms", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.delay"
+    },
+    {
+      "id": "humanize", "type": "ROTARY", "parameter": "humanize",
+      "centre": [927.5, 551.1], "capRadius": 54, "pointer": { "inner": 13, "outer": 49, "width": 4.5 },
+      "travelDegrees": [-117.5, 117.5], "hitbox": [860, 482, 135, 169], "readout": [881, 617, 95, 29], "readoutTextHeight": 17.5,
+      "range": [0, 100], "default": 35, "unit": "%", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.humanize"
+    },
+    {
+      "id": "width", "type": "ROTARY", "parameter": "width",
+      "centre": [1249.5, 550.7], "capRadius": 54, "pointer": { "inner": 13, "outer": 49, "width": 4.5 },
+      "travelDegrees": [-117.5, 117.5], "hitbox": [1182, 482, 135, 169], "readout": [1203, 617, 94, 29], "readoutTextHeight": 17.5,
+      "range": [0, 200], "default": 100, "unit": "%", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.width"
+    },
+    {
+      "id": "hpf", "type": "ROTARY", "parameter": "hpf",
+      "centre": [133.2, 764.2], "capRadius": 45, "pointer": { "inner": 11, "outer": 40, "width": 4 },
+      "travelDegrees": [-118, 118], "hitbox": [75, 704, 117, 154], "readout": [91, 827, 85, 28], "readoutTextHeight": 15.7,
+      "range": [20, 1000], "default": 20, "unit": "Hz", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.hpf"
+    },
+    {
+      "id": "lpf", "type": "ROTARY", "parameter": "lpf",
+      "centre": [325.5, 764.2], "capRadius": 45, "pointer": { "inner": 11, "outer": 40, "width": 4 },
+      "travelDegrees": [-118, 118], "hitbox": [267, 704, 117, 154], "readout": [283, 827, 85, 28], "readoutTextHeight": 15.7,
+      "range": [1000, 20000], "default": 20000, "unit": "Hz", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.lpf"
+    },
+    {
+      "id": "mix", "type": "ROTARY", "parameter": "mix",
+      "centre": [1169.9, 764.1], "capRadius": 45, "pointer": { "inner": 11, "outer": 40, "width": 4 },
+      "travelDegrees": [-118, 118], "hitbox": [1111, 704, 117, 154], "readout": [1127, 827, 85, 28], "readoutTextHeight": 15.7,
+      "range": [0, 100], "default": 50, "unit": "%", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.mix"
+    },
+    {
+      "id": "output", "type": "ROTARY", "parameter": "output",
+      "centre": [1393.4, 764.0], "capRadius": 45, "pointer": { "inner": 10, "outer": 40, "width": 4 },
+      "travelDegrees": [-118, 118], "hitbox": [1335, 704, 117, 154], "readout": [1351, 827, 86, 28], "readoutTextHeight": 15.7,
+      "range": [-12, 12], "default": 0, "unit": "dB", "continuous": true, "automation": true, "persistent": true,
+      "testId": "double.knob.output"
+    },
+    {
+      "id": "voices", "type": "BUTTON_GROUP", "parameter": "voices",
+      "states": ["1", "2", "4"], "default": "2", "continuous": false, "automation": true, "persistent": true,
+      "faces": [[74, 252, 107, 39], [74, 309.5, 107, 38.5], [74, 366, 107, 39]],
+      "bezels": [[66, 246, 123, 53], [66, 304, 123, 51], [66, 362, 123, 52]],
+      "hitboxes": [[64, 244, 127, 57], [64, 302, 127, 57], [64, 360, 127, 57]],
+      "litInArtwork": 1, "litSprites": [[54, 234, 147, 77], [54, 292, 147, 75], [54, 350, 147, 76]],
+      "testId": "double.buttons.voices"
+    },
+    {
+      "id": "mode", "type": "BUTTON_GROUP", "parameter": "mode",
+      "states": ["Tight", "Wide", "Ghost"], "default": "Tight", "continuous": false, "automation": true, "persistent": true,
+      "faces": [[1257, 252.5, 104, 39.5], [1257, 310.5, 104, 39], [1257, 367, 104, 40]],
+      "bezels": [[1252, 247, 115, 51], [1252, 305, 115, 51], [1252, 362, 115, 51]],
+      "hitboxes": [[1250, 244, 120, 57], [1250, 302, 120, 57], [1250, 360, 120, 57]],
+      "litInArtwork": 1, "litSprites": [[1240, 235, 139, 75], [1240, 293, 139, 75], [1240, 350, 139, 75]],
+      "testId": "double.buttons.mode"
+    },
+    {
+      "id": "monoSafe", "type": "TOGGLE_BUTTON", "parameter": "monoSafe",
+      "face": [902, 714, 129, 46.5], "bezel": [894, 706, 145, 61], "hitbox": [892, 704, 148, 66],
+      "default": true, "litInArtwork": true, "litSprite": [882, 694, 169, 85], "continuous": false, "automation": true, "persistent": true,
+      "testId": "double.toggle.monoSafe"
+    },
+    {
+      "id": "autoLevel", "type": "TOGGLE_BUTTON", "parameter": "autoLevel",
+      "face": [902, 782, 129, 46], "bezel": [894, 777, 145, 59], "hitbox": [892, 775, 148, 63],
+      "default": true, "litInArtwork": false, "litSprite": [882, 765, 169, 83], "continuous": false, "automation": true, "persistent": true,
+      "testId": "double.toggle.autoLevel"
+    },
+    {
+      "id": "voiceDisplay", "type": "VOICE_DISPLAY", "telemetry": "DoubleTelemetry (voices, pans, delays, detunes, per-voice envelope)",
+      "screen": [238, 190, 973, 229], "centreX": 768.3, "axisY": 310, "baselineY": 396.7, "baselineX": [262, 1180],
+      "keepStatic": { "labelL": [262, 212, 20, 24], "labelR": [1162, 212, 20, 24], "star": [740, 205, 58, 185] },
+      "hitbox": [236, 188, 977, 233],
+      "testId": "double.display.voices"
+    },
+    {
+      "id": "filterDisplay", "type": "FILTER_DISPLAY", "telemetry": "wetFilterResponseDb (exact response of the live wet HPF/LPF)",
+      "screen": [429, 682, 418, 149], "plot": [434, 690, 409, 134], "dbRange": [-30, 6],
+      "frequencyRange": [20, 20000], "labelRow": [425, 834, 432, 26], "labelTextHeight": 15,
+      "hitbox": [427, 680, 422, 182],
+      "testId": "double.display.filter"
+    },
+    { "id": "screws", "type": "STATIC" },
+    { "id": "title", "type": "STATIC" },
+    { "id": "artPanels", "type": "STATIC", "note": "photographs, taglines and stars in the header, footer and right edge" }
+  ]
+}

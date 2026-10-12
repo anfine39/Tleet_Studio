@@ -32,6 +32,16 @@ namespace tleet::ui
             juce::Point<float> centre;
             float innerRadius = 0, outerRadius = 0, width = 4;
             float startAngle = 0, endAngle = 0;
+
+            // Lit pointer colours: a hot core in a coloured glow.
+            juce::Colour core { 0xffffd59a }, glow { 0xffe8a14a };
+
+            // Optional readout window printed on the panel (component
+            // coordinates): the live value is always shown there, and a
+            // double-click on it opens the value entry.
+            juce::Rectangle<float> readout;
+            float readoutTextHeight = 13.0f;
+            juce::Colour readoutColour { 0xfff2d6ca };
         };
         void setSkinPointer (SkinPointer p) { skin = p; hasSkin = true; resized(); repaint(); }
 
@@ -53,6 +63,8 @@ namespace tleet::ui
         std::unique_ptr<juce::AccessibilityHandler> createAccessibilityHandler() override;
 
         juce::RangedAudioParameter& getParameter() noexcept { return param; }
+        juce::String getReadoutText() const;          // what the readout window shows
+        juce::Rectangle<int> getValueArea() const noexcept { return valueArea; }
         float getNormalisedValue() const noexcept { return normalised; }
         void setNormalisedFromUser (float newNormalised, bool singleShotGesture);
 

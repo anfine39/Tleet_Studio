@@ -7,6 +7,7 @@
 #     DISPLAY_NAME "<name shown in the DAW>"
 #     SOURCES ...
 #     [PRESETS <factory preset json files>]
+#     [VST3_CATEGORIES <categories>]   (default: Fx Dynamics)
 #     [SIDECHAIN])
 
 set(TLEET_MANUFACTURER_CODE "Tlet")
@@ -20,7 +21,11 @@ else()
 endif()
 
 function(tleet_add_plugin name)
-    cmake_parse_arguments(ARG "SIDECHAIN" "CODE;DISPLAY_NAME" "SOURCES;PRESETS" ${ARGN})
+    cmake_parse_arguments(ARG "SIDECHAIN" "CODE;DISPLAY_NAME" "SOURCES;PRESETS;VST3_CATEGORIES" ${ARGN})
+
+    if(NOT ARG_VST3_CATEGORIES)
+        set(ARG_VST3_CATEGORIES Fx Dynamics)
+    endif()
 
     string(TOLOWER ${name} lower)
 
@@ -38,7 +43,7 @@ function(tleet_add_plugin name)
         NEEDS_MIDI_OUTPUT FALSE
         IS_MIDI_EFFECT FALSE
         EDITOR_WANTS_KEYBOARD_FOCUS FALSE
-        VST3_CATEGORIES Fx Dynamics
+        VST3_CATEGORIES ${ARG_VST3_CATEGORIES}
         AU_MAIN_TYPE kAudioUnitType_Effect
         COPY_PLUGIN_AFTER_BUILD ${TLEET_COPY_AFTER_BUILD})
 

@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Backing Stack",
+  "params": {
+    "voices": 2,
+    "mode": 1,
+    "detune": 11.0,
+    "delay": 24.0,
+    "humanize": 55.0,
+    "width": 170.0,
+    "hpf": 180.0,
+    "lpf": 11000.0,
+    "monoSafe": 0,
+    "autoLevel": 1,
+    "mix": 55.0,
+    "output": 3.0
+  }
+}

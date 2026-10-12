@@ -14,7 +14,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | SHAPE | Passive program EQ | planned |
 | ECHO | Tape echo | planned |
 | VOID | Reverb | planned |
-| DOUBLE | Doubler / chorus | planned |
+| **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |
 | STEEL | Mastering limiter | planned |
 | TAPE | Tape machine | planned |
 
