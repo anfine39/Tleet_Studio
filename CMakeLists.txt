@@ -52,6 +52,7 @@ add_subdirectory(shared)
 add_subdirectory(plugins/ASH)
 add_subdirectory(plugins/BITE)
 add_subdirectory(plugins/DOUBLE)
+add_subdirectory(plugins/GLUE)
 
 if(TLEET_BUILD_TESTS)
     enable_testing()

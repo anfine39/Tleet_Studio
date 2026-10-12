@@ -114,6 +114,18 @@ namespace tleet::ui
         scaleButton.setBounds (r.removeFromRight (56));
         r.removeFromRight (4);
         bypassButton.setBounds (r.removeFromRight (74));
+        for (auto& [c, w] : extras)
+        {
+            r.removeFromRight (6);
+            c->setBounds (r.removeFromRight (w));
+        }
+    }
+
+    void Toolbar::addExtra (juce::Component& c, int width)
+    {
+        extras.emplace_back (&c, width);
+        addAndMakeVisible (c);
+        resized();
     }
 
     // ------------------------------------------------------------------ menus

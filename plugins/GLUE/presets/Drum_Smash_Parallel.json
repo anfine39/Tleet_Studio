@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Drum Smash Parallel",
+  "params": {
+    "threshold": -20.0,
+    "attack": 0,
+    "release": 0,
+    "ratio": 3,
+    "makeup": 8.0,
+    "scHpf": 20.0,
+    "mix": 40.0,
+    "character": 2,
+    "dark": 0.0,
+    "crush": 60.0,
+    "output": -1.0,
+    "scExternal": 0
+  }
+}

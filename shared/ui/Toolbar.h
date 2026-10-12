@@ -18,6 +18,10 @@ namespace tleet::ui
         std::function<void (float)> onScaleChosen;
         std::function<void()> onAbout;
 
+        // A plugin-specific control placed left of BYPASS (e.g. a sidechain
+        // source switch). The caller owns the component.
+        void addExtra (juce::Component& c, int width);
+
         void paint (juce::Graphics&) override;
         void resized() override;
 
@@ -40,6 +44,7 @@ namespace tleet::ui
                          undoButton { "UNDO" }, redoButton { "REDO" },
                          bypassButton { "BYPASS" }, scaleButton { "100%" }, aboutButton { "i" };
 
+        std::vector<std::pair<juce::Component*, int>> extras;
         std::unique_ptr<juce::ButtonParameterAttachment> bypassAttachment;
         std::unique_ptr<juce::AlertWindow> nameDialog;
     };

@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Gentle Master 1.5",
+  "params": {
+    "threshold": -3.0,
+    "attack": 5,
+    "release": 4,
+    "ratio": 0,
+    "makeup": 1.0,
+    "scHpf": 100.0,
+    "mix": 100.0,
+    "character": 0,
+    "dark": 0.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}

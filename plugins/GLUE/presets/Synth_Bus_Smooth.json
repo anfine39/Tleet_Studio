@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Synth Bus Smooth",
+  "params": {
+    "threshold": -10.0,
+    "attack": 4,
+    "release": 3,
+    "ratio": 1,
+    "makeup": 2.0,
+    "scHpf": 40.0,
+    "mix": 80.0,
+    "character": 0,
+    "dark": 0.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "plugin": "GLUE",
+  "reference": { "file": "assets/reference/GLUE.png", "width": 1448, "height": 1086 },
+  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
+  "notes": "Knobs are drawn in slight perspective: the pointer turns around the cap centre, the printed scale dots sit on a circle around scaleCentre. Every number printed on a knob scale is removed from the plate and drawn live at the angle where the parameter really has that value. Stepped knobs (attack, release, ratio) also lose their printed dots; the editor draws one dot per real step.",
+  "controls": [
+    {
+      "id": "threshold", "type": "ROTARY", "parameter": "threshold",
+      "centre": [172.0, 601.5], "scaleCentre": [173.2, 605.7], "dotRadius": 81.7, "capRadius": 48,
+      "pointer": { "inner": 14, "outer": 58, "width": 6.5 },
+      "travelDegrees": [-136, 136], "hitbox": [97, 526, 150, 150],
+      "scaleLabels": { "values": [-20, -10, 0, 10], "gap": 9, "capHeight": 19 },
+      "erase": [[84, 517, 37, 25], [163, 494, 21, 25], [53, 625, 37, 25], [237, 626, 47, 24]],
+      "repaintDots": [[[212.0, 533.5], [117.3, 546.1]]],
+      "testId": "glue.knob.threshold"
+    },
+    {
+      "id": "attack", "type": "ROTARY_STEPPED", "parameter": "attack",
+      "centre": [453.0, 602.5], "scaleCentre": [453.5, 606.2], "dotRadius": 76.6, "capRadius": 46,
+      "pointer": { "inner": 13, "outer": 54, "width": 6 },
+      "travelDegrees": [-125, 125], "hitbox": [378, 528, 150, 150],
+      "scaleLabels": { "values": "steps", "gap": 9, "capHeight": 19 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[444, 494, 21, 25], [510, 518, 29, 25], [371, 520, 25, 25], [535, 571, 30, 24], [345, 586, 25, 24]],
+      "eraseDots": [[395.2, 657.3], [379.5, 603.1], [396.0, 552.4], [424.8, 535.9], [453.6, 529.7], [505.9, 548.4], [527.2, 595.5], [512.1, 657.3]],
+      "testId": "glue.knob.attack"
+    },
+    {
+      "id": "release", "type": "ROTARY_STEPPED", "parameter": "release",
+      "centre": [723.5, 603.0], "scaleCentre": [724.1, 606.0], "dotRadius": 75.3, "capRadius": 46,
+      "pointer": { "inner": 13, "outer": 54, "width": 6 },
+      "travelDegrees": [-120, 120], "hitbox": [648, 528, 150, 150],
+      "scaleLabels": { "values": "steps", "gap": 9, "capHeight": 19 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[715, 494, 20, 25], [654, 514, 26, 25], [776, 514, 21, 25], [618, 569, 25, 25], [809, 569, 29, 25]],
+      "eraseDots": [[665.4, 654.7], [649.8, 595.9], [660.9, 568.2], [678.1, 545.8], [698.0, 534.8], [723.8, 529.3], [749.6, 535.6], [771.1, 545.4], [787.2, 567.8], [798.0, 593.4], [781.7, 654.7]],
+      "testId": "glue.knob.release"
+    },
+    {
+      "id": "ratio", "type": "ROTARY_STEPPED", "parameter": "ratio",
+      "centre": [1003.5, 604.5], "scaleCentre": [1001.6, 606.9], "dotRadius": 76.5, "capRadius": 46,
+      "pointer": { "inner": 13, "outer": 54, "width": 6 },
+      "travelDegrees": [-120, 120], "hitbox": [928, 529, 150, 150],
+      "scaleLabels": { "values": "steps", "gap": 9, "capHeight": 19 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[992, 494, 22, 24], [914, 514, 34, 25], [1061, 515, 29, 25], [1082, 573, 32, 22]],
+      "eraseDots": [[940.9, 656.8], [927.9, 595.3], [938.1, 568.3], [950.6, 546.4], [975.5, 535.8], [1002.7, 529.8], [1028.4, 537.2], [1052.6, 546.4], [1067.0, 568.0], [1075.7, 593.2], [1058.9, 656.9]],
+      "testId": "glue.knob.ratio"
+    },
+    {
+      "id": "makeup", "type": "ROTARY", "parameter": "makeup",
+      "centre": [1279.0, 601.5], "scaleCentre": [1276.7, 606.0], "dotRadius": 81.3, "capRadius": 52,
+      "pointer": { "inner": 14, "outer": 58, "width": 6.5 },
+      "travelDegrees": [-136, 136], "hitbox": [1204, 526, 150, 150],
+      "scaleLabels": { "values": [-10, 0, 10, 20], "gap": 9, "capHeight": 19 },
+      "erase": [[1266, 493, 21, 26], [1332, 518, 40, 24], [1161, 625, 37, 25], [1356, 625, 39, 25]],
+      "repaintDots": [[[1313.0, 533.5], [1238.3, 533.9]]],
+      "testId": "glue.knob.makeup"
+    },
+    {
+      "id": "scHpf", "type": "ROTARY", "parameter": "scHpf",
+      "centre": [156.0, 888.5], "scaleCentre": [156.3, 890.8], "dotRadius": 65.9, "capRadius": 38,
+      "pointer": { "inner": 9, "outer": 35, "width": 5 },
+      "travelDegrees": [-140, 140], "hitbox": [96, 828, 120, 120],
+      "scaleLabels": { "values": [20, 50, 100, 300], "gap": 9, "capHeight": 19 },
+      "erase": [[136, 797, 37, 26], [207, 817, 37, 25], [76, 819, 29, 25], [221, 916, 39, 25]],
+      "repaintDots": [[[155.9, 825.8], [205.4, 845.3]], [[106.3, 846.1], [205.4, 845.3]]],
+      "testId": "glue.knob.schpf"
+    },
+    {
+      "id": "mix", "type": "ROTARY", "parameter": "mix",
+      "centre": [408.0, 887.5], "scaleCentre": [408.1, 888.9], "dotRadius": 70.0, "capRadius": 40,
+      "pointer": { "inner": 8, "outer": 34, "width": 5 },
+      "travelDegrees": [-139, 139], "hitbox": [348, 827, 120, 120],
+      "scaleLabels": { "values": [0, 50, 100], "gap": 9, "capHeight": 19 },
+      "erase": [[394, 793, 30, 26], [326, 937, 21, 25], [463, 937, 38, 25]],
+      "repaintDots": [[[408.3, 822.9], [448.1, 830.2]]],
+      "testId": "glue.knob.mix"
+    },
+    {
+      "id": "character", "type": "ROTARY_STEPPED", "parameter": "character",
+      "centre": [691.0, 897.0], "capRadius": 40,
+      "pointer": { "inner": 10, "outer": 48, "width": 5.5 },
+      "travelDegrees": [-74, 74], "hitbox": [631, 837, 120, 120],
+      "arcLamp": { "radius": 68.0, "sectorDegrees": 22, "sectorRadii": [56, 84] },
+      "states": ["Clean", "TLEET", "Burn"],
+      "testId": "glue.knob.character"
+    },
+    {
+      "id": "dark", "type": "ROTARY", "parameter": "dark",
+      "centre": [918.5, 886.0], "scaleCentre": [918.0, 888.4], "dotRadius": 60.0, "capRadius": 36,
+      "pointer": { "inner": 9, "outer": 35, "width": 5 },
+      "travelDegrees": [-143, 143], "hitbox": [858, 826, 120, 120],
+      "scaleLabels": { "values": [0, 100], "gap": 9, "capHeight": 19 },
+      "erase": [[860, 937, 23, 25], [951, 937, 37, 25]],
+      "repaintDots": [[[978.0, 886.1], [858.6, 886.0]], [[971.8, 914.6], [864.1, 914.3]]],
+      "testId": "glue.knob.dark"
+    },
+    {
+      "id": "crush", "type": "ROTARY", "parameter": "crush",
+      "centre": [1085.0, 888.5], "scaleCentre": [1084.1, 888.2], "dotRadius": 59.9, "capRadius": 36,
+      "pointer": { "inner": 9, "outer": 35, "width": 5 },
+      "travelDegrees": [-143, 143], "hitbox": [1025, 828, 120, 120],
+      "scaleLabels": { "values": [0, 100], "gap": 9, "capHeight": 19 },
+      "erase": [[1027, 937, 23, 25], [1117, 937, 37, 25]],
+      "repaintDots": [[[1115.4, 836.7], [1052.8, 836.8]]],
+      "testId": "glue.knob.crush"
+    },
+    {
+      "id": "output", "type": "ROTARY", "parameter": "output",
+      "centre": [1288.5, 888.5], "scaleCentre": [1287.5, 888.9], "dotRadius": 68.5, "capRadius": 38,
+      "pointer": { "inner": 9, "outer": 35, "width": 5 },
+      "travelDegrees": [-139, 139], "hitbox": [1228, 828, 120, 120],
+      "scaleLabels": { "values": [-20, 0, 20], "gap": 9, "capHeight": 19 },
+      "erase": [[1277, 793, 21, 26], [1196, 937, 37, 25], [1342, 937, 39, 25]],
+      "repaintDots": [[[1287.0, 822.9], [1250.1, 830.3]], [[1324.0, 830.4], [1250.1, 830.3]]],
+      "testId": "glue.knob.output"
+    },
+    {
+      "id": "grMeter", "type": "LED_METER", "telemetry": "grMeter (actual applied VCA gain)",
+      "scale": { "0": 443, "2": 501, "3": 531, "4": 561, "5": 596, "6": 632, "7": 668, "8": 704, "9": 740,
+                 "10": 775, "11": 811, "12": 846, "14": 889, "16": 931, "20": 996 },
+      "segmentRow": [349, 362], "segmentGap": 3,
+      "eraseBar": [413, 345, 614, 21],
+      "hitbox": [393, 250, 670, 170],
+      "testId": "glue.meter.gr"
+    },
+    { "id": "scExternal", "type": "TOOLBAR_TOGGLE", "parameter": "scExternal", "note": "not on the artwork; spec 12 allows a settings/context control. Lamp lit only while the external key is really used." },
+    { "id": "sideLamps", "type": "STATIC", "note": "amber slots left and right of the meter and the tall bar at the meter's right end: static artwork (UI_SPEC_CONFLICTS.md)" },
+    { "id": "screws", "type": "STATIC" },
+    { "id": "title",  "type": "STATIC" }
+  ]
+}

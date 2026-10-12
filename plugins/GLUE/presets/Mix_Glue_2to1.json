@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Mix Glue 2:1",
+  "params": {
+    "threshold": -8.0,
+    "attack": 5,
+    "release": 4,
+    "ratio": 1,
+    "makeup": 1.5,
+    "scHpf": 20.0,
+    "mix": 100.0,
+    "character": 1,
+    "dark": 0.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}
