@@ -20,6 +20,16 @@
    `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"TLEET ASH.vst3"`
    (и то же для `.component`).
 
+## Сборка на своём компьютере (Windows)
+
+1. Установите бесплатные **Build Tools for Visual Studio 2022**, отметив
+   «Desktop development with C++» (CMake входит в набор), и **Git**.
+2. Склонируйте репозиторий и в PowerShell **от администратора** выполните в
+   его папке:
+   `powershell -ExecutionPolicy Bypass -File scripts\build-windows.ps1 -Install`
+3. Скрипт скачает JUCE, соберёт плагины, прогонит тесты и скопирует `.vst3`
+   в `C:\Program Files\Common Files\VST3`. Первая сборка занимает 10–20 минут.
+
 ## Сборка из исходников
 
 Нужны CMake 3.22+ и компилятор C++20:
