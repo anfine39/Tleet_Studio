@@ -37,7 +37,12 @@ namespace tleet::ui
         // Where the needle settles when the audio thread has delivered nothing
         // for a while (transport stopped, plugin not processing): 0 VU in GR
         // mode, the left pin in level modes.
-        void setRestValue (float vu) { restValue = vu; }
+        // Before any audio has arrived the needle starts at rest, not swinging in.
+        void setRestValue (float vu)
+        {
+            restValue = vu;
+            if (! hasData) { ballistics.reset (vu); target = vu; repaint(); }
+        }
 
         std::function<void()> onClick;
 
@@ -56,6 +61,7 @@ namespace tleet::ui
         float target = -20.0f;
         float restValue = -20.0f;
         float staleSeconds = 0.0f;
+        bool hasData = false;
         double lastTime = 0.0;
         juce::String caption;
     };

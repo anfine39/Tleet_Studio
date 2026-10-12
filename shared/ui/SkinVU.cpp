@@ -43,6 +43,7 @@ namespace tleet::ui
             {
                 target = r;
                 staleSeconds = 0.0f;
+                hasData = true;
             }
             else if ((staleSeconds += dt) > 0.3f)
             {
