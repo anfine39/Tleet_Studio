@@ -24,7 +24,8 @@
 
 1. Установите бесплатные **Build Tools for Visual Studio 2022**, отметив
    «Desktop development with C++» (CMake входит в набор), и **Git**.
-2. Склонируйте репозиторий и в PowerShell **от администратора** выполните в
+2. Склонируйте репозиторий, откройте **Developer PowerShell for VS 2022** от
+   администратора (через меню Пуск) и выполните в
    его папке:
    `powershell -ExecutionPolicy Bypass -File scripts\build-windows.ps1 -Install`
 3. Скрипт скачает JUCE, соберёт плагины, прогонит тесты и скопирует `.vst3`

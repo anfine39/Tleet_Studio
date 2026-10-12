@@ -1,6 +1,7 @@
 # Builds every TLEET plugin on Windows, runs the tests and installs the VST3s.
 # Needs: Visual Studio 2022 Build Tools ("Desktop development with C++"),
 # CMake 3.22+ and Git. Run from the repository root in PowerShell:
+#   (in "Developer PowerShell for VS 2022", so cmake is on PATH)
 #   powershell -ExecutionPolicy Bypass -File scripts\build-windows.ps1
 # Add -Install to copy the plugins into C:\Program Files\Common Files\VST3
 # (the window must be started "as administrator" for that).
