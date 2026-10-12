@@ -31,6 +31,7 @@ namespace tleet::ui
         virtual void layoutPanel (juce::Rectangle<int>) {}
 
         void addToPanel (juce::Component& c) { content.addAndMakeVisible (c); }
+        void addToToolbar (juce::Component& c, int width) { toolbar.addExtra (c, width); }
         void finishSetup(); // call at the end of the derived constructor
 
         TleetProcessorBase& baseProcessor;

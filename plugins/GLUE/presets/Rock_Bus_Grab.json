@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Rock Bus Grab",
+  "params": {
+    "threshold": -12.0,
+    "attack": 3,
+    "release": 1,
+    "ratio": 2,
+    "makeup": 3.0,
+    "scHpf": 90.0,
+    "mix": 100.0,
+    "character": 1,
+    "dark": 20.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}
