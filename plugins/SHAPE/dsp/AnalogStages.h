@@ -30,6 +30,7 @@ namespace tleet::shape
     struct Voicing
     {
         double driveDb;  // extra level into the stages (Burn)
+        double levelDb;  // the unit's own output level with EQ IN or out (host Bypass and MIX 0 stay at unity)
         double ampVc;    // amplifier soft-limit level Vc (linear, 1 = 0 dBFS at DRIVE 0)
         double ampEven;  // e2: single-ended (even-order) share of the amplifier
         double xfmrIn;   // k of the input transformer
@@ -49,10 +50,13 @@ namespace tleet::shape
 
         inline const Voicing& voicing (int index) noexcept
         {
-            //                                          drive  Vc      e2      k in   k out
-            static const Voicing v[numCharacters] = { { 0.0,   11.22,  0.002,  0.6,   0.9 },    // Clean
-                                                      { 0.0,   4.467,  0.012,  7.0,   12.0 },   // Original
-                                                      { 6.0,   3.162,  0.04,   15.0,  22.5 } }; // Burn
+            // level: the hardware is about 1.13 dB up when it is in the signal
+            // path (RESEARCH F9, S2). Owner decision O4 (2026-10-13): Original
+            // and Burn have it, Clean stays at unity.
+            //                                          drive  level  Vc      e2      k in   k out
+            static const Voicing v[numCharacters] = { { 0.0,   0.0,   11.22,  0.002,  0.6,   0.9 },    // Clean
+                                                      { 0.0,   1.13,  4.467,  0.012,  7.0,   12.0 },   // Original
+                                                      { 6.0,   1.13,  3.162,  0.04,   15.0,  22.5 } }; // Burn
             return v[std::clamp (index, 0, numCharacters - 1)];
         }
 

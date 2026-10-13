@@ -59,6 +59,7 @@ namespace tleet::shape
         Voicing voice = stages::voicing (1);
         int characterIndex = 1;
         double driveTarget = 0.25, driveGain = 1.0, driveMid = 1.0, driveGainTarget = 1.0, invDrive = 1.0;
+        double level = 1.0, levelMid = 1.0, levelTarget = 1.0; // the voicing's output level (linear)
         double eqInTarget = 1.0, eqFade = 1.0, eqFadeLin = 1.0, eqStep = 0.001, kRound = 0.01;
         double kKnob = 0.1, kSelector = 0.05, kVoice = 0.1, kDrive = 0.001;
         int countdown = 0;

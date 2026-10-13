@@ -309,11 +309,15 @@ DRIVE 0..100 % = 0..+24 dB into the stages (×D before the input transformer,
 the output level does not. CHARACTER selects one of three voicings. It is
 glided, so a switch never clicks.
 
-| CHARACTER | extra drive | amplifier Vc | even share e2 | k input | k output |
-|---|---|---|---|---|---|
-| Clean | 0 dB | 11.22 (+21 dBFS) | 0.002 | 0.6 | 0.9 |
-| Original | 0 dB | 4.467 (+13 dBFS) | 0.012 | 7.0 | 12.0 |
-| Burn | +6 dB | 3.162 (+10 dBFS) | 0.04 | 15.0 | 22.5 |
+| CHARACTER | extra drive | output level | amplifier Vc | even share e2 | k input | k output |
+|---|---|---|---|---|---|---|
+| Clean | 0 dB | 0 dB | 11.22 (+21 dBFS) | 0.002 | 0.6 | 0.9 |
+| Original | 0 dB | +1.13 dB | 4.467 (+13 dBFS) | 0.012 | 7.0 | 12.0 |
+| Burn | +6 dB | +1.13 dB | 3.162 (+10 dBFS) | 0.04 | 15.0 | 22.5 |
+
+The output level is the hardware's inherent +1.13 dB (S2, F9; owner decision
+O4): it applies with EQ IN in or out, after the output transformer, and glides
+with a CHARACTER change. Host Bypass and MIX 0 stay at unity.
 
 Original at DRIVE 0 is the hardware reference (5.5). Clean reduces the colour
 by about 7× (−17 dB THD) at the reference level. Burn adds 6 dB of drive, a
@@ -532,8 +536,6 @@ All six were restored afterwards. The final run has every test green.
 
 ## 13. Not modelled (intentionally)
 
-- The inherent +1.13 dB level of the hardware (S2): SHAPE is unity at flat
-  (owner decision O4).
 - The inter-stage transformer as a separate stage: its colour is folded into
   the output transformer.
 - Tube noise and hum; the 6X4 power supply sag.
@@ -566,7 +568,11 @@ Owner decisions:
   the skirts would follow the plain bilinear map, but the bandwidth at 16 kHz
   would be about 5 % narrower (1/γ) than the analog prototype's (γ = 1.056 at a
   176.4 kHz internal rate).
-- **O4 Level.** Add the hardware's +1.13 dB inherent boost, or keep unity
-  (current).
+- **O4 Level. Decided by Andrew 2026-10-13:** the hardware's +1.13 dB level
+  (S2, F9) is part of the voicing: Original and Burn are +1.13 dB at flat
+  settings, with EQ IN in or out; Clean stays at unity. Host Bypass and MIX 0
+  are unity. A CHARACTER change glides the level (no click). Tested in
+  `tests/ShapeTests.cpp` (THD test and EQ IN test). [SOURCE_CONFIRMED level,
+  TLEET_EXTENSION per voicing]
 - **O5 Defaults.** DRIVE 25 % (+6 dB into the stages) and BANDWIDTH 5 make the
   default slightly coloured and mid-Q. DRIVE 0 would be the hardware level.

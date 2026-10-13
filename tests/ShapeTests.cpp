@@ -913,6 +913,14 @@ TEST ("SHAPE: EQ IN Out removes the curves but keeps the transformer/amplifier c
     CHECK_NEAR (tOut.thd / tIn.thd, 1.0, 0.01);
     CHECK (tOutLf.thd > tOut.thd); // the transformers' LF colour stays
 
+    // the unit's level stays with EQ IN Out, per voicing (owner O4): Original +1.13 dB, Clean unity
+    const auto lvlOrig = renderTone (cOriginal, 0.0f, -40.0f, 1000.0, fs, outFlat);
+    const auto lvlClean = renderTone (cClean, 0.0f, -40.0f, 1000.0, fs, outFlat);
+    MEASURE ("EQ IN Out, Original: level at 1 kHz (dB)", lvlOrig.fundDb);
+    MEASURE ("EQ IN Out, Clean: level at 1 kHz (dB)", lvlClean.fundDb);
+    CHECK_NEAR (lvlOrig.fundDb, 1.13, 0.01);
+    CHECK_NEAR (lvlClean.fundDb, 0.0, 0.01);
+
     // 3) host Bypass: bit-exact delayed dry; EQ IN Out is not.
     auto p = makeShape (fs, 256);
     applyEq (*p, bigOut);
@@ -999,9 +1007,16 @@ TEST ("SHAPE: harmonic spectrum, THD and THD+N vs level per CHARACTER and DRIVE 
     CHECK (R (cOriginal, 0, 4).thd > 2.0 * nominal.thd);
     CHECK (R (cClean, 1, 4).thd < 0.2 * nominal.thd);
     CHECK (R (cOriginal, 1, 8).thd > 0.02); // +24 dBu: audibly crunchy
-    // EQ curves preserved by every CHARACTER: small-signal gain within 0.01 dB
+    // EQ curves preserved by every CHARACTER: small-signal gain within 0.01 dB of the
+    // voicing's level (Clean unity, Original and Burn +1.13 dB as the hardware, owner O4)
     for (int c : { cClean, cOriginal, cBurn })
-        CHECK_NEAR (R (c, 1, 0).fundDb, 0.0, 0.01);
+    {
+        MEASURE (juce::String (charName[c]) + ": small-signal gain at flat (dB)", R (c, 1, 0).fundDb);
+        CHECK_NEAR (R (c, 1, 0).fundDb, tleet::shape::stages::voicing (c).levelDb, 0.01);
+    }
+    CHECK (tleet::shape::stages::voicing (cClean).levelDb == 0.0);
+    CHECK (tleet::shape::stages::voicing (cOriginal).levelDb == 1.13);
+    CHECK (tleet::shape::stages::voicing (cBurn).levelDb == 1.13);
 
     // DRIVE: level into the stages, compensated (gain unchanged); THD rises monotonically.
     double prev = 0;
@@ -1013,7 +1028,7 @@ TEST ("SHAPE: harmonic spectrum, THD and THD+N vs level per CHARACTER and DRIVE 
         MEASURE ("Original DRIVE " + juce::String (d, 0) + " %, 1 kHz -18 dBFS: THD %", pct (r.thd));
         MEASURE ("    small-signal gain (dB)", small.fundDb);
         CHECK (r.thd > prev);
-        CHECK_NEAR (small.fundDb, 0.0, 0.01);
+        CHECK_NEAR (small.fundDb, tleet::shape::stages::voicing (cOriginal).levelDb, 0.01);
         prev = r.thd;
     }
     // DRIVE +12 dB at -18 dBFS = DRIVE 0 at -6 dBFS (the drive is the level)

@@ -93,6 +93,7 @@ namespace tleet::shape
             moved |= glide2 (mid.hfAtten, current.hfAtten, target.hfAtten, kKnob);
 
             glideLinear (voice.driveDb, tv.driveDb, kVoice);
+            voice.levelDb = tv.levelDb; // glided per sample below
             glideLog (voice.ampVc, tv.ampVc, kVoice);
             glideLinear (voice.ampEven, tv.ampEven, kVoice);
             glideLinear (voice.xfmrIn, tv.xfmrIn, kVoice);
@@ -118,8 +119,10 @@ namespace tleet::shape
         settled = ! moved;
 
         driveGainTarget = stages::driveGain (driveTarget) * std::pow (10.0, voice.driveDb / 20.0);
+        levelTarget = std::pow (10.0, voice.levelDb / 20.0);
         if (snapAll)
         {
+            level = levelMid = levelTarget;
             driveGain = driveMid = driveGainTarget;
             invDrive = 1.0 / driveGain;
             eqFade = eqFadeLin = eqInTarget;
@@ -161,6 +164,15 @@ namespace tleet::shape
                 invDrive = 1.0 / driveGain;
             }
 
+            if (level != levelTarget)
+            {
+                // the CHARACTER level step, glided like DRIVE
+                const double d1 = levelTarget - levelMid;
+                levelMid = std::abs (d1) < 1.0e-9 ? levelTarget : levelMid + kDrive * d1;
+                const double d2 = levelMid - level;
+                level = std::abs (d2) < 1.0e-9 && levelMid == levelTarget ? levelTarget : level + kDrive * d2;
+            }
+
             for (int ch = 0; ch < nch; ++ch)
             {
                 const double x = io[ch][i];
@@ -171,7 +183,7 @@ namespace tleet::shape
                 if (stagesOn)
                 {
                     const double a = amp[(size_t) ch].process (y, voice.ampVc, voice.ampEven, stageCoeffs);
-                    out = outXfmr[(size_t) ch].process (a, voice.xfmrOut, stages::outFluxSat, stageCoeffs) * invDrive;
+                    out = outXfmr[(size_t) ch].process (a, voice.xfmrOut, stages::outFluxSat, stageCoeffs) * (invDrive * level);
                 }
                 io[ch][i] = (float) out;
             }

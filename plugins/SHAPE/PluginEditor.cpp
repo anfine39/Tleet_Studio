@@ -72,7 +72,8 @@ namespace tleet::shape
             { params::hfAttenFreq, "HIGH ATTEN frequency: 5, 10 or 20 kHz" },
             { params::hfAtten,     "HIGH ATTEN: high shelf cut at the selected frequency" },
             { params::drive,       "DRIVE: level into the transformers and the tube amplifier" },
-            { params::character,   "CHARACTER: Clean (little colour, same EQ curves), Original, Burn (hotter transformer and tube drive)" },
+            { params::character,   "CHARACTER: Clean (little colour, unity level), Original (the hardware's colour and its +1.13 dB level), "
+                                   "Burn (hotter transformer and tube drive, +1.13 dB). The EQ curves are the same in all three" },
             { params::mix,         "MIX: blend of the processed signal with the original input" },
             { params::output,      "OUTPUT: output level" },
         };

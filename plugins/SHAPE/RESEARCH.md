@@ -187,12 +187,12 @@ the flat network is unity after make-up. The host **Bypass** is the plugin's
 own true bypass: the latency-aligned input, bit-exact. [SOURCE_CONFIRMED EQ
 IN behaviour; TLEET_EXTENSION host bypass]
 
-### F9 The 1.13 dB inherent level boost (not modelled)
+### F9 The 1.13 dB inherent level boost (modelled in Original and Burn)
 
 S2: the original "has an inherent level boost of approximately 1.13 dB when
-it is in the signal path". No other source repeats it. SHAPE is unity gain
-at flat settings; OUTPUT covers ±20 dB. Whether to add it is an owner
-decision (MODEL_SPEC 14).
+it is in the signal path". No other source repeats it. Owner decision O4
+(2026-10-13): Original and Burn have it, with EQ IN in or out; Clean is unity
+gain at flat settings (MODEL_SPEC 14).
 
 ### F10 Amplifier bandwidth
 
