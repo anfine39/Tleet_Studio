@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Parallel Drum Smash",
+  "params": {
+    "input": 4.0,
+    "threshold": -16.0,
+    "attack": 10.0,
+    "recovery": 120.0,
+    "compress": 10.0,
+    "mix": 40.0,
+    "output": -2.0,
+    "tubeDrive": 60.0,
+    "harmonics": 50.0,
+    "saturation": 50.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 20.0,
+    "character": 2,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}

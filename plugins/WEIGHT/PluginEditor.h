@@ -10,49 +10,9 @@ namespace tleet::weight
     using ScaleLabel = ui::skin::ScaleLabel;
     using StepDot = ui::skin::StepDot;
 
-    // A lit lamp cut from the mockup, drawn over a dark lamp of the plate.
-    struct LampSprite
-    {
-        juce::Image image;
-        juce::Rectangle<float> area; // component coordinates
-    };
-
-    // One lamp of a lamp group (THRUST, DETECTOR, TONE, GR MODE). The plate
-    // shows every lamp dark; a lamp is lit only while its position is the
-    // parameter's real value. A click on the lamp or its caption selects it.
-    // The component also covers the lamp's glow, which may reach past the
-    // click area; only the click area takes the mouse.
-    class LampButton : public juce::Button
-    {
-    public:
-        LampButton (const juce::String& name, LampSprite, juce::Rectangle<float> clickArea);
-        void paintButton (juce::Graphics&, bool highlighted, bool down) override;
-        bool hitTest (int x, int y) override { return clickArea.contains ((float) x, (float) y); }
-        juce::Rectangle<float> getClickArea() const noexcept { return clickArea; }
-
-    private:
-        LampSprite sprite;
-        juce::Rectangle<float> clickArea; // component coordinates
-    };
-
-    // The lamps of one choice parameter, kept in step with it both ways.
-    class LampGroup
-    {
-    public:
-        LampGroup (juce::RangedAudioParameter&, std::function<void()> onEdit);
-        void add (std::unique_ptr<LampButton>);
-        int getNumLamps() const noexcept { return (int) lamps.size(); }
-        LampButton& getLamp (int i) { return *lamps[(size_t) i]; }
-        int getSelected() const noexcept { return selected; }
-
-    private:
-        void show (float value);
-
-        juce::ParameterAttachment attachment;
-        std::vector<std::unique_ptr<LampButton>> lamps;
-        std::function<void()> onEdit;
-        int selected = -1;
-    };
+    using LampSprite = ui::skin::LampSprite;
+    using LampButton = ui::skin::LampButton;
+    using LampGroup = ui::skin::LampGroup;
 
     // EXTERNAL SC. The lamp is fully lit only while the external key is really
     // used (switch on and the host feeds the Sidechain bus); switched on with

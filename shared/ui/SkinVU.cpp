@@ -35,7 +35,11 @@ namespace tleet::ui
         const double now = juce::Time::getMillisecondCounterHiRes() * 0.001;
         const float dt = lastTime > 0.0 ? (float) juce::jlimit (0.0, 0.1, now - lastTime) : 1.0f / 60.0f;
         lastTime = now;
+        tick (dt);
+    }
 
+    void SkinVU::tick (float dt)
+    {
         if (supplier)
         {
             const float r = supplier();

@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Colour Only",
+  "params": {
+    "input": 0.0,
+    "threshold": 20.0,
+    "attack": 50.0,
+    "recovery": 400.0,
+    "compress": 0.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "tubeDrive": 70.0,
+    "harmonics": 80.0,
+    "saturation": 40.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 60.0,
+    "character": 2,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 2
+  }
+}

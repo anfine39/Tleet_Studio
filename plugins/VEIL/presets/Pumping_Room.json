@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Pumping Room",
+  "params": {
+    "input": 3.0,
+    "threshold": -14.0,
+    "attack": 15.0,
+    "recovery": 150.0,
+    "compress": 8.5,
+    "mix": 60.0,
+    "output": 0.0,
+    "tubeDrive": 45.0,
+    "harmonics": 45.0,
+    "saturation": 30.0,
+    "dryWet": 85.0,
+    "hpf": 20.0,
+    "scHpf": 20.0,
+    "character": 1,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}

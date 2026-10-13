@@ -10,7 +10,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **GLUE** | VCA bus compressor (G-bus family) | in progress |
 | **PUNCH** | VCA compressor (dbx 160A family) | in progress |
 | **WEIGHT** | Stereo bus compressor (API 2500 family) | in progress |
-| VEIL | Vintage stereo compressor | planned |
+| **VEIL** | Variable-mu tube compressor (Manley Variable Mu family) | in progress |
 | SHAPE | Passive program EQ | planned |
 | ECHO | Tape echo | planned |
 | VOID | Reverb | planned |
