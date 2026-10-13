@@ -91,7 +91,9 @@ namespace tleet::ui::skin
         const auto centre = pointFrom (c["scaleCentre"]);
         const float radius = (float) c["dotRadius"];
         const float r = (float) c["stepDots"]["radius"];
-        const int n = param.getNumSteps();
+        // stepped parameters: one dot per position; a continuous one may ask
+        // for "count" evenly spaced dots (e.g. one per unit of a 0..10 scale)
+        const int n = c["stepDots"].hasProperty ("count") ? (int) c["stepDots"]["count"] : param.getNumSteps();
         for (int i = 0; i < n; ++i)
         {
             const float deg = angleFor (c, (float) i / (float) juce::jmax (1, n - 1));

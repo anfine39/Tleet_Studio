@@ -1,0 +1,1472 @@
+{
+ "plugin": "SHAPE",
+ "reference": {
+  "file": "assets/reference/SHAPE.png",
+  "width": 1448,
+  "height": 1086
+ },
+ "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
+ "notes": "Continuous knobs turn around the centre of their printed dot circle; the frequency selectors around their cap (their printed dots were off-centre and unevenly spaced, so they are removed and one live dot per real position is drawn). Every number printed on a scale is erased and drawn live at the angle where the parameter really has that value. CLEAN / ORIGINAL / BURN, SHARP / BROAD, the CHARACTER arc and its marks stay printed. The EQ IN lamp is dark on the plate and lit at runtime.",
+ "controls": [
+  {
+   "id": "lfFreq",
+   "type": "ROTARY_STEPPED",
+   "parameter": "lfFreq",
+   "centre": [
+    272.3,
+    398.9
+   ],
+   "scaleCentre": [
+    272.3,
+    398.9
+   ],
+   "dotRadius": 66.0,
+   "capRadius": 40,
+   "rimRadius": 52,
+   "pointer": {
+    "inner": 8,
+    "outer": 48,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -60,
+    60
+   ],
+   "hitbox": [
+    214,
+    341,
+    116,
+    116
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.lffreq",
+   "scaleLabels": {
+    "values": "steps",
+    "gap": 8,
+    "capHeight": 19
+   },
+   "stepDots": {
+    "radius": 4.0
+   },
+   "erase": [
+    [
+     178,
+     344,
+     25,
+     21
+    ],
+    [
+     224,
+     312,
+     24,
+     21
+    ],
+    [
+     298,
+     309,
+     25,
+     21
+    ],
+    [
+     343,
+     341,
+     33,
+     21
+    ]
+   ],
+   "eraseDots": [
+    [
+     212.8,
+     366.8
+    ],
+    [
+     244.1,
+     341.5
+    ],
+    [
+     301.1,
+     339.9
+    ],
+    [
+     332.8,
+     365.9
+    ]
+   ]
+  },
+  {
+   "id": "lfBoost",
+   "type": "ROTARY",
+   "parameter": "lfBoost",
+   "centre": [
+    152.4,
+    560.1
+   ],
+   "scaleCentre": [
+    152.4,
+    560.1
+   ],
+   "dotRadius": 84.6,
+   "capRadius": 60,
+   "rimRadius": 79,
+   "pointer": {
+    "inner": 13,
+    "outer": 72,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -134.4,
+    134.9
+   ],
+   "hitbox": [
+    67,
+    475,
+    170,
+    170
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.lfboost",
+   "scaleLabels": {
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "gap": 11,
+    "capHeight": 16
+   },
+   "erase": [
+    [
+     71,
+     624,
+     13,
+     17
+    ],
+    [
+     51,
+     582,
+     12,
+     17
+    ],
+    [
+     48,
+     536,
+     13,
+     20
+    ],
+    [
+     65,
+     498,
+     12,
+     17
+    ],
+    [
+     99,
+     465,
+     13,
+     17
+    ],
+    [
+     148,
+     442,
+     13,
+     17
+    ],
+    [
+     195,
+     465,
+     12,
+     17
+    ],
+    [
+     229,
+     498,
+     13,
+     17
+    ],
+    [
+     244,
+     539,
+     13,
+     17
+    ],
+    [
+     241,
+     582,
+     13,
+     17
+    ],
+    [
+     220,
+     624,
+     20,
+     17
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     92.0,
+     619.3
+    ],
+    [
+     71.7,
+     585.5
+    ],
+    [
+     69.0,
+     546.2
+    ],
+    [
+     84.3,
+     509.9
+    ],
+    [
+     114.4,
+     484.5
+    ],
+    [
+     152.8,
+     475.5
+    ],
+    [
+     191.0,
+     484.8
+    ],
+    [
+     220.9,
+     510.5
+    ],
+    [
+     236.0,
+     546.9
+    ],
+    [
+     232.9,
+     586.2
+    ],
+    [
+     212.3,
+     619.8
+    ]
+   ]
+  },
+  {
+   "id": "lfAtten",
+   "type": "ROTARY",
+   "parameter": "lfAtten",
+   "centre": [
+    387.9,
+    560.2
+   ],
+   "scaleCentre": [
+    387.9,
+    560.2
+   ],
+   "dotRadius": 84.7,
+   "capRadius": 60,
+   "rimRadius": 79,
+   "pointer": {
+    "inner": 13,
+    "outer": 72,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -134.2,
+    135.0
+   ],
+   "hitbox": [
+    303,
+    475,
+    170,
+    170
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.lfatten",
+   "scaleLabels": {
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "gap": 11,
+    "capHeight": 16
+   },
+   "erase": [
+    [
+     307,
+     624,
+     12,
+     17
+    ],
+    [
+     287,
+     583,
+     12,
+     16
+    ],
+    [
+     283,
+     540,
+     13,
+     17
+    ],
+    [
+     301,
+     498,
+     13,
+     17
+    ],
+    [
+     335,
+     465,
+     13,
+     16
+    ],
+    [
+     382,
+     442,
+     13,
+     17
+    ],
+    [
+     430,
+     465,
+     12,
+     16
+    ],
+    [
+     466,
+     498,
+     12,
+     17
+    ],
+    [
+     480,
+     539,
+     13,
+     17
+    ],
+    [
+     477,
+     582,
+     13,
+     17
+    ],
+    [
+     455,
+     624,
+     20,
+     17
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     327.2,
+     619.2
+    ],
+    [
+     307.0,
+     585.4
+    ],
+    [
+     304.4,
+     546.0
+    ],
+    [
+     319.9,
+     509.7
+    ],
+    [
+     350.1,
+     484.4
+    ],
+    [
+     388.5,
+     475.5
+    ],
+    [
+     426.8,
+     484.9
+    ],
+    [
+     456.6,
+     510.7
+    ],
+    [
+     471.6,
+     547.2
+    ],
+    [
+     468.4,
+     586.5
+    ],
+    [
+     447.8,
+     620.1
+    ]
+   ]
+  },
+  {
+   "id": "hfFreq",
+   "type": "ROTARY_STEPPED",
+   "parameter": "hfFreq",
+   "centre": [
+    805.6,
+    400.0
+   ],
+   "scaleCentre": [
+    805.6,
+    400.0
+   ],
+   "dotRadius": 72.0,
+   "capRadius": 46,
+   "rimRadius": 57,
+   "pointer": {
+    "inner": 9,
+    "outer": 52,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -90,
+    90
+   ],
+   "hitbox": [
+    744,
+    338,
+    124,
+    124
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.hffreq",
+   "scaleLabels": {
+    "values": "steps",
+    "gap": 9,
+    "capHeight": 19
+   },
+   "stepDots": {
+    "radius": 4.0
+   },
+   "erase": [
+    [
+     677,
+     373,
+     14,
+     20
+    ],
+    [
+     705,
+     343,
+     15,
+     20
+    ],
+    [
+     748,
+     314,
+     14,
+     20
+    ],
+    [
+     797,
+     304,
+     22,
+     21
+    ],
+    [
+     854,
+     314,
+     22,
+     20
+    ],
+    [
+     895,
+     342,
+     22,
+     21
+    ],
+    [
+     928,
+     371,
+     22,
+     24
+    ]
+   ],
+   "eraseDots": [
+    [
+     712.2,
+     393.2
+    ],
+    [
+     734.7,
+     365.8
+    ],
+    [
+     766.2,
+     341.8
+    ],
+    [
+     807.2,
+     333.3
+    ],
+    [
+     849.1,
+     341.6
+    ],
+    [
+     880.7,
+     365.7
+    ],
+    [
+     904.1,
+     393.1
+    ]
+   ]
+  },
+  {
+   "id": "hfBoost",
+   "type": "ROTARY",
+   "parameter": "hfBoost",
+   "centre": [
+    672.0,
+    560.7
+   ],
+   "scaleCentre": [
+    672.0,
+    560.7
+   ],
+   "dotRadius": 87.0,
+   "capRadius": 60,
+   "rimRadius": 79,
+   "pointer": {
+    "inner": 13,
+    "outer": 72,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -132.9,
+    133.1
+   ],
+   "hitbox": [
+    587,
+    476,
+    170,
+    170
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.hfboost",
+   "scaleLabels": {
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "gap": 11,
+    "capHeight": 16
+   },
+   "erase": [
+    [
+     587,
+     625,
+     13,
+     17
+    ],
+    [
+     567,
+     583,
+     12,
+     17
+    ],
+    [
+     564,
+     540,
+     12,
+     17
+    ],
+    [
+     582,
+     498,
+     13,
+     17
+    ],
+    [
+     618,
+     465,
+     13,
+     17
+    ],
+    [
+     667,
+     441,
+     13,
+     18
+    ],
+    [
+     715,
+     464,
+     12,
+     17
+    ],
+    [
+     751,
+     497,
+     12,
+     17
+    ],
+    [
+     766,
+     539,
+     13,
+     16
+    ],
+    [
+     764,
+     582,
+     13,
+     17
+    ],
+    [
+     743,
+     624,
+     20,
+     17
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     608.3,
+     619.9
+    ],
+    [
+     588.5,
+     585.1
+    ],
+    [
+     586.4,
+     545.1
+    ],
+    [
+     602.4,
+     508.5
+    ],
+    [
+     633.2,
+     482.8
+    ],
+    [
+     672.2,
+     473.7
+    ],
+    [
+     711.1,
+     483.0
+    ],
+    [
+     741.8,
+     508.7
+    ],
+    [
+     757.7,
+     545.4
+    ],
+    [
+     755.4,
+     585.4
+    ],
+    [
+     735.5,
+     620.1
+    ]
+   ]
+  },
+  {
+   "id": "hfBandwidth",
+   "type": "ROTARY",
+   "parameter": "hfBandwidth",
+   "centre": [
+    957.3,
+    562.7
+   ],
+   "scaleCentre": [
+    957.3,
+    562.7
+   ],
+   "dotRadius": 88.7,
+   "capRadius": 60,
+   "rimRadius": 79,
+   "pointer": {
+    "inner": 13,
+    "outer": 72,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -128.1,
+    128.1
+   ],
+   "hitbox": [
+    872,
+    478,
+    170,
+    170
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.hfbandwidth",
+   "scaleLabels": {
+    "values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "gap": 11,
+    "capHeight": 16
+   },
+   "stepDots": {
+    "radius": 3.6,
+    "count": 11
+   },
+   "erase": [
+    [
+     847,
+     573,
+     12,
+     17
+    ],
+    [
+     855,
+     514,
+     13,
+     17
+    ],
+    [
+     897,
+     468,
+     13,
+     17
+    ],
+    [
+     952,
+     441,
+     14,
+     18
+    ],
+    [
+     1004,
+     468,
+     17,
+     21
+    ],
+    [
+     1046,
+     513,
+     14,
+     17
+    ],
+    [
+     1055,
+     573,
+     12,
+     17
+    ]
+   ],
+   "eraseDots": [
+    [
+     886.6,
+     617.3
+    ],
+    [
+     870.2,
+     579.2
+    ],
+    [
+     876.7,
+     526.5
+    ],
+    [
+     910.7,
+     489.0
+    ],
+    [
+     958.9,
+     472.1
+    ],
+    [
+     1006.2,
+     488.8
+    ],
+    [
+     1038.2,
+     526.4
+    ],
+    [
+     1043.8,
+     579.4
+    ],
+    [
+     1026.9,
+     618.1
+    ]
+   ]
+  },
+  {
+   "id": "hfAttenFreq",
+   "type": "ROTARY_STEPPED",
+   "parameter": "hfAttenFreq",
+   "centre": [
+    1258.6,
+    405.4
+   ],
+   "scaleCentre": [
+    1258.6,
+    405.4
+   ],
+   "dotRadius": 60.5,
+   "capRadius": 34,
+   "rimRadius": 50,
+   "pointer": {
+    "inner": 6,
+    "outer": 45,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -50,
+    50
+   ],
+   "hitbox": [
+    1204,
+    350,
+    110,
+    110
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.hfattenfreq",
+   "scaleLabels": {
+    "values": "steps",
+    "gap": 12,
+    "capHeight": 19
+   },
+   "stepDots": {
+    "radius": 4.0
+   },
+   "erase": [
+    [
+     1194,
+     338,
+     14,
+     21
+    ],
+    [
+     1248,
+     311,
+     22,
+     21
+    ],
+    [
+     1304,
+     336,
+     24,
+     20
+    ]
+   ],
+   "eraseDots": [
+    [
+     1212.5,
+     366.6
+    ],
+    [
+     1258.9,
+     344.9
+    ],
+    [
+     1304.5,
+     366.0
+    ]
+   ]
+  },
+  {
+   "id": "hfAtten",
+   "type": "ROTARY",
+   "parameter": "hfAtten",
+   "centre": [
+    1259.9,
+    564.2
+   ],
+   "scaleCentre": [
+    1259.9,
+    564.2
+   ],
+   "dotRadius": 86.1,
+   "capRadius": 60,
+   "rimRadius": 79,
+   "pointer": {
+    "inner": 13,
+    "outer": 72,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -131.9,
+    132.3
+   ],
+   "hitbox": [
+    1175,
+    479,
+    170,
+    170
+   ],
+   "ink": "dark",
+   "testId": "shape.knob.hfatten",
+   "scaleLabels": {
+    "values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "gap": 11,
+    "capHeight": 16
+   },
+   "erase": [
+    [
+     1175,
+     626,
+     13,
+     17
+    ],
+    [
+     1155,
+     584,
+     12,
+     17
+    ],
+    [
+     1152,
+     542,
+     13,
+     17
+    ],
+    [
+     1170,
+     500,
+     12,
+     17
+    ],
+    [
+     1206,
+     469,
+     14,
+     16
+    ],
+    [
+     1255,
+     460,
+     12,
+     15
+    ],
+    [
+     1304,
+     468,
+     13,
+     17
+    ],
+    [
+     1340,
+     500,
+     13,
+     17
+    ],
+    [
+     1355,
+     541,
+     13,
+     16
+    ],
+    [
+     1353,
+     583,
+     13,
+     17
+    ],
+    [
+     1331,
+     626,
+     20,
+     17
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     1195.8,
+     621.7
+    ],
+    [
+     1176.9,
+     587.2
+    ],
+    [
+     1175.4,
+     547.9
+    ],
+    [
+     1191.5,
+     512.0
+    ],
+    [
+     1221.9,
+     487.0
+    ],
+    [
+     1260.2,
+     478.1
+    ],
+    [
+     1298.5,
+     487.2
+    ],
+    [
+     1328.7,
+     512.4
+    ],
+    [
+     1344.5,
+     548.5
+    ],
+    [
+     1342.7,
+     587.8
+    ],
+    [
+     1323.6,
+     622.1
+    ]
+   ]
+  },
+  {
+   "id": "drive",
+   "type": "ROTARY",
+   "parameter": "drive",
+   "centre": [
+    201.7,
+    917.4
+   ],
+   "scaleCentre": [
+    201.7,
+    917.4
+   ],
+   "dotRadius": 66.1,
+   "capRadius": 46,
+   "rimRadius": 57,
+   "pointer": {
+    "inner": 8,
+    "outer": 52,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -137.5,
+    137.6
+   ],
+   "hitbox": [
+    132,
+    847,
+    140,
+    140
+   ],
+   "ink": "light",
+   "testId": "shape.knob.drive",
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 6,
+    "capHeight": 18
+   },
+   "erase": [
+    [
+     127,
+     959,
+     14,
+     20
+    ],
+    [
+     191,
+     827,
+     24,
+     20
+    ],
+    [
+     257,
+     959,
+     31,
+     20
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     157.0,
+     966.1
+    ],
+    [
+     139.6,
+     940.0
+    ],
+    [
+     136.2,
+     908.7
+    ],
+    [
+     147.6,
+     879.5
+    ],
+    [
+     171.2,
+     858.7
+    ],
+    [
+     201.8,
+     851.3
+    ],
+    [
+     232.3,
+     858.8
+    ],
+    [
+     255.9,
+     879.6
+    ],
+    [
+     267.2,
+     908.9
+    ],
+    [
+     263.8,
+     940.1
+    ],
+    [
+     246.3,
+     966.2
+    ]
+   ],
+   "note": "bottom panel (light print)"
+  },
+  {
+   "id": "character",
+   "type": "ROTARY_STEPPED",
+   "parameter": "character",
+   "centre": [
+    540.5,
+    922.0
+   ],
+   "scaleCentre": [
+    540.5,
+    922.0
+   ],
+   "dotRadius": 60.0,
+   "capRadius": 40,
+   "rimRadius": 55,
+   "pointer": {
+    "inner": 6,
+    "outer": 48,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -66.8,
+    66.8
+   ],
+   "hitbox": [
+    476,
+    857,
+    130,
+    130
+   ],
+   "ink": "light",
+   "testId": "shape.knob.character",
+   "erase": [],
+   "eraseDots": [],
+   "note": "bottom panel (light print)"
+  },
+  {
+   "id": "mix",
+   "type": "ROTARY",
+   "parameter": "mix",
+   "centre": [
+    853.1,
+    919.5
+   ],
+   "scaleCentre": [
+    853.1,
+    919.5
+   ],
+   "dotRadius": 64.9,
+   "capRadius": 43,
+   "rimRadius": 57,
+   "pointer": {
+    "inner": 8,
+    "outer": 52,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -135.9,
+    136.3
+   ],
+   "hitbox": [
+    783,
+    850,
+    140,
+    140
+   ],
+   "ink": "light",
+   "testId": "shape.knob.mix",
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 6,
+    "capHeight": 18
+   },
+   "erase": [
+    [
+     779,
+     959,
+     14,
+     20
+    ],
+    [
+     842,
+     827,
+     24,
+     20
+    ],
+    [
+     910,
+     959,
+     31,
+     20
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     807.9,
+     966.1
+    ],
+    [
+     791.6,
+     940.3
+    ],
+    [
+     788.9,
+     909.9
+    ],
+    [
+     800.4,
+     881.6
+    ],
+    [
+     823.6,
+     861.7
+    ],
+    [
+     853.3,
+     854.6
+    ],
+    [
+     883.0,
+     861.9
+    ],
+    [
+     906.0,
+     881.9
+    ],
+    [
+     917.3,
+     910.3
+    ],
+    [
+     914.4,
+     940.7
+    ],
+    [
+     897.9,
+     966.4
+    ]
+   ],
+   "note": "bottom panel (light print)"
+  },
+  {
+   "id": "output",
+   "type": "ROTARY",
+   "parameter": "output",
+   "centre": [
+    1102.9,
+    918.9
+   ],
+   "scaleCentre": [
+    1102.9,
+    918.9
+   ],
+   "dotRadius": 62.8,
+   "capRadius": 43,
+   "rimRadius": 57,
+   "pointer": {
+    "inner": 8,
+    "outer": 52,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -137.6,
+    137.9
+   ],
+   "hitbox": [
+    1033,
+    849,
+    140,
+    140
+   ],
+   "ink": "light",
+   "testId": "shape.knob.output",
+   "scaleLabels": {
+    "values": [
+     -20,
+     0,
+     20
+    ],
+    "gap": 6,
+    "capHeight": 18
+   },
+   "erase": [
+    [
+     1016,
+     959,
+     31,
+     20
+    ],
+    [
+     1096,
+     827,
+     14,
+     20
+    ],
+    [
+     1157,
+     959,
+     33,
+     20
+    ]
+   ],
+   "eraseDots": [],
+   "keepDots": [
+    [
+     1060.6,
+     965.3
+    ],
+    [
+     1043.9,
+     940.4
+    ],
+    [
+     1040.6,
+     910.7
+    ],
+    [
+     1051.5,
+     882.8
+    ],
+    [
+     1074.0,
+     863.1
+    ],
+    [
+     1103.1,
+     856.1
+    ],
+    [
+     1132.1,
+     863.3
+    ],
+    [
+     1154.5,
+     883.1
+    ],
+    [
+     1165.2,
+     911.0
+    ],
+    [
+     1161.8,
+     940.7
+    ],
+    [
+     1145.0,
+     965.5
+    ]
+   ],
+   "note": "bottom panel (light print)"
+  },
+  {
+   "id": "eqIn",
+   "type": "LAMP_SWITCH",
+   "parameter": "eqIn",
+   "lamp": {
+    "rect": [
+     1290,
+     858,
+     72,
+     72
+    ],
+    "centre": [
+     1325.5,
+     893.6
+    ]
+   },
+   "hitbox": [
+    1288,
+    856,
+    76,
+    76
+   ],
+   "note": "Lit while the passive EQ is in the signal path; dark when EQ IN is off (the amplifier stays in, as on the hardware).",
+   "testId": "shape.switch.eqin"
+  }
+ ]
+}

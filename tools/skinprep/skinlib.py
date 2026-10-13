@@ -206,10 +206,13 @@ def source_turn(plate, mask, c, r, a):
     return float(best[1])
 
 
-def remove_pointer(img, plate, c, yy, xx):
-    """The lit pointer and its glow, filled along the circle around the cap."""
+def remove_pointer(img, plate, c, yy, xx, reach=None):
+    """The lit pointer and its glow, filled along the circle around the cap.
+    `reach` limits the search for the pointer's light (default: a bit beyond
+    the cap); on a warm, stained panel it must stay inside the knob's rim."""
     cx, cy = c["centre"]
-    reach = max(c["capRadius"] * 1.45, c["pointer"]["outer"] + 14)
+    if reach is None:
+        reach = max(c["capRadius"] * 1.45, c["pointer"]["outer"] + 14)
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     r = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
     near = r <= reach

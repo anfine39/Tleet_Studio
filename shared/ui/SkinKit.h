@@ -47,7 +47,8 @@ namespace tleet::ui::skin
     // "dotRadius"). Each label's value goes through the parameter's own range.
     std::vector<ScaleLabel> makeScaleLabels (const juce::var& control, juce::RangedAudioParameter&, const LabelTextFn&);
 
-    // From a control's "stepDots" entry: one dot per parameter step.
+    // From a control's "stepDots" entry: one dot per parameter step, or
+    // "count" evenly spaced dots over the travel.
     std::vector<StepDot> makeStepDots (const juce::var& control, juce::RangedAudioParameter&);
 
     // Paints dots and labels (given in reference pixels) at `scale` from `origin`.
