@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Vocal Air",
+  "params": {
+    "lfFreq": 3,
+    "lfBoost": 0.0,
+    "lfAtten": 2.0,
+    "hfFreq": 5,
+    "hfBoost": 4.0,
+    "hfBandwidth": 7.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 1.0,
+    "drive": 20.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": 0.0,
+    "eqIn": 1
+  }
+}

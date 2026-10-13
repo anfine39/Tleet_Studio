@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Clean Air Lift",
+  "params": {
+    "lfFreq": 2,
+    "lfBoost": 0.0,
+    "lfAtten": 0.0,
+    "hfFreq": 6,
+    "hfBoost": 5.0,
+    "hfBandwidth": 10.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 0.0,
+    "drive": 0.0,
+    "character": 0,
+    "mix": 100.0,
+    "output": -0.5,
+    "eqIn": 1
+  }
+}

@@ -6,7 +6,7 @@
   "height": 1086
  },
  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
- "notes": "Continuous knobs turn around the centre of their printed dot circle; the frequency selectors around their cap (their printed dots were off-centre and unevenly spaced, so they are removed and one live dot per real position is drawn). Every number printed on a scale is erased and drawn live at the angle where the parameter really has that value. CLEAN / ORIGINAL / BURN, SHARP / BROAD, the CHARACTER arc and its marks stay printed. The EQ IN lamp is dark on the plate and lit at runtime.",
+ "notes": "Continuous knobs turn around the centre of their printed dot circle; the frequency selectors around their cap (their printed dots were off-centre and unevenly spaced, so they are removed and one live dot per real position is drawn). The printed dots of the continuous knobs were unevenly spaced too (up to 6 px off the real values), so every scale dot is drawn live. Every number printed on a scale is erased and drawn live at the angle where the parameter really has that value. CLEAN / ORIGINAL / BURN, SHARP / BROAD, the CHARACTER arc and its marks stay printed. The EQ IN lamp is dark on the plate and lit at runtime.",
  "controls": [
   {
    "id": "lfFreq",
@@ -142,6 +142,10 @@
     "gap": 11,
     "capHeight": 16
    },
+   "stepDots": {
+    "radius": 3.3,
+    "count": 11
+   },
    "erase": [
     [
      71,
@@ -210,51 +214,50 @@
      17
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     92.0,
-     619.3
-    ],
-    [
-     71.7,
-     585.5
-    ],
-    [
-     69.0,
-     546.2
-    ],
-    [
-     84.3,
-     509.9
-    ],
-    [
-     114.4,
-     484.5
-    ],
-    [
-     152.8,
-     475.5
-    ],
-    [
-     191.0,
-     484.8
-    ],
-    [
-     220.9,
-     510.5
-    ],
-    [
-     236.0,
-     546.9
-    ],
-    [
-     232.9,
-     586.2
-    ],
-    [
-     212.3,
+     91.4,
      619.8
+    ],
+    [
+     72.5,
+     587.6
+    ],
+    [
+     69.4,
+     549.7
+    ],
+    [
+     82.3,
+     513.3
+    ],
+    [
+     111.0,
+     486.2
+    ],
+    [
+     153.8,
+     471.9
+    ],
+    [
+     194.5,
+     485.9
+    ],
+    [
+     223.0,
+     513.1
+    ],
+    [
+     235.4,
+     549.7
+    ],
+    [
+     231.7,
+     587.4
+    ],
+    [
+     212.5,
+     620.1
     ]
    ]
   },
@@ -306,6 +309,10 @@
     ],
     "gap": 11,
     "capHeight": 16
+   },
+   "stepDots": {
+    "radius": 3.3,
+    "count": 11
    },
    "erase": [
     [
@@ -375,51 +382,50 @@
      17
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     327.2,
-     619.2
+     326.5,
+     620.0
     ],
     [
-     307.0,
-     585.4
+     308.2,
+     588.2
     ],
     [
-     304.4,
-     546.0
+     304.5,
+     549.8
     ],
     [
-     319.9,
-     509.7
+     318.3,
+     513.3
     ],
     [
-     350.1,
-     484.4
+     347.0,
+     485.5
     ],
     [
-     388.5,
-     475.5
+     388.0,
+     471.9
     ],
     [
-     426.8,
-     484.9
+     430.0,
+     485.7
     ],
     [
-     456.6,
-     510.7
+     458.8,
+     512.7
     ],
     [
-     471.6,
-     547.2
+     470.9,
+     549.5
     ],
     [
-     468.4,
-     586.5
+     467.4,
+     587.6
     ],
     [
      447.8,
-     620.1
+     620.2
     ]
    ]
   },
@@ -587,6 +593,10 @@
     "gap": 11,
     "capHeight": 16
    },
+   "stepDots": {
+    "radius": 3.3,
+    "count": 11
+   },
    "erase": [
     [
      587,
@@ -655,51 +665,50 @@
      17
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     608.3,
-     619.9
+     607.5,
+     620.5
     ],
     [
-     588.5,
-     585.1
+     589.5,
+     588.5
     ],
     [
      586.4,
-     545.1
+     550.4
     ],
     [
-     602.4,
-     508.5
+     600.0,
+     513.5
     ],
     [
-     633.2,
-     482.8
+     630.5,
+     485.5
     ],
     [
-     672.2,
-     473.7
+     672.8,
+     471.6
     ],
     [
-     711.1,
-     483.0
+     714.8,
+     485.1
     ],
     [
-     741.8,
-     508.7
+     744.4,
+     512.2
     ],
     [
-     757.7,
-     545.4
+     757.5,
+     549.0
     ],
     [
-     755.4,
-     585.4
+     754.4,
+     587.3
     ],
     [
      735.5,
-     620.1
+     620.0
     ]
    ]
   },
@@ -958,8 +967,12 @@
      9,
      10
     ],
-    "gap": 11,
+    "gap": 5,
     "capHeight": 16
+   },
+   "stepDots": {
+    "radius": 3.3,
+    "count": 11
    },
    "erase": [
     [
@@ -1029,51 +1042,50 @@
      17
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     1195.8,
-     621.7
+     1195.7,
+     621.9
     ],
     [
-     1176.9,
-     587.2
+     1177.8,
+     589.8
     ],
     [
-     1175.4,
-     547.9
+     1175.1,
+     551.7
     ],
     [
-     1191.5,
-     512.0
+     1188.5,
+     515.5
     ],
     [
-     1221.9,
-     487.0
+     1219.0,
+     489.5
     ],
     [
-     1260.2,
-     478.1
+     1260.5,
+     479.0
     ],
     [
-     1298.5,
-     487.2
+     1303.1,
+     489.5
     ],
     [
-     1328.7,
-     512.4
+     1331.9,
+     515.6
     ],
     [
-     1344.5,
-     548.5
+     1344.7,
+     551.4
     ],
     [
-     1342.7,
-     587.8
+     1342.0,
+     589.2
     ],
     [
-     1323.6,
-     622.1
+     1323.2,
+     622.0
     ]
    ]
   },
@@ -1118,6 +1130,10 @@
     "gap": 6,
     "capHeight": 18
    },
+   "stepDots": {
+    "radius": 3.0,
+    "count": 11
+   },
    "erase": [
     [
      127,
@@ -1138,51 +1154,50 @@
      20
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     157.0,
+     156.9,
+     966.5
+    ],
+    [
+     139.5,
+     939.0
+    ],
+    [
+     136.9,
+     907.2
+    ],
+    [
+     147.9,
+     877.9
+    ],
+    [
+     170.0,
+     859.0
+    ],
+    [
+     202.0,
+     852.6
+    ],
+    [
+     233.0,
+     858.9
+    ],
+    [
+     255.8,
+     877.8
+    ],
+    [
+     266.7,
+     907.2
+    ],
+    [
+     263.9,
+     938.7
+    ],
+    [
+     246.1,
      966.1
-    ],
-    [
-     139.6,
-     940.0
-    ],
-    [
-     136.2,
-     908.7
-    ],
-    [
-     147.6,
-     879.5
-    ],
-    [
-     171.2,
-     858.7
-    ],
-    [
-     201.8,
-     851.3
-    ],
-    [
-     232.3,
-     858.8
-    ],
-    [
-     255.9,
-     879.6
-    ],
-    [
-     267.2,
-     908.9
-    ],
-    [
-     263.8,
-     940.1
-    ],
-    [
-     246.3,
-     966.2
     ]
    ],
    "note": "bottom panel (light print)"
@@ -1264,6 +1279,10 @@
     "gap": 6,
     "capHeight": 18
    },
+   "stepDots": {
+    "radius": 3.0,
+    "count": 11
+   },
    "erase": [
     [
      779,
@@ -1284,51 +1303,50 @@
      20
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     807.9,
-     966.1
+     807.7,
+     966.3
     ],
     [
-     791.6,
-     940.3
+     792.4,
+     941.0
     ],
     [
-     788.9,
-     909.9
+     789.1,
+     911.2
     ],
     [
-     800.4,
-     881.6
+     798.8,
+     882.7
     ],
     [
-     823.6,
-     861.7
+     821.0,
+     863.0
     ],
     [
-     853.3,
-     854.6
+     852.8,
+     855.4
     ],
     [
-     883.0,
-     861.9
+     885.0,
+     863.0
     ],
     [
-     906.0,
-     881.9
+     907.3,
+     882.6
     ],
     [
-     917.3,
-     910.3
+     917.5,
+     911.5
     ],
     [
-     914.4,
-     940.7
+     914.0,
+     941.0
     ],
     [
      897.9,
-     966.4
+     966.5
     ]
    ],
    "note": "bottom panel (light print)"
@@ -1374,6 +1392,10 @@
     "gap": 6,
     "capHeight": 18
    },
+   "stepDots": {
+    "radius": 3.0,
+    "count": 11
+   },
    "erase": [
     [
      1016,
@@ -1394,51 +1416,50 @@
      20
     ]
    ],
-   "eraseDots": [],
-   "keepDots": [
+   "eraseDots": [
     [
-     1060.6,
-     965.3
+     1059.7,
+     966.2
     ],
     [
-     1043.9,
-     940.4
+     1045.0,
+     941.0
     ],
     [
-     1040.6,
-     910.7
+     1041.7,
+     911.5
     ],
     [
-     1051.5,
+     1051.6,
      882.8
     ],
     [
-     1074.0,
-     863.1
+     1072.6,
+     863.2
     ],
     [
-     1103.1,
-     856.1
+     1102.1,
+     855.3
     ],
     [
      1132.1,
-     863.3
+     863.0
     ],
     [
-     1154.5,
-     883.1
+     1153.8,
+     882.6
     ],
     [
-     1165.2,
-     911.0
+     1164.5,
+     911.3
     ],
     [
-     1161.8,
-     940.7
+     1161.0,
+     941.0
     ],
     [
-     1145.0,
-     965.5
+     1145.4,
+     966.0
     ]
    ],
    "note": "bottom panel (light print)"

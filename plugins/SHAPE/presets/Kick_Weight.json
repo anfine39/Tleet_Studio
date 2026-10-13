@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Kick Weight",
+  "params": {
+    "lfFreq": 2,
+    "lfBoost": 6.0,
+    "lfAtten": 3.0,
+    "hfFreq": 2,
+    "hfBoost": 2.0,
+    "hfBandwidth": 4.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 0.0,
+    "drive": 30.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": -1.0,
+    "eqIn": 1
+  }
+}

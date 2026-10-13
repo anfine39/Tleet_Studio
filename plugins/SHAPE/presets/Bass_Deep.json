@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Bass Deep",
+  "params": {
+    "lfFreq": 1,
+    "lfBoost": 7.0,
+    "lfAtten": 4.0,
+    "hfFreq": 4,
+    "hfBoost": 0.0,
+    "hfBandwidth": 5.0,
+    "hfAttenFreq": 1,
+    "hfAtten": 2.0,
+    "drive": 25.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": -1.5,
+    "eqIn": 1
+  }
+}

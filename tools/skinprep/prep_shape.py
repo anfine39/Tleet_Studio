@@ -11,11 +11,11 @@ Removed from the artwork, because the runtime draws them from the real state:
   - every number printed on a scale: the editor draws the parameter's real
     value at the angle where the knob really has it (the HIGH FREQUENCY
     selector was printed 3 4 5 10 13 12 16, the BANDWIDTH scale 1 2 3 4 6 4 7);
-  - the printed dots of the three frequency selectors and of BANDWIDTH: they
-    were off-centre or unevenly spaced, so the editor draws one dot per real
-    position (selectors) or per step of 1 (BANDWIDTH);
+  - every printed scale dot: the selectors' dots were off-centre, the others
+    unevenly spaced (up to 6 px off the real values), so the editor draws one
+    dot per real position (selectors) or per step of a tenth of the travel;
   - the lit EQ IN lamp (dark on the plate, a sprite for the lit state).
-Kept: the dots of the other knobs (they sit at the real values), CLEAN /
+Kept: CLEAN /
 ORIGINAL / BURN with their arc and marks, SHARP / BROAD, units, titles.
 
 Usage: python3 tools/skinprep/prep_shape.py [--debug out_dir]
@@ -29,8 +29,8 @@ import os
 import cv2
 import numpy as np
 
-from skinlib import angular_fill, erase_dot, feather_composite, lamp_off, orange_mask, remove_pointer
-from prep_weight import erase_label
+from skinlib import (angular_fill, clean_patch, erase_dot, feather_composite, lamp_off, match_illumination,
+                     orange_mask, rect_mask, remove_pointer)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 REF = os.path.join(ROOT, "assets", "reference", "SHAPE.png")
@@ -87,6 +87,27 @@ def pointer_out(img, plate, c, yy, xx):
     return np.clip(out, 0, 255).astype(np.uint8)
 
 
+def erase_text(plate, rect, avoid, sigma=4.0):
+    """A printed number: the quietest patch of panel nearby (no print, no
+    knob, no dot in it, margin included), brought to the brightness around
+    the number."""
+    x, y, w, h = rect
+    mask = rect_mask(plate.shape, [(x, y, w, h)])
+    m = 4  # the composite's feather reaches past the rect
+    size = max(w, h) + 2 * m
+    corner = (x + w / 2 - size / 2, y + h / 2 - size / 2)
+    try:
+        px, py, _, _ = clean_patch(plate, corner, avoid | (mask > 0), size=size)
+    except TypeError:  # nothing clean close by: look further
+        px, py, _, _ = clean_patch(plate, corner, avoid | (mask > 0), size=size, search=160)
+    dx, dy = px + m - x, py + m - y
+    source = np.roll(np.roll(plate, -dy, axis=0), -dx, axis=1)
+    # brightness matched over the whole reach of the feather, so a patch
+    # from further away cannot leave its own brightness as an outline
+    filled = match_illumination(plate, source, cv2.dilate(mask, np.ones((3, 3), np.uint8), iterations=3), sigma=sigma)
+    return feather_composite(plate, filled, cv2.dilate(mask, np.ones((3, 3), np.uint8), iterations=1), 1.2)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--debug", default=None)
@@ -111,35 +132,18 @@ def main():
         cx, cy = c["centre"]
         printed |= ((xx - cx) ** 2 + (yy - cy) ** 2) <= (c["rimRadius"] + 4) ** 2
 
+    # grain and rust specks alone would block every patch: for the clean
+    # patch under a dot only print bigger than the grain counts
+    n, lab, st, _ = cv2.connectedComponentsWithStats(printed.astype(np.uint8))
+    printed_bold = (st[:, cv2.CC_STAT_AREA] >= 90)[lab] & (lab > 0)
+
     for c in knobs:
         for p in c.get("eraseDots", []):
-            avoid = printed.copy()
+            avoid = printed_bold.copy()
             avoid[int(p[1]) - 8:int(p[1]) + 9, int(p[0]) - 8:int(p[0]) + 9] = False
             plate = erase_dot(plate, p, avoid, radius=8)
         for rect in c.get("erase", []):
-            r = pad(rect, 3)
-            avoid = printed.copy()
-            avoid[r[1]:r[1] + r[3], r[0]:r[0] + r[2]] = False
-            plate = erase_label(plate, r, c["scaleCentre"], avoid)
-
-    # the printed dots that stay: back from the artwork, whole (a label
-    # erased right next to a dot must not nibble at it)
-    for c in knobs:
-        if c.get("eraseDots") or "keepDots" not in c:
-            continue
-        for p in c["keepDots"]:
-            # the dot itself: the dark blob under its centre (not a digit next to it)
-            px, py = int(round(p[0])), int(round(p[1]))
-            box = g[py - 9:py + 10, px - 9:px + 10]
-            ink = (cv2.GaussianBlur(g, (0, 0), 6.0)[py - 9:py + 10, px - 9:px + 10] - box > 25).astype(np.uint8)
-            n, lab = cv2.connectedComponents(ink)
-            centre_label = lab[9, 9] if ink[9, 9] else (np.bincount(lab[7:12, 7:12].ravel())[1:].argmax() + 1 if ink[7:12, 7:12].any() else 0)
-            if centre_label == 0:
-                continue
-            m = np.zeros(plate.shape[:2], np.uint8)
-            m[py - 9:py + 10, px - 9:px + 10] = (lab == centre_label).astype(np.uint8) * 255
-            m = cv2.dilate(m, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
-            plate = feather_composite(plate, img, m, 0.8)
+            plate = erase_text(plate, pad(rect, 3), printed_bold)
 
     plate, lamp_sprite = lamp_off(img, plate, controls["eqIn"])
 

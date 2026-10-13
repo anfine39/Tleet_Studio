@@ -11,7 +11,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **PUNCH** | VCA compressor (dbx 160A family) | in progress |
 | **WEIGHT** | Stereo bus compressor (API 2500 family) | in progress |
 | **VEIL** | Variable-mu tube compressor (Manley Variable Mu family) | in progress |
-| SHAPE | Passive program EQ | planned |
+| **SHAPE** | Passive program EQ (Pultec EQP-1A family) | in progress |
 | ECHO | Tape echo | planned |
 | VOID | Reverb | planned |
 | **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |

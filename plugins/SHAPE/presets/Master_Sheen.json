@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Master Sheen",
+  "params": {
+    "lfFreq": 1,
+    "lfBoost": 3.0,
+    "lfAtten": 2.0,
+    "hfFreq": 6,
+    "hfBoost": 3.0,
+    "hfBandwidth": 8.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 1.0,
+    "drive": 15.0,
+    "character": 0,
+    "mix": 100.0,
+    "output": -0.5,
+    "eqIn": 1
+  }
+}

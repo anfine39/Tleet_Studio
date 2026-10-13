@@ -284,7 +284,7 @@ TEST ("SHAPE GUI: every scale number and dot sits where the knob really has that
     MEASURE ("worst label angle error (deg)", worstLabel);
     MEASURE ("worst pointer-vs-label error (deg)", worstPointer);
     MEASURE ("worst pointer-vs-dot error (deg)", worstDot);
-    CHECK (dots == 4 + 7 + 3 + 11);
+    CHECK (dots == 4 + 7 + 3 + 11 * 8); // three selectors, then 11 per continuous knob (BANDWIDTH included)
 
     auto texts = [&] (const char* id)
     {
