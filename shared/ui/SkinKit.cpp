@@ -245,4 +245,172 @@ namespace tleet::ui::skin
         g.gap = (float) c["segmentGap"] * s;
         return g;
     }
+
+    // ============================================================= arc meter
+
+    ArcLedMeter::ArcLedMeter (Geometry g) : geo (std::move (g))
+    {
+        setInterceptsMouseClicks (false, false);
+        startTimerHz (30);
+    }
+
+    int ArcLedMeter::getNumLitCapableSegments() const noexcept
+    {
+        int n = 0;
+        for (auto& s : geo.segments)
+            n += s.decorative ? 0 : 1;
+        return n;
+    }
+
+    int ArcLedMeter::litSegmentsFor (float grDb) const noexcept
+    {
+        int lit = 0, k = 0;
+        for (auto& s : geo.segments)
+        {
+            if (s.decorative)
+                continue;
+            ++k;
+            if (grDb >= 0.5f * (s.loDb + s.hiDb))
+                lit = k;
+        }
+        return lit;
+    }
+
+    juce::Path ArcLedMeter::getSegmentPath (int index) const
+    {
+        const auto& s = geo.segments[(size_t) index];
+        const float rMid = 0.5f * (geo.outerRadius + geo.innerRadius);
+        const float halfGap = 0.5f * geo.gap / juce::jmax (1.0f, rMid);
+        float a0 = juce::degreesToRadians (juce::jmin (s.startDeg, s.endDeg)) + halfGap;
+        float a1 = juce::degreesToRadians (juce::jmax (s.startDeg, s.endDeg)) - halfGap;
+        if (a1 < a0)
+            std::swap (a0, a1);
+        juce::Path p;
+        const auto c = geo.centre;
+        p.addCentredArc (c.x, c.y, geo.outerRadius, geo.outerRadius, 0.0f, a0, a1, true);
+        p.addCentredArc (c.x, c.y, geo.innerRadius, geo.innerRadius, 0.0f, a1, a0, false);
+        p.closeSubPath();
+        return p;
+    }
+
+    void ArcLedMeter::refresh (float seconds)
+    {
+        if (supplier)
+        {
+            const float v = supplier();
+            if (v >= 0.0f)
+            {
+                if (v >= displayed)
+                    displayed = v;
+                else
+                    displayed = v + (displayed - v) * std::exp (-seconds / fallSeconds);
+            }
+        }
+        const int lit = getLitSegments();
+        if (lit != paintedLit)
+        {
+            paintedLit = lit;
+            repaint();
+        }
+    }
+
+    void ArcLedMeter::paint (juce::Graphics& g)
+    {
+        const int lit = getLitSegments();
+        const float depth = geo.outerRadius - geo.innerRadius;
+
+        // segment k (1-based among the lit-capable ones) is lit when k <= lit
+        std::vector<bool> isLit (geo.segments.size(), false);
+        {
+            int k = 0;
+            for (size_t i = 0; i < geo.segments.size(); ++i)
+                if (! geo.segments[i].decorative)
+                    isLit[i] = ++k <= lit;
+        }
+
+        // glow of the lit part on the window around the bar
+        if (lit > 0)
+        {
+            juce::Path bar;
+            for (size_t i = 0; i < geo.segments.size(); ++i)
+                if (isLit[i])
+                    bar.addPath (getSegmentPath ((int) i));
+            for (int i = 4; i >= 1; --i)
+            {
+                g.setColour (juce::Colour (0xffffa63a).withAlpha (0.05f * (float) (5 - i)));
+                g.strokePath (bar, juce::PathStrokeType (depth * 0.55f * (float) i, juce::PathStrokeType::curved,
+                                                         juce::PathStrokeType::rounded));
+            }
+        }
+
+        for (size_t i = 0; i < geo.segments.size(); ++i)
+        {
+            const auto path = getSegmentPath ((int) i);
+            const auto r = path.getBounds();
+            if (isLit[i])
+            {
+                // measured on the artwork's lit segments: warm top, hot middle, amber lower edge
+                juce::ColourGradient grad (juce::Colour (0xfffcd96a), r.getX(), r.getY(),
+                                           juce::Colour (0xffcf7f1f), r.getX(), r.getBottom(), false);
+                grad.addColour (0.45, juce::Colour (0xffffeea2));
+                grad.addColour (0.85, juce::Colour (0xfffde68e));
+                g.setGradientFill (grad);
+                g.fillPath (path);
+            }
+            else
+            {
+                // the artwork's unlit segments: dull amber glass, lighter lower edge
+                juce::ColourGradient grad (juce::Colour (0xff4b2a0e), r.getX(), r.getY(),
+                                           juce::Colour (0xff7e4a17), r.getX(), r.getBottom(), false);
+                grad.addColour (0.75, juce::Colour (0xff6b3f14));
+                g.setGradientFill (grad);
+                g.fillPath (path);
+                g.setColour (juce::Colour (0xff120b05).withAlpha (0.6f));
+                g.strokePath (path, juce::PathStrokeType (0.6f));
+            }
+        }
+    }
+
+    ArcLedMeter::Geometry arcMeterGeometry (const juce::var& c, juce::Rectangle<float> bounds, float s)
+    {
+        ArcLedMeter::Geometry g;
+        const auto& arc = c["arc"];
+        g.centre = (pointFrom (arc["centre"]) - bounds.getPosition()) * s;
+        const float rail = (float) arc["railRadius"];
+        g.outerRadius = (rail - (float) arc["segmentDepth"][0]) * s;
+        g.innerRadius = (rail - (float) arc["segmentDepth"][1]) * s;
+        g.gap = (float) c["segmentGap"] * s;
+
+        // printed scale: gain reduction (dB) -> angle, piecewise linear
+        std::vector<std::pair<float, float>> scale;
+        if (auto* props = c["scaleDegrees"].getDynamicObject())
+            for (auto& prop : props->getProperties())
+                scale.emplace_back (prop.name.toString().getFloatValue(), (float) prop.value);
+        std::sort (scale.begin(), scale.end());
+        auto angleFor = [&scale] (float db)
+        {
+            if (scale.empty())
+                return 0.0f;
+            if (db <= scale.front().first)
+                return scale.front().second;
+            for (size_t i = 1; i < scale.size(); ++i)
+                if (db <= scale[i].first)
+                {
+                    const float t = (db - scale[i - 1].first) / (scale[i].first - scale[i - 1].first);
+                    return scale[i - 1].second + t * (scale[i].second - scale[i - 1].second);
+                }
+            return scale.back().second;
+        };
+
+        if (auto* b = c["segmentBoundaries"].getArray())
+            for (int i = 0; i + 1 < b->size(); ++i)
+            {
+                const float lo = (float) (*b)[i], hi = (float) (*b)[i + 1];
+                g.segments.push_back ({ angleFor (lo), angleFor (hi), lo, hi, false });
+            }
+        if (auto* u = c["unlitDegrees"].getArray())
+            for (auto& seg : *u)
+                g.segments.push_back ({ (float) seg[0], (float) seg[1], 0.0f, 0.0f, true });
+        return g;
+    }
 }

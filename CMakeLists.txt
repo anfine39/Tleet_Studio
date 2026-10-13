@@ -54,6 +54,7 @@ add_subdirectory(plugins/BITE)
 add_subdirectory(plugins/DOUBLE)
 add_subdirectory(plugins/GLUE)
 add_subdirectory(plugins/PUNCH)
+add_subdirectory(plugins/WEIGHT)
 
 if(TLEET_BUILD_TESTS)
     enable_testing()

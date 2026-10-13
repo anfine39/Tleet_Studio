@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Dual Mono Guitars",
+  "params": {
+    "threshold": -5.0,
+    "attack": 4,
+    "release": 2,
+    "ratio": 3,
+    "makeup": 4.0,
+    "thrust": 1,
+    "detector": 0,
+    "tone": 0,
+    "scHpf": 80.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 0.0,
+    "grMode": 1,
+    "scExternal": 0
+  }
+}

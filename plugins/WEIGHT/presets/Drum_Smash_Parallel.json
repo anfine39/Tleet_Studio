@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Drum Smash Parallel",
+  "params": {
+    "threshold": -14.0,
+    "attack": 0,
+    "release": 0,
+    "ratio": 6,
+    "makeup": 10.0,
+    "thrust": 2,
+    "detector": 0,
+    "tone": 0,
+    "scHpf": 60.0,
+    "mix": 35.0,
+    "output": -1.0,
+    "link": 100.0,
+    "grMode": 0,
+    "scExternal": 0
+  }
+}

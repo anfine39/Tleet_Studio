@@ -101,6 +101,65 @@ namespace tleet::ui::skin
         int paintedLit = -1;
     };
 
+    // LED gain-reduction bar on an arc (a VU-style printed scale): segments
+    // are annular sectors around a centre far below the bar. Each segment
+    // spans a dB interval of gain reduction and lights once the reduction
+    // reaches its middle; decorative segments (where the printed scale goes
+    // beyond what a gain reduction can show) are always drawn unlit. Same
+    // display ballistics as LedGainMeter: instant rise, exponential fall.
+    class ArcLedMeter : public juce::Component, private juce::Timer
+    {
+    public:
+        struct Segment
+        {
+            float startDeg = 0, endDeg = 0; // around `centre`, 0 = up, clockwise
+            float loDb = 0, hiDb = 0;       // gain-reduction interval (lit segments)
+            bool decorative = false;        // never lit
+        };
+
+        struct Geometry
+        {
+            juce::Point<float> centre;     // component coordinates
+            float outerRadius = 0, innerRadius = 0;
+            float gap = 2;                 // between segments, along the arc
+            std::vector<Segment> segments; // lit segments first, from 0 dB outwards
+        };
+
+        static constexpr float fallSeconds = 0.12f;
+
+        explicit ArcLedMeter (Geometry);
+
+        // Returns the gain reduction to show (dB, >= 0), or -1 if none.
+        void setSupplier (std::function<float()> f) { supplier = std::move (f); }
+        void refresh (float seconds = 1.0f / 30.0f);
+
+        float getDisplayedDb() const noexcept { return displayed; }
+        int getNumLitCapableSegments() const noexcept;
+        int getLitSegments() const noexcept { return litSegmentsFor (displayed); }
+        int litSegmentsFor (float grDb) const noexcept;
+        const Geometry& getGeometry() const noexcept { return geo; }
+
+        // The segment's outline (component coordinates), gap applied.
+        juce::Path getSegmentPath (int index) const;
+
+        void paint (juce::Graphics&) override;
+        bool hitTest (int, int) override { return false; }
+
+    private:
+        void timerCallback() override { refresh(); }
+
+        Geometry geo;
+        std::function<float()> supplier;
+        float displayed = 0.0f;
+        int paintedLit = -1;
+    };
+
+    // Reads an ARC_LED_METER control: "arc" {centre, railRadius,
+    // segmentDepth [outer, inner] below the rail}, "scaleDegrees" {"dB": angle},
+    // "segmentBoundaries" (dB), "unlitDegrees" [[from, to], ...], "segmentGap",
+    // into a geometry relative to `bounds` (reference pixels) at `scale`.
+    ArcLedMeter::Geometry arcMeterGeometry (const juce::var& control, juce::Rectangle<float> bounds, float scale);
+
     // Reads an LED_METER control ("scale": {"dB": x}, "segmentRow", "segmentGap",
     // optional "segmentBoundaries") into a geometry relative to `bounds`
     // (reference pixels), at `scale` editor units per reference pixel.

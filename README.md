@@ -9,7 +9,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **BITE** | FET limiting amplifier (1176 family) | in progress |
 | **GLUE** | VCA bus compressor (G-bus family) | in progress |
 | **PUNCH** | VCA compressor (dbx 160A family) | in progress |
-| WEIGHT | Variable-mu compressor | planned |
+| **WEIGHT** | Stereo bus compressor (API 2500 family) | in progress |
 | VEIL | Vintage stereo compressor | planned |
 | SHAPE | Passive program EQ | planned |
 | ECHO | Tape echo | planned |

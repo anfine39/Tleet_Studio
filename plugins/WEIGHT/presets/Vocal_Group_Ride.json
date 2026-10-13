@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Vocal Group Ride",
+  "params": {
+    "threshold": -3.0,
+    "attack": 4,
+    "release": 2,
+    "ratio": 3,
+    "makeup": 3.5,
+    "thrust": 1,
+    "detector": 0,
+    "tone": 1,
+    "scHpf": 120.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 100.0,
+    "grMode": 1,
+    "scExternal": 0
+  }
+}

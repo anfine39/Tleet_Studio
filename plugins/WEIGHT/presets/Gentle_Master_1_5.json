@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Gentle Master 1.5",
+  "params": {
+    "threshold": 4.0,
+    "attack": 6,
+    "release": 4,
+    "ratio": 0,
+    "makeup": 0.8,
+    "thrust": 1,
+    "detector": 1,
+    "tone": 1,
+    "scHpf": 30.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 100.0,
+    "grMode": 2,
+    "scExternal": 0
+  }
+}

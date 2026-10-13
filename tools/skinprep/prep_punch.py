@@ -27,61 +27,12 @@ import os
 import cv2
 import numpy as np
 
-from skinlib import angular_fill, erase_rect_beside, feather_composite, remove_pointer
+from skinlib import erase_rect_beside, feather_composite, lamp_off, remove_pointer_mirrored
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 REF = os.path.join(ROOT, "assets", "reference", "PUNCH.png")
 OUT = os.path.join(ROOT, "assets", "processed", "PUNCH")
 UI_MAP = os.path.join(ROOT, "plugins", "PUNCH", "UI_MAP.json")
-
-
-def remove_pointer_mirrored(img, plate, c, yy, xx):
-    """Pointer and glow out. The face (brushed cone) is filled along its
-    circles; the ribbed skirt is taken from the mirror image about the
-    knob's vertical axis (the knobs are drawn tilted only vertically, so the
-    mirrored ribs fit), brought to the brightness around the gap."""
-    cx, cy = c["centre"]
-    face_done, mask = remove_pointer(img, plate, c, yy, xx)
-    r = np.hypot(xx - cx, yy - cy)
-    mask = mask.copy()
-    mask[r > c["rimRadius"]] = 0
-    mx = (2.0 * cx - xx).astype(np.float32)
-    mirrored = cv2.remap(plate, mx, yy.astype(np.float32), cv2.INTER_LINEAR).astype(np.float32)
-    smooth = angular_fill(plate, mask, (float(cx), float(cy))).astype(np.float32)
-    gain = cv2.GaussianBlur(smooth, (0, 0), 5.0) / np.maximum(cv2.GaussianBlur(mirrored, (0, 0), 5.0), 1.0)
-    skirt = mirrored * np.clip(gain, 0.5, 2.0)
-    on_face = (r < c["capRadius"] - 2)[..., None]
-    filled = np.where(on_face, face_done.astype(np.float32), skirt)
-    return feather_composite(plate, np.clip(filled, 0, 255).astype(np.uint8), mask, 1.0)
-
-
-def warm_mask(img):
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    return (hsv[..., 0] >= 4) & (hsv[..., 0] <= 34) & (hsv[..., 1] > 50) & (hsv[..., 2] > 50)
-
-
-def lamp_off(img, plate, sw):
-    """The OverEasy lamp: unlit on the plate, the lit original as a sprite."""
-    x, y, w, h = sw["lamp"]["rect"]
-    crop = img[y:y + h, x:x + w]
-    # the glow is warm; the lamp's hot core is near white
-    hot = cv2.cvtColor(crop, cv2.COLOR_BGR2HSV)[..., 2] > 140
-    lit = (warm_mask(crop) | hot).astype(np.uint8) * 255
-    lit = cv2.dilate(lit, np.ones((3, 3), np.uint8), iterations=1)
-    alpha = cv2.GaussianBlur(lit.astype(np.float32) / 255.0, (0, 0), 1.2)
-
-    # unlit lamp: the same shapes, desaturated and dark like the paddle below it
-    hsv = cv2.cvtColor(crop, cv2.COLOR_BGR2HSV).astype(np.float32)
-    hsv[..., 1] *= 0.3
-    hsv[..., 2] = 16.0 + 0.2 * hsv[..., 2]
-    dark = cv2.cvtColor(np.clip(hsv, 0, 255).astype(np.uint8), cv2.COLOR_HSV2BGR).astype(np.float32)
-    region = plate[y:y + h, x:x + w].astype(np.float32)
-    a = alpha[..., None]
-    plate = plate.copy()
-    plate[y:y + h, x:x + w] = np.clip(region * (1 - a) + dark * a, 0, 255).astype(np.uint8)
-
-    sprite = np.dstack([crop, np.clip(alpha * 255.0, 0, 255).astype(np.uint8)])
-    return plate, sprite
 
 
 def deglow_window(img, plate, meter):
