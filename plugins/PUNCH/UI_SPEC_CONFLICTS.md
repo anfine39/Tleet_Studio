@@ -5,7 +5,7 @@ mockup defines placement and style. Nothing below has an invented function.
 
 | # | Element on the mockup | Problem | Decision now | Needs approval? |
 |---|---|---|---|---|
-| 1 | Compression scale "1, 4, 4, 8, 20" | Garbled (4 twice) and ends at 20, while the spec asks for the documented continuous ratio up to ∞ | Printed numbers removed; 1 2 4 8 ∞ drawn live at their real positions; the knob reaches ∞:1 at the right end | No (same rule as GLUE / BITE) |
+| 1 | Compression scale "1, 4, 4, 8, 20" | Garbled (4 twice) and ends at 20, while the spec asks for the documented continuous ratio up to ∞ | Printed numbers removed; 1 2 4 8 ∞ drawn live at their real positions; the knob reaches ∞:1 at the right end | Approved by Andrew (∞ instead of 20) |
 | 2 | Other printed scale numbers (Threshold, Mix, Output) | Values must be drawn from the parameter | Removed and drawn live at their real angles; the printed dots stay | No |
 | 3 | OverEasy lamp lit on the artwork | A baked state | Plate lamp darkened; lit only while OverEasy is on | No |
 | 4 | Lit GR bar (8 dB) | Baked value | Removed; drawn live from the applied VCA gain | No |
