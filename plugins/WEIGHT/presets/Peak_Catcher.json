@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Peak Catcher",
+  "params": {
+    "threshold": 6.0,
+    "attack": 0,
+    "release": 1,
+    "ratio": 6,
+    "makeup": 0.0,
+    "thrust": 0,
+    "detector": 0,
+    "tone": 1,
+    "scHpf": 20.0,
+    "mix": 100.0,
+    "output": -0.5,
+    "link": 100.0,
+    "grMode": 0,
+    "scExternal": 0
+  }
+}

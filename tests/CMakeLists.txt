@@ -12,6 +12,7 @@ target_sources(tleet_tests PRIVATE
     GlueGuiTests.cpp
     PunchTests.cpp
     PunchGuiTests.cpp
+    WeightTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
@@ -28,7 +29,9 @@ target_sources(tleet_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/GLUE/dsp/GlueModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/PUNCH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/PUNCH/PluginEditor.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/PUNCH/dsp/PunchModel.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/PUNCH/dsp/PunchModel.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/dsp/WeightModel.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -52,6 +55,7 @@ target_link_libraries(tleet_tests PRIVATE
     GLUE_Skin
     PUNCH_Presets
     PUNCH_Skin
+    WEIGHT_Presets
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 

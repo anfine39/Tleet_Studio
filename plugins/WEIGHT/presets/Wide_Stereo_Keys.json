@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Wide Stereo Keys",
+  "params": {
+    "threshold": 0.0,
+    "attack": 5,
+    "release": 3,
+    "ratio": 1,
+    "makeup": 2.0,
+    "thrust": 1,
+    "detector": 1,
+    "tone": 2,
+    "scHpf": 60.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 50.0,
+    "grMode": 2,
+    "scExternal": 0
+  }
+}
