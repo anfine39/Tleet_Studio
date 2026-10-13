@@ -413,4 +413,49 @@ namespace tleet::ui::skin
                 g.segments.push_back ({ (float) seg[0], (float) seg[1], 0.0f, 0.0f, true });
         return g;
     }
+    // ================================================================== lamps
+
+    LampButton::LampButton (const juce::String& name, LampSprite s, juce::Rectangle<float> area)
+        : juce::Button (name), sprite (std::move (s)), clickArea (area)
+    {
+        setClickingTogglesState (false);
+    }
+
+    void LampButton::paintButton (juce::Graphics& g, bool, bool)
+    {
+        // the plate shows the lamp dark; only the lit lamp is drawn
+        if (getToggleState() && sprite.image.isValid() && alpha > 0.0f)
+        {
+            g.setImageResamplingQuality (juce::Graphics::highResamplingQuality);
+            g.setOpacity (alpha);
+            g.drawImage (sprite.image, sprite.area, juce::RectanglePlacement::stretchToFit);
+        }
+    }
+
+    LampGroup::LampGroup (juce::RangedAudioParameter& p, std::function<void()> edited)
+        : attachment (p, [this] (float v) { show (v); }), onEdit (std::move (edited))
+    {
+    }
+
+    void LampGroup::add (std::unique_ptr<LampButton> lamp)
+    {
+        const int index = (int) lamps.size();
+        lamp->onClick = [this, index]
+        {
+            attachment.setValueAsCompleteGesture ((float) index);
+            if (onEdit)
+                onEdit();
+        };
+        lamps.push_back (std::move (lamp));
+        attachment.sendInitialUpdate();
+    }
+
+    void LampGroup::show (float value)
+    {
+        selected = juce::roundToInt (value);
+        for (size_t i = 0; i < lamps.size(); ++i)
+            lamps[i]->setToggleState ((int) i == selected, juce::dontSendNotification);
+        if (onShow)
+            onShow (selected);
+    }
 }

@@ -164,4 +164,56 @@ namespace tleet::ui::skin
     // optional "segmentBoundaries") into a geometry relative to `bounds`
     // (reference pixels), at `scale` editor units per reference pixel.
     LedGainMeter::Geometry meterGeometry (const juce::var& control, juce::Rectangle<float> bounds, float scale);
+    // A lit lamp cut from the mockup, drawn over a dark lamp of the plate.
+    struct LampSprite
+    {
+        juce::Image image;
+        juce::Rectangle<float> area; // component coordinates
+    };
+
+    // One lamp of a lamp group. The plate shows every lamp dark; a lamp is
+    // lit only while its position is the parameter's real value. A click on
+    // the lamp or its caption selects it. The component also covers the
+    // lamp's glow, which may reach past the click area; only the click area
+    // takes the mouse.
+    class LampButton : public juce::Button
+    {
+    public:
+        LampButton (const juce::String& name, LampSprite, juce::Rectangle<float> clickArea);
+        void paintButton (juce::Graphics&, bool highlighted, bool down) override;
+        bool hitTest (int x, int y) override { return clickArea.contains ((float) x, (float) y); }
+        juce::Rectangle<float> getClickArea() const noexcept { return clickArea; }
+
+        // How strongly the lit sprite is drawn while toggled on (a lamp that
+        // is armed but not in use glows faintly).
+        void setLampAlpha (float a) { if (a != alpha) { alpha = a; repaint(); } }
+        float getLampAlpha() const noexcept { return alpha; }
+
+    private:
+        LampSprite sprite;
+        juce::Rectangle<float> clickArea; // component coordinates
+        float alpha = 1.0f;
+    };
+
+    // The lamps of one choice (or bool) parameter, kept in step with it both ways.
+    class LampGroup
+    {
+    public:
+        LampGroup (juce::RangedAudioParameter&, std::function<void()> onEdit);
+        void add (std::unique_ptr<LampButton>);
+        int getNumLamps() const noexcept { return (int) lamps.size(); }
+        LampButton& getLamp (int i) { return *lamps[(size_t) i]; }
+        int getSelected() const noexcept { return selected; }
+
+        // Called after the lamps were updated from the parameter.
+        std::function<void (int)> onShow;
+
+    private:
+        void show (float value);
+
+        juce::ParameterAttachment attachment;
+        std::vector<std::unique_ptr<LampButton>> lamps;
+        std::function<void()> onEdit;
+        int selected = -1;
+    };
 }

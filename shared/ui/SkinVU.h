@@ -59,6 +59,10 @@ namespace tleet::ui
 
         float angleForVu (float vu) const noexcept;
         float getNeedleVu() const noexcept { return ballistics.position(); }
+
+        // One meter frame of dt seconds: reads the supplier and moves the
+        // needle (the timer calls this; tests call it directly).
+        void tick (float dt);
         const juce::String& getModeCaption() const noexcept { return caption; }
 
     private:

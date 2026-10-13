@@ -1,0 +1,1373 @@
+{
+ "plugin": "VEIL",
+ "reference": {
+  "file": "assets/reference/VEIL.png",
+  "width": 1536,
+  "height": 1024
+ },
+ "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1152 x 768 at 100 %)",
+ "notes": "Every knob turns around the centre of its printed dot circle. Printed dots stay as scale marks; every number printed on a knob scale is erased and drawn live at the angle where the parameter really has that value. Travel ends are the printed end dots. Readout windows are emptied and show the live value. Lamps are dark on the plate; lit sprites are drawn for the real state. VU needles, the spectrum curve, its grid and frequency labels are erased and drawn live.",
+ "sprites": {
+  "character_clean": [
+   400,
+   724,
+   137,
+   92
+  ],
+  "character_veil": [
+   514,
+   725,
+   156,
+   94
+  ],
+  "character_thick": [
+   649,
+   724,
+   136,
+   92
+  ],
+  "scExternal_int": [
+   806,
+   732,
+   99,
+   79
+  ],
+  "scExternal_ext": [
+   878,
+   732,
+   97,
+   78
+  ],
+  "meterMode_gr": [
+   1165,
+   214,
+   123,
+   79
+  ],
+  "meterMode_vu": [
+   1166,
+   263,
+   121,
+   76
+  ],
+  "meterMode_inout": [
+   1166,
+   310,
+   121,
+   76
+  ],
+  "link_dualmono": [
+   569,
+   310,
+   143,
+   76
+  ],
+  "link_lamp": [
+   604,
+   235,
+   74,
+   74
+  ]
+ },
+ "controls": [
+  {
+   "id": "input",
+   "type": "ROTARY",
+   "parameter": "input",
+   "centre": [
+    131.3,
+    550.6
+   ],
+   "scaleCentre": [
+    131.3,
+    550.6
+   ],
+   "dotRadius": 67.2,
+   "capRadius": 47,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 48,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -126.9,
+    127.1
+   ],
+   "hitbox": [
+    65,
+    481,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     -20,
+     0,
+     20
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     128,
+     466,
+     8,
+     16
+    ],
+    [
+     52,
+     590,
+     24,
+     17
+    ],
+    [
+     186,
+     590,
+     25,
+     17
+    ]
+   ],
+   "artPointers": [
+    -0.8
+   ],
+   "testId": "veil.knob.input",
+   "readout": [
+    87,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "threshold",
+   "type": "ROTARY",
+   "parameter": "threshold",
+   "centre": [
+    328.0,
+    550.4
+   ],
+   "scaleCentre": [
+    328.0,
+    550.4
+   ],
+   "dotRadius": 66.9,
+   "capRadius": 47,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 48,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -127.8,
+    127.6
+   ],
+   "hitbox": [
+    262,
+    480,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     -20,
+     0,
+     20
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     324,
+     466,
+     9,
+     16
+    ],
+    [
+     250,
+     590,
+     24,
+     17
+    ],
+    [
+     382,
+     590,
+     25,
+     17
+    ]
+   ],
+   "artPointers": [
+    0.0
+   ],
+   "testId": "veil.knob.threshold",
+   "readout": [
+    284,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "attack",
+   "type": "ROTARY",
+   "parameter": "attack",
+   "centre": [
+    567.9,
+    551.3
+   ],
+   "scaleCentre": [
+    567.9,
+    551.3
+   ],
+   "dotRadius": 63.3,
+   "capRadius": 44,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 43.5,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -111.7,
+    111.5
+   ],
+   "hitbox": [
+    502,
+    481,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     10,
+     30,
+     100,
+     300,
+     1000
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     558,
+     469,
+     21,
+     16
+    ],
+    [
+     490,
+     511,
+     16,
+     16
+    ],
+    [
+     489,
+     573,
+     15,
+     16
+    ],
+    [
+     630,
+     511,
+     23,
+     16
+    ],
+    [
+     632,
+     573,
+     16,
+     16
+    ]
+   ],
+   "artPointers": [
+    -38.8
+   ],
+   "testId": "veil.knob.attack",
+   "readout": [
+    524,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "recovery",
+   "type": "ROTARY",
+   "parameter": "recovery",
+   "centre": [
+    809.8,
+    550.2
+   ],
+   "scaleCentre": [
+    809.8,
+    550.2
+   ],
+   "dotRadius": 61.7,
+   "capRadius": 44,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 43.5,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -113.6,
+    113.3
+   ],
+   "hitbox": [
+    744,
+    480,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     50,
+     150,
+     400,
+     1000,
+     2000
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     799,
+     469,
+     23,
+     16
+    ],
+    [
+     729,
+     511,
+     24,
+     16
+    ],
+    [
+     868,
+     511,
+     15,
+     16
+    ],
+    [
+     872,
+     572,
+     15,
+     16
+    ],
+    [
+     732,
+     573,
+     16,
+     16
+    ]
+   ],
+   "artPointers": [
+    -36.4
+   ],
+   "testId": "veil.knob.recovery",
+   "readout": [
+    766,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "compress",
+   "type": "ROTARY",
+   "parameter": "compress",
+   "centre": [
+    1042.9,
+    551.5
+   ],
+   "scaleCentre": [
+    1042.9,
+    551.5
+   ],
+   "dotRadius": 65.8,
+   "capRadius": 47,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 48,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -125.9,
+    126.2
+   ],
+   "hitbox": [
+    977,
+    482,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     5,
+     10
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     1035,
+     467,
+     15,
+     16
+    ],
+    [
+     973,
+     590,
+     9,
+     17
+    ],
+    [
+     1100,
+     590,
+     15,
+     17
+    ]
+   ],
+   "artPointers": [
+    18.4
+   ],
+   "testId": "veil.knob.compress",
+   "readout": [
+    999,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "mix",
+   "type": "ROTARY",
+   "parameter": "mix",
+   "centre": [
+    1231.2,
+    550.1
+   ],
+   "scaleCentre": [
+    1231.2,
+    550.1
+   ],
+   "dotRadius": 63.3,
+   "capRadius": 47,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 48,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -128.9,
+    130.1
+   ],
+   "hitbox": [
+    1165,
+    480,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     1223,
+     467,
+     16,
+     17
+    ],
+    [
+     1168,
+     591,
+     9,
+     16
+    ],
+    [
+     1281,
+     590,
+     23,
+     17
+    ]
+   ],
+   "artPointers": [
+    -0.3
+   ],
+   "testId": "veil.knob.mix",
+   "readout": [
+    1187,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "output",
+   "type": "ROTARY",
+   "parameter": "output",
+   "centre": [
+    1417.0,
+    549.8
+   ],
+   "scaleCentre": [
+    1417.0,
+    549.8
+   ],
+   "dotRadius": 63.7,
+   "capRadius": 47,
+   "rimRadius": 58,
+   "pointer": {
+    "inner": 11,
+    "outer": 48,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -130.2,
+    130.3
+   ],
+   "hitbox": [
+    1351,
+    480,
+    132,
+    172
+   ],
+   "scaleLabels": {
+    "values": [
+     -20,
+     0,
+     20
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     1412,
+     467,
+     9,
+     17
+    ],
+    [
+     1344,
+     590,
+     22,
+     17
+    ],
+    [
+     1466,
+     590,
+     24,
+     17
+    ]
+   ],
+   "artPointers": [
+    2.2
+   ],
+   "testId": "veil.knob.output",
+   "readout": [
+    1373,
+    621,
+    88,
+    28
+   ],
+   "readoutTextHeight": 17
+  },
+  {
+   "id": "tubeDrive",
+   "type": "ROTARY",
+   "parameter": "tubeDrive",
+   "centre": [
+    128.2,
+    778.3
+   ],
+   "scaleCentre": [
+    128.2,
+    778.3
+   ],
+   "dotRadius": 51.5,
+   "capRadius": 34,
+   "rimRadius": 43,
+   "pointer": {
+    "inner": 7.5,
+    "outer": 33,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -123.6,
+    124.4
+   ],
+   "hitbox": [
+    76,
+    722,
+    104,
+    136
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 1,
+    "capHeight": 13
+   },
+   "erase": [
+    [
+     122,
+     718,
+     14,
+     13
+    ],
+    [
+     70,
+     809,
+     9,
+     14
+    ],
+    [
+     174,
+     809,
+     23,
+     14
+    ]
+   ],
+   "artPointers": [
+    -13.0
+   ],
+   "testId": "veil.knob.tubedrive",
+   "readout": [
+    89,
+    828,
+    78,
+    28
+   ],
+   "readoutTextHeight": 16
+  },
+  {
+   "id": "harmonics",
+   "type": "ROTARY",
+   "parameter": "harmonics",
+   "centre": [
+    297.4,
+    778.2
+   ],
+   "scaleCentre": [
+    297.4,
+    778.2
+   ],
+   "dotRadius": 51.5,
+   "capRadius": 34,
+   "rimRadius": 43,
+   "pointer": {
+    "inner": 7.5,
+    "outer": 33,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -124.0,
+    124.3
+   ],
+   "hitbox": [
+    245,
+    722,
+    104,
+    136
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 1,
+    "capHeight": 13
+   },
+   "erase": [
+    [
+     291,
+     718,
+     14,
+     13
+    ],
+    [
+     239,
+     809,
+     9,
+     14
+    ],
+    [
+     343,
+     809,
+     23,
+     14
+    ]
+   ],
+   "artPointers": [
+    21.4
+   ],
+   "testId": "veil.knob.harmonics",
+   "readout": [
+    258,
+    828,
+    78,
+    28
+   ],
+   "readoutTextHeight": 16
+  },
+  {
+   "id": "hpf",
+   "type": "ROTARY",
+   "parameter": "hpf",
+   "centre": [
+    1050.7,
+    777.5
+   ],
+   "scaleCentre": [
+    1050.7,
+    777.5
+   ],
+   "dotRadius": 49.5,
+   "capRadius": 32,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 7.5,
+    "outer": 31,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -124.1,
+    123.7
+   ],
+   "hitbox": [
+    999,
+    722,
+    104,
+    136
+   ],
+   "scaleLabels": {
+    "values": [
+     20,
+     100,
+     300
+    ],
+    "gap": 1,
+    "capHeight": 13
+   },
+   "erase": [
+    [
+     991,
+     804,
+     15,
+     15
+    ],
+    [
+     1098,
+     745,
+     22,
+     14
+    ],
+    [
+     1096,
+     804,
+     22,
+     15
+    ]
+   ],
+   "artPointers": [
+    -48.4
+   ],
+   "testId": "veil.knob.hpf",
+   "readout": [
+    1012,
+    828,
+    78,
+    28
+   ],
+   "readoutTextHeight": 16
+  },
+  {
+   "id": "saturation",
+   "type": "ROTARY",
+   "parameter": "saturation",
+   "centre": [
+    1237.8,
+    778.2
+   ],
+   "scaleCentre": [
+    1237.8,
+    778.2
+   ],
+   "dotRadius": 50.9,
+   "capRadius": 34,
+   "rimRadius": 43,
+   "pointer": {
+    "inner": 7.5,
+    "outer": 33,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -124.0,
+    124.6
+   ],
+   "hitbox": [
+    1186,
+    722,
+    104,
+    136
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 1,
+    "capHeight": 13
+   },
+   "erase": [
+    [
+     1231,
+     718,
+     15,
+     13
+    ],
+    [
+     1181,
+     809,
+     9,
+     14
+    ],
+    [
+     1284,
+     809,
+     22,
+     14
+    ]
+   ],
+   "artPointers": [
+    -10.2
+   ],
+   "testId": "veil.knob.saturation",
+   "readout": [
+    1199,
+    828,
+    78,
+    28
+   ],
+   "readoutTextHeight": 16
+  },
+  {
+   "id": "dryWet",
+   "type": "ROTARY",
+   "parameter": "dryWet",
+   "centre": [
+    1413.6,
+    778.2
+   ],
+   "scaleCentre": [
+    1413.6,
+    778.2
+   ],
+   "dotRadius": 50.4,
+   "capRadius": 34,
+   "rimRadius": 43,
+   "pointer": {
+    "inner": 7.5,
+    "outer": 33,
+    "width": 3.4
+   },
+   "travelDegrees": [
+    -124.5,
+    124.7
+   ],
+   "hitbox": [
+    1362,
+    722,
+    104,
+    136
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     50,
+     100
+    ],
+    "gap": 1,
+    "capHeight": 13
+   },
+   "erase": [
+    [
+     1407,
+     718,
+     14,
+     13
+    ],
+    [
+     1357,
+     809,
+     9,
+     14
+    ],
+    [
+     1459,
+     809,
+     22,
+     14
+    ]
+   ],
+   "artPointers": [
+    -1.2,
+    -45.6
+   ],
+   "testId": "veil.knob.drywet",
+   "readout": [
+    1375,
+    828,
+    78,
+    28
+   ],
+   "readoutTextHeight": 16
+  },
+  {
+   "id": "scHpf",
+   "type": "ROTARY",
+   "parameter": "scHpf",
+   "centre": [
+    1405.9,
+    314.0
+   ],
+   "scaleCentre": [
+    1405.9,
+    314.0
+   ],
+   "dotRadius": 61.9,
+   "capRadius": 42,
+   "rimRadius": 52,
+   "pointer": {
+    "inner": 12,
+    "outer": 42,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -128.2,
+    128.1
+   ],
+   "hitbox": [
+    1348,
+    256,
+    116,
+    116
+   ],
+   "scaleLabels": {
+    "values": [
+     20,
+     80,
+     300
+    ],
+    "gap": 3,
+    "capHeight": 15
+   },
+   "erase": [
+    [
+     1398,
+     233,
+     16,
+     16
+    ],
+    [
+     1336,
+     352,
+     17,
+     16
+    ],
+    [
+     1459,
+     352,
+     24,
+     16
+    ],
+    [
+     1395,
+     376,
+     21,
+     14
+    ]
+   ],
+   "artPointers": [
+    -34.6
+   ],
+   "testId": "veil.knob.schpf",
+   "ink": "dark"
+  },
+  {
+   "id": "character",
+   "type": "LAMP_GROUP",
+   "parameter": "character",
+   "litInArtwork": 1,
+   "copyFrom": 0,
+   "buttons": [
+    {
+     "label": "CLEAN",
+     "body": [
+      416,
+      740,
+      105,
+      60
+     ],
+     "hitbox": [
+      410,
+      734,
+      117,
+      102
+     ]
+    },
+    {
+     "label": "VEIL",
+     "body": [
+      530,
+      741,
+      124,
+      62
+     ],
+     "hitbox": [
+      527,
+      734,
+      130,
+      102
+     ]
+    },
+    {
+     "label": "THICK",
+     "body": [
+      665,
+      740,
+      104,
+      60
+     ],
+     "hitbox": [
+      660,
+      734,
+      116,
+      102
+     ]
+    }
+   ],
+   "note": "Three voicings of the tube stages; the lit button is the real value.",
+   "testId": "veil.lamps.character"
+  },
+  {
+   "id": "scExternal",
+   "type": "LAMP_GROUP",
+   "parameter": "scExternal",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "INT",
+     "body": [
+      822,
+      748,
+      67,
+      47
+     ],
+     "hitbox": [
+      817,
+      742,
+      74,
+      58
+     ]
+    },
+    {
+     "label": "EXT",
+     "body": [
+      894,
+      748,
+      65,
+      46
+     ],
+     "hitbox": [
+      891,
+      742,
+      72,
+      58
+     ]
+    }
+   ],
+   "note": "INT: the detector listens to the program. EXT: to WEIGHT-style Sidechain bus; the EXT lamp is fully lit only while a key is really used, faint when armed with no key.",
+   "testId": "veil.lamps.sidechain"
+  },
+  {
+   "id": "meterMode",
+   "type": "LAMP_GROUP",
+   "parameter": "meterMode",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "GR",
+     "body": [
+      1181,
+      230,
+      91,
+      47
+     ],
+     "hitbox": [
+      1178,
+      228,
+      97,
+      50
+     ]
+    },
+    {
+     "label": "VU",
+     "body": [
+      1182,
+      279,
+      89,
+      44
+     ],
+     "hitbox": [
+      1178,
+      278,
+      97,
+      47
+     ]
+    },
+    {
+     "label": "IN/OUT",
+     "body": [
+      1182,
+      326,
+      89,
+      44
+     ],
+     "hitbox": [
+      1178,
+      325,
+      97,
+      48
+     ]
+    }
+   ],
+   "note": "What both needles show; never changes the audio.",
+   "testId": "veil.lamps.meter"
+  },
+  {
+   "id": "stereoLink",
+   "type": "LINK_SWITCH",
+   "parameter": "stereoLink",
+   "lamp": {
+    "rect": [
+     604,
+     235,
+     74,
+     74
+    ],
+    "centre": [
+     640.7,
+     271.7
+    ],
+    "bezelRadius": 35,
+    "hitbox": [
+     600,
+     232,
+     82,
+     80
+    ]
+   },
+   "dualMono": {
+    "body": [
+     585,
+     326,
+     111,
+     44
+    ],
+    "hitbox": [
+     579,
+     320,
+     123,
+     56
+    ]
+   },
+   "note": "One switch: the lamp is lit while the channels are linked; DUAL MONO is lit while they are independent. A click on either toggles.",
+   "testId": "veil.switch.link"
+  },
+  {
+   "id": "vuL",
+   "type": "VU",
+   "channel": 0,
+   "face": [
+    127,
+    229,
+    350,
+    140
+   ],
+   "pivot": [
+    301.6,
+    620.5
+   ],
+   "arcRadius": 338.2,
+   "needleLength": 345,
+   "bakedNeedle": [
+    [
+     338.0,
+     368.0
+    ],
+    [
+     365.6,
+     290.0
+    ]
+   ],
+   "bakedTip": [
+    [
+     365.6,
+     290.0
+    ],
+    [
+     372.5,
+     266.0
+    ]
+   ],
+   "scaleDegrees": {
+    "-20": -22.35,
+    "-10": -16.55,
+    "-7": -12.45,
+    "-5": -7.55,
+    "-3": 0.1,
+    "-1": 4.45,
+    "0": 10.05,
+    "1": 14.85,
+    "2": 19.2,
+    "3": 23.95
+   },
+   "hitbox": [
+    120,
+    222,
+    364,
+    154
+   ],
+   "testId": "veil.meter.left"
+  },
+  {
+   "id": "vuR",
+   "type": "VU",
+   "channel": 1,
+   "face": [
+    793,
+    229,
+    320,
+    140
+   ],
+   "pivot": [
+    952.4,
+    556.0
+   ],
+   "arcRadius": 273.6,
+   "needleLength": 280,
+   "bakedNeedle": [
+    [
+     984.5,
+     369.0
+    ],
+    [
+     1010.6,
+     290.0
+    ]
+   ],
+   "bakedTip": [
+    [
+     1010.6,
+     290.0
+    ],
+    [
+     1017.0,
+     272.0
+    ]
+   ],
+   "scaleDegrees": {
+    "-20": -24.65,
+    "-10": -17.95,
+    "-7": -13.4,
+    "-5": -7.95,
+    "-3": 0.5,
+    "-1": 5.35,
+    "0": 11.45,
+    "1": 16.65,
+    "2": 21.5,
+    "3": 26.75
+   },
+   "hitbox": [
+    786,
+    222,
+    334,
+    154
+   ],
+   "testId": "veil.meter.right"
+  },
+  {
+   "id": "spectrum",
+   "type": "SPECTRUM",
+   "screen": [
+    235,
+    890,
+    724,
+    82
+   ],
+   "labelStrip": [
+    232,
+    979,
+    728,
+    24
+   ],
+   "labelGrain": [
+    258,
+    980,
+    40,
+    18
+   ],
+   "frequencies": [
+    20,
+    50,
+    100,
+    200,
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000
+   ],
+   "hitbox": [
+    235,
+    890,
+    724,
+    82
+   ],
+   "note": "Real FFT of the plugin output; grid and frequency labels drawn live at the analyser's own log axis.",
+   "testId": "veil.display.spectrum"
+  }
+ ]
+}

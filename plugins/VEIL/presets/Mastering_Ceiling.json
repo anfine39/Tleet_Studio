@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Mastering Ceiling",
+  "params": {
+    "input": 0.0,
+    "threshold": 2.0,
+    "attack": 25.0,
+    "recovery": 200.0,
+    "compress": 9.5,
+    "mix": 100.0,
+    "output": 0.0,
+    "tubeDrive": 10.0,
+    "harmonics": 20.0,
+    "saturation": 30.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 80.0,
+    "character": 0,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 1
+  }
+}

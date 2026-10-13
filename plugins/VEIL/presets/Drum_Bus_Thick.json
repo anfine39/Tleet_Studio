@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Drum Bus Thick",
+  "params": {
+    "input": 0.0,
+    "threshold": -10.0,
+    "attack": 40.0,
+    "recovery": 200.0,
+    "compress": 7.0,
+    "mix": 70.0,
+    "output": 3.0,
+    "tubeDrive": 50.0,
+    "harmonics": 60.0,
+    "saturation": 35.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 150.0,
+    "character": 2,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}

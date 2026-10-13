@@ -14,6 +14,8 @@ target_sources(tleet_tests PRIVATE
     PunchGuiTests.cpp
     WeightTests.cpp
     WeightGuiTests.cpp
+    VeilTests.cpp
+    VeilGuiTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
@@ -33,7 +35,10 @@ target_sources(tleet_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/PUNCH/dsp/PunchModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/PluginEditor.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/dsp/WeightModel.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/WEIGHT/dsp/WeightModel.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/VEIL/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/VEIL/PluginEditor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/VEIL/dsp/VeilModel.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -59,6 +64,8 @@ target_link_libraries(tleet_tests PRIVATE
     PUNCH_Skin
     WEIGHT_Presets
     WEIGHT_Skin
+    VEIL_Presets
+    VEIL_Skin
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 

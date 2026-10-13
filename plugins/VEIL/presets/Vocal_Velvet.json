@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Vocal Velvet",
+  "params": {
+    "input": 2.0,
+    "threshold": -8.0,
+    "attack": 30.0,
+    "recovery": 300.0,
+    "compress": 6.0,
+    "mix": 100.0,
+    "output": 2.0,
+    "tubeDrive": 40.0,
+    "harmonics": 55.0,
+    "saturation": 20.0,
+    "dryWet": 100.0,
+    "hpf": 80.0,
+    "scHpf": 120.0,
+    "character": 1,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}
