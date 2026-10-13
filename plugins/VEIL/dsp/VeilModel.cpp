@@ -9,6 +9,8 @@ namespace tleet::veil
         v = std::abs (d) <= (T) 1.0e-9 * ((T) 1 + std::abs (target)) ? target : v + d * coeff;
     }
 
+    static inline bool same (double a, double b) noexcept { return ! (a < b) && ! (a > b); }
+
     static inline void ramp (double& v, double target, double step) noexcept
     {
         if (v < target)      v = std::min (target, v + step);
@@ -59,6 +61,8 @@ namespace tleet::veil
         avg1.fill (0.0);
         avg2.fill (0.0);
         yPrev.fill (0.0);
+        xPrev.fill (0.0);
+        slopePrev.fill (1.0);
         target.fill (0.0);
         cap.fill (0.0);
         cv.fill (0.0);
@@ -96,6 +100,11 @@ namespace tleet::veil
         }
         else
         {
+            if (same (compress, compressTarget) && same (drive, driveTarget) && same (harmonics, harmonicsTarget)
+                && same (saturation, saturationTarget) && same (voice.b2, v.b2) && same (voice.b3, v.b3)
+                && same (voice.headroom, v.headroom) && same (voice.element, v.element)
+                && same (voice.softness, v.softness) && same (voice.weightDb, v.weightDb))
+                return; // settled: the derived coefficients are already current
             const double k = kGlideControl;
             glide (compress, compressTarget, k);
             glide (drive, driveTarget, k);
@@ -122,8 +131,8 @@ namespace tleet::veil
         tc.hElement = harmonics * voice.element;
         tc.satDepth = saturation < 1.0e-6 ? 0.0 : saturation;
         tc.invCeiling = 1.0 / tube::saturationCeiling (saturation);
-        tc.p = voice.softness;
-        tc.invP = 1.0 / voice.softness;
+        tc.p = (float) voice.softness;
+        tc.invP = (float) (1.0 / voice.softness);
     }
 
     void VeilModel::preProcess (float* const* io, int numChannels, int numSamples) noexcept
@@ -228,8 +237,10 @@ namespace tleet::veil
                 if (avg2[c] > 0.0)
                 {
                     const double x = levelDbOfAverage (avg2[c]) - thresholdDb;
-                    const double y = law::solveOutputDb (x, lawConst, kneeStart, yPrev[c]);
+                    const double guess = yPrev[c] + (x - xPrev[c]) / slopePrev[c];
+                    const double y = law::solveOutputDb (x, lawConst, kneeStart, guess, &slopePrev[c]);
                     yPrev[c] = y;
+                    xPrev[c] = x;
                     t = std::max (0.0, x - y);
                 }
                 target[c] = t;

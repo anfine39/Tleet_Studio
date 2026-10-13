@@ -152,14 +152,22 @@ namespace tleet::veil::law
     }
 
     // ---- fast solver used per sample by the DSP: safeguarded Newton on
-    // F(y) = y + G(e(v(y))) - x (F' = local ratio >= 1), warm-started from the
-    // previous solution, bracketed by [kneeStart, x]. Converges to 1e-9 dB.
-    inline double solveOutputDb (double x, const Constants& c, double yk, double guess) noexcept
+    // F(y) = y + G(e(v(y))) - x (F' = local ratio >= 1), bracketed by
+    // [kneeStart, x]. The caller passes a first-order prediction of the root
+    // (previous root + dx / previous slope), so one Newton step from it is
+    // normally enough: the step is accepted once it is below 1e-5 dB, where the
+    // quadratic convergence leaves an error far below 1e-9 dB. *slope receives
+    // F' at the solution (1 below the knee) for the next prediction.
+    inline double solveOutputDb (double x, const Constants& c, double yk, double guess, double* slope = nullptr) noexcept
     {
         if (x <= yk)
+        {
+            if (slope) *slope = 1.0;
             return x;
+        }
         double lo = yk, hi = x;
         double y = std::clamp (guess, lo, hi);
+        double fp = 1.0;
         for (int it = 0; it < 40; ++it)
         {
             const double v = std::exp (y * ln10Over20);
@@ -167,14 +175,19 @@ namespace tleet::veil::law
             const double g = tubeGrDb (excess (v, c.w, &de), c, &dg);
             const double f = y + g - x;
             if (f > 0.0) hi = y; else lo = y;
-            const double fp = 1.0 + dg * de * v * ln10Over20;
+            fp = 1.0 + dg * de * v * ln10Over20;
             double next = y - f / fp;
-            if (! (next > lo && next < hi))
+            const bool newton = next > lo && next < hi;
+            if (! newton)
                 next = 0.5 * (lo + hi);
-            if (std::abs (next - y) < 1.0e-9 || hi - lo < 1.0e-9)
-                return next;
+            if ((newton && std::abs (next - y) < 1.0e-5) || hi - lo < 1.0e-9)
+            {
+                y = next;
+                break;
+            }
             y = next;
         }
+        if (slope) *slope = fp;
         return y;
     }
 }

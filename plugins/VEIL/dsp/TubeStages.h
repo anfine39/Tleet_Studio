@@ -74,7 +74,7 @@ namespace tleet::veil
         double hElement = 0.0;                    // h E
         double satDepth = 0.0;                    // s (0 = stage bypassed)
         double invCeiling = 1.0 / 16.0;
-        double p = 2.0, invP = 0.5;
+        float p = 2.0f, invP = 0.5f;              // single precision: the knee exponent (powf)
         double dcCoeff = 0.0;
     };
 
@@ -107,8 +107,8 @@ namespace tleet::veil
         {
             if (c.satDepth <= 0.0)
                 return m;
-            const double t = std::abs (m) * c.invCeiling;
-            return m / std::pow (1.0 + std::pow (t, c.p), c.invP);
+            const float t = (float) (std::abs (m) * c.invCeiling);
+            return m / (double) std::pow (1.0f + std::pow (t, c.p), c.invP);
         }
 
         OnePole inEven, elEven;

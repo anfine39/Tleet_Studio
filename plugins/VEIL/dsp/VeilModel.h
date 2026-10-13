@@ -113,7 +113,7 @@ namespace tleet::veil
         TubeCoeffs tc {};
 
         // per-channel state
-        std::array<double, maxChannels> avg1 {}, avg2 {}, yPrev {}, target {}, cap {}, cv {};
+        std::array<double, maxChannels> avg1 {}, avg2 {}, yPrev {}, xPrev {}, slopePrev { 1.0, 1.0 }, target {}, cap {}, cv {};
         std::array<float, maxChannels> gain { 1.0f, 1.0f }, blockMaxGr {};
         std::array<HighPassState, maxChannels> hpf {}, scInternal {}, scKey {};
         std::array<OnePole, maxChannels> couplingIn {}, couplingKey {}, weight {};
