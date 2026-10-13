@@ -5,7 +5,7 @@ mockup defines placement and style. Nothing below has an invented function.
 
 | # | Element on the mockup | Problem | Decision now | Needs approval? |
 |---|---|---|---|---|
-| 1 | GR meters printed as a VU scale: −20 −10 −7 −5 −3 −1 0 +1 +3 | A gain reduction is never positive, and the artwork lights the bar from the left as if it showed a level | Read as on the API 2500's own GR meter: g dB of reduction lights the bar from the 0 mark leftwards to the printed −g. 1 dB lights to −1, 3 dB to −3, 20 dB to −20. The segments right of 0 (+1, +3) never light and stay drawn dark | **Yes**: confirm the bar grows from 0 to the left |
+| 1 | GR meters printed as a VU scale: −20 −10 −7 −5 −3 −1 0 +1 +3 | A gain reduction is never positive, and the artwork lights the bar from the left as if it showed a level | Read as on the API 2500's own GR meter: g dB of reduction lights the bar from the 0 mark leftwards to the printed −g. 1 dB lights to −1, 3 dB to −3, 20 dB to −20. The segments right of 0 (+1, +3) never light and stay drawn dark | Approved by Andrew 2026-10-13 |
 | 2 | One lit bar per meter (LEFT, RIGHT) | Addendum 10: WEIGHT must not show one linked value when L and R are reduced differently | Each meter shows its own channel's applied gain (`grLeft`, `grRight`); with the link below 100 % they differ | No |
 | 3 | GR MODE PEAK / RMS / AVERAGE | Not in spec 13.5 | Display only, as the owner's brief asked: peak, 300 ms RMS or 300 ms average of the applied gain reduction; never changes the audio (tested) | No |
 | 4 | THRESHOLD scale "−30, 0, −20, +10" | Garbled (−30 where −10 belongs) | Printed numbers removed; −20 −10 0 +10 drawn live at their real positions | No |
