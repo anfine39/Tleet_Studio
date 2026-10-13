@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Acoustic Gentle",
+  "params": {
+    "threshold": -5.0,
+    "ratio": 0.5,
+    "overEasy": 1,
+    "grit": 5.0,
+    "mix": 100.0,
+    "output": 1.0
+  }
+}

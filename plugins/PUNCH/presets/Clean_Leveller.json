@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Clean Leveller",
+  "params": {
+    "threshold": -4.0,
+    "ratio": 0.6,
+    "overEasy": 1,
+    "grit": 0.0,
+    "mix": 100.0,
+    "output": 1.5
+  }
+}

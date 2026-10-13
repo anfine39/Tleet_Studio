@@ -16,7 +16,7 @@ namespace tleet::dsp
             size = juce::nextPowerOfTwo (maxBlockSize + delay + 1);
             buffer.setSize (numChannels, size, false, true, false);
             dry.setSize (numChannels, maxBlockSize, false, true, false);
-            writePos = 0;
+            reset(); // setSize keeps old samples at an unchanged size: a re-prepare must start silent
         }
 
         void reset()

@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Drum Bus Smack",
+  "params": {
+    "threshold": -3.0,
+    "ratio": 0.6667,
+    "overEasy": 1,
+    "grit": 25.0,
+    "mix": 100.0,
+    "output": 1.0
+  }
+}

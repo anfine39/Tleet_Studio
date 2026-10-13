@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Drum Smash Parallel",
+  "params": {
+    "threshold": -14.0,
+    "ratio": 1.0,
+    "overEasy": 0,
+    "grit": 70.0,
+    "mix": 40.0,
+    "output": 0.0
+  }
+}

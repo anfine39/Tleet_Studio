@@ -10,6 +10,8 @@ target_sources(tleet_tests PRIVATE
     DoubleGuiTests.cpp
     GlueTests.cpp
     GlueGuiTests.cpp
+    PunchTests.cpp
+    PunchGuiTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
@@ -23,7 +25,10 @@ target_sources(tleet_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/DOUBLE/dsp/DoubleEngine.cpp
     ${CMAKE_SOURCE_DIR}/plugins/GLUE/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/GLUE/PluginEditor.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/GLUE/dsp/GlueModel.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/GLUE/dsp/GlueModel.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/PUNCH/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/PUNCH/PluginEditor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/PUNCH/dsp/PunchModel.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -45,6 +50,8 @@ target_link_libraries(tleet_tests PRIVATE
     DOUBLE_Skin
     GLUE_Presets
     GLUE_Skin
+    PUNCH_Presets
+    PUNCH_Skin
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 
