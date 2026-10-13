@@ -12,7 +12,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **WEIGHT** | Stereo bus compressor (API 2500 family) | in progress |
 | **VEIL** | Variable-mu tube compressor (Manley Variable Mu family) | in progress |
 | **SHAPE** | Passive program EQ (Pultec EQP-1A family) | in progress |
-| ECHO | Tape echo | planned |
+| **ECHO** | Multi-head tape echo with spring reverb (Roland RE-201 family) | in progress |
 | VOID | Reverb | planned |
 | **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |
 | STEEL | Mastering limiter | planned |
