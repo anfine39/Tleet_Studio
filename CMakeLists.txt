@@ -60,6 +60,7 @@ add_subdirectory(plugins/SHAPE)
 add_subdirectory(plugins/ECHO)
 add_subdirectory(plugins/VOID)
 add_subdirectory(plugins/STEEL)
+add_subdirectory(plugins/TAPE)
 
 if(TLEET_BUILD_TESTS)
     enable_testing()

@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Wobbly Dub 7.5",
+  "params": {
+    "input": 2.0,
+    "output": 0.0,
+    "tapeType": 0,
+    "speed": 0,
+    "calibration": 2,
+    "bias": 0.0,
+    "saturation": 50.0,
+    "headBump": 45.0,
+    "lf": 0.0,
+    "hf": -15.0,
+    "age": 40.0,
+    "wow": 70.0,
+    "flutter": 40.0,
+    "noise": 1,
+    "noiseAmount": 25.0,
+    "crosstalk": 15.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

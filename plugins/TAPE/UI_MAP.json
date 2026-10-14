@@ -1,0 +1,1471 @@
+{
+ "plugin": "TAPE",
+ "reference": {
+  "file": "ui/UI_REFERENCE.png",
+  "width": 1536,
+  "height": 1024
+ },
+ "units": "reference pixels (1536x1024 mockup); the editor shows the panel at 0.75 at 100 %",
+ "controls": [
+  {
+   "id": "input",
+   "type": "ROTARY",
+   "parameter": "input",
+   "centre": [
+    108.7,
+    319.6
+   ],
+   "scaleCentre": [
+    108.7,
+    319.6
+   ],
+   "dotRadius": 72.4,
+   "capRadius": 60,
+   "rimRadius": 64,
+   "pointer": {
+    "inner": 17,
+    "outer": 60,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -145.4,
+    145.4
+   ],
+   "hitbox": [
+    29,
+    240,
+    160,
+    160
+   ],
+   "stepDots": {
+    "radius": 1.6,
+    "count": 11
+   },
+   "readout": [
+    53,
+    416,
+    110,
+    37
+   ],
+   "readoutCapHeight": 14.5,
+   "eraseReadout": [
+    76,
+    423,
+    70,
+    23
+   ],
+   "scaleLabels": {
+    "values": [
+     -12,
+     24
+    ],
+    "gap": 3.0,
+    "capHeight": 10.0
+   },
+   "erase": [
+    [
+     38,
+     387,
+     28,
+     20
+    ],
+    [
+     150,
+     387,
+     30,
+     20
+    ]
+   ],
+   "testId": "tape.knob.input"
+  },
+  {
+   "id": "output",
+   "type": "ROTARY",
+   "parameter": "output",
+   "centre": [
+    1428.8,
+    319.0
+   ],
+   "scaleCentre": [
+    1428.8,
+    319.0
+   ],
+   "dotRadius": 72.1,
+   "capRadius": 60,
+   "rimRadius": 64,
+   "pointer": {
+    "inner": 17,
+    "outer": 60,
+    "width": 4.0
+   },
+   "travelDegrees": [
+    -145.4,
+    145.4
+   ],
+   "hitbox": [
+    1349,
+    239,
+    160,
+    160
+   ],
+   "stepDots": {
+    "radius": 1.6,
+    "count": 11
+   },
+   "readout": [
+    1373,
+    416,
+    110,
+    37
+   ],
+   "readoutCapHeight": 14.5,
+   "eraseReadout": [
+    1401,
+    423,
+    58,
+    23
+   ],
+   "scaleLabels": {
+    "values": [
+     -24,
+     24
+    ],
+    "gap": 3.0,
+    "capHeight": 10.0
+   },
+   "erase": [
+    [
+     1361,
+     387,
+     29,
+     20
+    ],
+    [
+     1464,
+     387,
+     29,
+     20
+    ]
+   ],
+   "testId": "tape.knob.output"
+  },
+  {
+   "id": "bias",
+   "type": "ROTARY",
+   "parameter": "bias",
+   "centre": [
+    778.6,
+    573.8
+   ],
+   "scaleCentre": [
+    778.6,
+    573.8
+   ],
+   "dotRadius": 46.1,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    727,
+    522,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    741,
+    629,
+    76,
+    28
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    765,
+    634,
+    32,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     -100,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     711,
+     608,
+     33,
+     18
+    ],
+    [
+     810,
+     607,
+     33,
+     19
+    ]
+   ],
+   "testId": "tape.knob.bias"
+  },
+  {
+   "id": "saturation",
+   "type": "ROTARY",
+   "parameter": "saturation",
+   "centre": [
+    927.7,
+    573.3
+   ],
+   "scaleCentre": [
+    927.7,
+    573.3
+   ],
+   "dotRadius": 49.1,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    876,
+    521,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    890,
+    629,
+    76,
+    28
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    907,
+    634,
+    40,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     873,
+     608,
+     11,
+     18
+    ],
+    [
+     963,
+     608,
+     25,
+     18
+    ]
+   ],
+   "testId": "tape.knob.saturation"
+  },
+  {
+   "id": "headBump",
+   "type": "ROTARY",
+   "parameter": "headBump",
+   "centre": [
+    1074.1,
+    573.4
+   ],
+   "scaleCentre": [
+    1074.1,
+    573.4
+   ],
+   "dotRadius": 49.9,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    1022,
+    521,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    1036,
+    629,
+    76,
+    28
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    1054,
+    634,
+    40,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     1019,
+     608,
+     11,
+     18
+    ],
+    [
+     1115,
+     608,
+     25,
+     18
+    ]
+   ],
+   "testId": "tape.knob.headbump"
+  },
+  {
+   "id": "lf",
+   "type": "ROTARY",
+   "parameter": "lf",
+   "centre": [
+    1233.0,
+    573.7
+   ],
+   "scaleCentre": [
+    1233.0,
+    573.7
+   ],
+   "dotRadius": 50.0,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    1181,
+    522,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    1195,
+    629,
+    76,
+    28
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    1219,
+    634,
+    29,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     -100,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     1161,
+     608,
+     34,
+     18
+    ],
+    [
+     1271,
+     608,
+     31,
+     18
+    ]
+   ],
+   "testId": "tape.knob.lf"
+  },
+  {
+   "id": "hf",
+   "type": "ROTARY",
+   "parameter": "hf",
+   "centre": [
+    1411.3,
+    573.3
+   ],
+   "scaleCentre": [
+    1411.3,
+    573.3
+   ],
+   "dotRadius": 49.8,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    1359,
+    521,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    1373,
+    629,
+    76,
+    28
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    1397,
+    634,
+    31,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     -100,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     1339,
+     608,
+     35,
+     18
+    ],
+    [
+     1450,
+     608,
+     30,
+     18
+    ]
+   ],
+   "testId": "tape.knob.hf"
+  },
+  {
+   "id": "age",
+   "type": "ROTARY",
+   "parameter": "age",
+   "centre": [
+    97.5,
+    762.6
+   ],
+   "scaleCentre": [
+    97.5,
+    762.6
+   ],
+   "dotRadius": 48.3,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    46,
+    711,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    58,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    81,
+    827,
+    39,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     46,
+     800,
+     11,
+     18
+    ],
+    [
+     133,
+     800,
+     25,
+     18
+    ]
+   ],
+   "testId": "tape.knob.age"
+  },
+  {
+   "id": "wow",
+   "type": "ROTARY",
+   "parameter": "wow",
+   "centre": [
+    249.9,
+    763.1
+   ],
+   "scaleCentre": [
+    249.9,
+    763.1
+   ],
+   "dotRadius": 47.8,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    198,
+    711,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    211,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    237,
+    828,
+    31,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     199,
+     800,
+     11,
+     18
+    ],
+    [
+     285,
+     800,
+     24,
+     18
+    ]
+   ],
+   "testId": "tape.knob.wow"
+  },
+  {
+   "id": "flutter",
+   "type": "ROTARY",
+   "parameter": "flutter",
+   "centre": [
+    400.2,
+    763.3
+   ],
+   "scaleCentre": [
+    400.2,
+    763.3
+   ],
+   "dotRadius": 47.6,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    348,
+    711,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    361,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    385,
+    828,
+    33,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     350,
+     800,
+     11,
+     19
+    ],
+    [
+     435,
+     800,
+     25,
+     19
+    ]
+   ],
+   "testId": "tape.knob.flutter"
+  },
+  {
+   "id": "noiseAmount",
+   "type": "ROTARY",
+   "parameter": "noiseAmount",
+   "centre": [
+    640.2,
+    764.6
+   ],
+   "scaleCentre": [
+    640.2,
+    764.6
+   ],
+   "dotRadius": 46.7,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    588,
+    713,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    601,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    622,
+    828,
+    38,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     591,
+     802,
+     11,
+     18
+    ],
+    [
+     674,
+     802,
+     25,
+     18
+    ]
+   ],
+   "testId": "tape.knob.noiseamount"
+  },
+  {
+   "id": "crosstalk",
+   "type": "ROTARY",
+   "parameter": "crosstalk",
+   "centre": [
+    793.7,
+    763.2
+   ],
+   "scaleCentre": [
+    793.7,
+    763.2
+   ],
+   "dotRadius": 46.9,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    742,
+    711,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    755,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    780,
+    828,
+    31,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     744,
+     801,
+     11,
+     19
+    ],
+    [
+     828,
+     801,
+     24,
+     18
+    ]
+   ],
+   "testId": "tape.knob.crosstalk"
+  },
+  {
+   "id": "mix",
+   "type": "ROTARY",
+   "parameter": "mix",
+   "centre": [
+    939.8,
+    763.5
+   ],
+   "scaleCentre": [
+    939.8,
+    763.5
+   ],
+   "dotRadius": 47.2,
+   "capRadius": 36,
+   "rimRadius": 40,
+   "pointer": {
+    "inner": 7,
+    "outer": 34,
+    "width": 3.0
+   },
+   "travelDegrees": [
+    -142.2,
+    142.2
+   ],
+   "hitbox": [
+    888,
+    712,
+    104,
+    104
+   ],
+   "stepDots": {
+    "radius": 1.4,
+    "count": 11
+   },
+   "readout": [
+    901,
+    823,
+    78,
+    29
+   ],
+   "readoutCapHeight": 12.0,
+   "eraseReadout": [
+    918,
+    828,
+    47,
+    20
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 3.0,
+    "capHeight": 9.0
+   },
+   "erase": [
+    [
+     884,
+     802,
+     19,
+     18
+    ],
+    [
+     973,
+     801,
+     24,
+     19
+    ]
+   ],
+   "testId": "tape.knob.mix"
+  },
+  {
+   "id": "tapeType",
+   "type": "BUTTON_GROUP",
+   "parameter": "tapeType",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "A",
+     "body": [
+      52,
+      541,
+      64,
+      56
+     ],
+     "hitbox": [
+      52,
+      541,
+      64,
+      56
+     ]
+    },
+    {
+     "label": "B",
+     "body": [
+      120,
+      541,
+      60,
+      56
+     ],
+     "hitbox": [
+      120,
+      541,
+      60,
+      56
+     ]
+    },
+    {
+     "label": "C",
+     "body": [
+      182,
+      541,
+      60,
+      56
+     ],
+     "hitbox": [
+      182,
+      541,
+      60,
+      56
+     ]
+    }
+   ],
+   "testId": "tape.buttons.tapetype"
+  },
+  {
+   "id": "speed",
+   "type": "BUTTON_GROUP",
+   "parameter": "speed",
+   "litInArtwork": 1,
+   "copyFrom": 2,
+   "buttons": [
+    {
+     "label": "7.5",
+     "body": [
+      273,
+      541,
+      59,
+      56
+     ],
+     "hitbox": [
+      273,
+      541,
+      59,
+      56
+     ]
+    },
+    {
+     "label": "15",
+     "body": [
+      335,
+      541,
+      49,
+      56
+     ],
+     "hitbox": [
+      335,
+      541,
+      49,
+      56
+     ]
+    },
+    {
+     "label": "30",
+     "body": [
+      387,
+      541,
+      50,
+      56
+     ],
+     "hitbox": [
+      387,
+      541,
+      50,
+      56
+     ]
+    }
+   ],
+   "testId": "tape.buttons.speed"
+  },
+  {
+   "id": "calibration",
+   "type": "BUTTON_GROUP",
+   "parameter": "calibration",
+   "litInArtwork": 1,
+   "copyFrom": 2,
+   "buttons": [
+    {
+     "label": "-3",
+     "body": [
+      476,
+      541,
+      50,
+      56
+     ],
+     "hitbox": [
+      476,
+      541,
+      50,
+      56
+     ]
+    },
+    {
+     "label": "0",
+     "body": [
+      531,
+      541,
+      47,
+      56
+     ],
+     "hitbox": [
+      531,
+      541,
+      47,
+      56
+     ]
+    },
+    {
+     "label": "+3",
+     "body": [
+      582,
+      541,
+      50,
+      56
+     ],
+     "hitbox": [
+      582,
+      541,
+      50,
+      56
+     ]
+    },
+    {
+     "label": "+6",
+     "body": [
+      633,
+      541,
+      51,
+      56
+     ],
+     "hitbox": [
+      633,
+      541,
+      51,
+      56
+     ]
+    }
+   ],
+   "testId": "tape.buttons.calibration"
+  },
+  {
+   "id": "noise",
+   "type": "BUTTON_GROUP",
+   "parameter": "noise",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "OFF",
+     "body": [
+      511,
+      725,
+      66,
+      45
+     ],
+     "hitbox": [
+      511,
+      725,
+      66,
+      45
+     ]
+    },
+    {
+     "label": "ON",
+     "body": [
+      511,
+      778,
+      66,
+      44
+     ],
+     "hitbox": [
+      511,
+      778,
+      66,
+      44
+     ]
+    }
+   ],
+   "testId": "tape.buttons.noise"
+  },
+  {
+   "id": "autoGain",
+   "type": "TOGGLE",
+   "parameter": "autoGain",
+   "body": [
+    1035,
+    740,
+    76,
+    57
+   ],
+   "litInArtwork": true,
+   "darkDonor": [
+    508,
+    778,
+    70,
+    44
+   ],
+   "glyph": "ON",
+   "hitbox": [
+    1035,
+    740,
+    76,
+    57
+   ],
+   "testId": "tape.button.autogain"
+  },
+  {
+   "id": "vuRecord",
+   "type": "VU",
+   "face": [
+    945,
+    242,
+    178,
+    115
+   ],
+   "hitbox": [
+    945,
+    242,
+    178,
+    115
+   ],
+   "pivot": [
+    1030.2,
+    422.4
+   ],
+   "needleLength": 140.8,
+   "arcRadius": 134.8,
+   "scaleDegrees": {
+    "-20": -23.9,
+    "-10": -15.2,
+    "-7": -10.1,
+    "-5": -4.8,
+    "-3": 2.4,
+    "-2": 6.3,
+    "-1": 9.9,
+    "0": 13.4,
+    "1": 17.4,
+    "2": 19.7,
+    "3": 22.0
+   },
+   "bakedNeedles": [
+    [
+     [
+      970.4,
+      289
+     ],
+     [
+      1015.0,
+      356
+     ]
+    ],
+    [
+     [
+      1070.8,
+      292
+     ],
+     [
+      1047.2,
+      350
+     ]
+    ]
+   ],
+   "cap": {
+    "centre": [
+     1033.4,
+     361.5
+    ],
+    "radius": 19.8
+   },
+   "testId": "tape.vu.record"
+  },
+  {
+   "id": "vuRepro",
+   "type": "VU",
+   "face": [
+    1140,
+    242,
+    176,
+    115
+   ],
+   "hitbox": [
+    1140,
+    242,
+    176,
+    115
+   ],
+   "pivot": [
+    1223.3,
+    423.3
+   ],
+   "needleLength": 141.6,
+   "arcRadius": 135.6,
+   "scaleDegrees": {
+    "-20": -23.5,
+    "-10": -15.0,
+    "-7": -10.0,
+    "-5": -4.6,
+    "-3": 2.6,
+    "-2": 6.6,
+    "-1": 10.1,
+    "0": 13.6,
+    "1": 17.6,
+    "2": 19.85,
+    "3": 22.1
+   },
+   "bakedNeedles": [
+    [
+     [
+      1164.0,
+      289
+     ],
+     [
+      1208.3,
+      356
+     ]
+    ],
+    [
+     [
+      1265.8,
+      289
+     ],
+     [
+      1240.1,
+      349
+     ]
+    ]
+   ],
+   "cap": {
+    "centre": [
+     1226.3,
+     361.3
+    ],
+    "radius": 19.4
+   },
+   "testId": "tape.vu.repro"
+  },
+  {
+   "id": "saturationMeter",
+   "type": "LED_BAR",
+   "housing": [
+    1016,
+    409,
+    229,
+    29
+   ],
+   "first": 1022.0,
+   "pitch": 9.2174,
+   "count": 24,
+   "segment": [
+    6,
+    20
+   ],
+   "top": 413,
+   "redFrom": 15,
+   "litWhiteArt": 7,
+   "litRedArt": 15,
+   "unlitArt": [
+    19,
+    23
+   ],
+   "hitbox": [
+    1016,
+    405,
+    229,
+    36
+   ],
+   "testId": "tape.meter.saturation"
+  },
+  {
+   "id": "tapeCondition",
+   "type": "SPECTRUM",
+   "screen": [
+    1164,
+    719,
+    329,
+    99
+   ],
+   "labelStrip": [
+    1158,
+    827,
+    344,
+    14
+   ],
+   "erase": [
+    [
+     1165,
+     720,
+     327,
+     97
+    ]
+   ],
+   "eraseLabels": [
+    [
+     1156,
+     820,
+     348,
+     23
+    ]
+   ],
+   "frequencies": [
+    20,
+    100,
+    1000,
+    10000,
+    20000
+   ],
+   "labelCapHeight": 9.0,
+   "hitbox": [
+    1164,
+    719,
+    329,
+    99
+   ],
+   "testId": "tape.display.condition"
+  },
+  {
+   "id": "reelLeft",
+   "type": "REEL",
+   "flange": [
+    387.4,
+    246.5
+   ],
+   "radius": 154.0,
+   "hub": [
+    389.5,
+    248.5
+   ],
+   "window": 185.5,
+   "phase": 285.0,
+   "decal": {
+    "angles": [
+     203,
+     252
+    ],
+    "radii": [
+     64,
+     140
+    ]
+   },
+   "occluders": [
+    [
+     436,
+     368,
+     14,
+     40
+    ]
+   ],
+   "windowTop": 186.5,
+   "hitbox": [
+    233,
+    187,
+    308,
+    214
+   ],
+   "testId": "tape.reel.left"
+  },
+  {
+   "id": "reelRight",
+   "type": "REEL",
+   "flange": [
+    759.1,
+    247.7
+   ],
+   "radius": 147.6,
+   "hub": [
+    761.5,
+    248.5
+   ],
+   "window": 224.0,
+   "phase": 300.0,
+   "decal": {
+    "angles": [
+     108,
+     166
+    ],
+    "radii": [
+     62,
+     140
+    ]
+   },
+   "occluders": [
+    [
+     708,
+     368,
+     14,
+     40
+    ]
+   ],
+   "windowTop": 186.5,
+   "hitbox": [
+    612,
+    187,
+    295,
+    208
+   ],
+   "testId": "tape.reel.right"
+  }
+ ]
+}
