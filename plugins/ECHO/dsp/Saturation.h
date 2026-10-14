@@ -5,7 +5,7 @@
 #include <cmath>
 
 // The two nonlinear stages of the record path (MODEL_SPEC 5). Both run at the
-// record-stage rate (2x below 80 kHz, else 1x) inside Oversampler2x.
+// record-stage rate (176.4/192 kHz: 4x, 2x or 1x) inside Oversampler2x.
 //
 //   preamp (the RE-201's transistor input/mixing stage, DRIVE):
 //       z = x * D / Vc,  s = z / sqrt(1 + z^2)

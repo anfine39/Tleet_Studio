@@ -12,7 +12,8 @@
 // to 0.39 fs_os, stopband from 0.61 fs_os (about -80 dB). Polyphase: the
 // upsampler's odd phase is the centre tap (a pure delay), the even phase 24
 // taps; the downsampler is 24 taps plus the centre tap.
-//   latency: up 23 + down 23 samples at 2x = exactly 23 host samples.
+//   latency: up 23 + down 23 samples at 2x = exactly 23 host samples. Two
+//   stages in cascade give 4x (23 + 11.5 = 34.5 host samples).
 // The tape delay is shortened by that latency (MODEL_SPEC 4.4), so the echo
 // lands on its nominal time; the plugin's own latency stays zero (the dry path
 // never goes through here).

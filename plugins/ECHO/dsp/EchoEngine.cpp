@@ -33,9 +33,12 @@ namespace tleet::echo
     void EchoEngine::prepare (double sampleRate, int)
     {
         fs = sampleRate;
-        os = fs < 80000.0 ? 2 : 1;
+        // The record stage runs at 176.4 / 192 kHz at every host rate: 4x below
+        // 50 kHz, 2x below 100 kHz, 1x above (MODEL_SPEC 5.4).
+        os = fs < 50000.0 ? 4 : (fs < 100000.0 ? 2 : 1);
         recordRate = fs * os;
-        osLatency = os == 2 ? Downsampler2x::latency2x : 0; // 23 + 23 samples at 2x = 23 host samples
+        // each 2x stage: 23 samples up + 23 down at its own rate = 23 samples at its input rate
+        osLatency = os == 4 ? Downsampler2x::latency2x * 1.5 : (os == 2 ? (double) Downsampler2x::latency2x : 0.0);
 
         const double controlRate = fs / K;
         kGain = blockCoeff (engine::gainGlideS, fs);
@@ -87,6 +90,7 @@ namespace tleet::echo
         chainM.reset(); chainS.reset();
         preFilter.reset(); loopFilter.reset(); postM.reset(); postS.reset();
         upIn.reset(); upFb.reset(); downTape.reset(); downPre.reset();
+        upIn4.reset(); upFb4.reset(); downTape4.reset(); downPre4.reset();
         preamp.reset(); tapeSat.reset();
         springA.reset(); springB.reset();
         wowFlutter.reset(); dropouts.reset(); hiss.reset();
@@ -298,7 +302,27 @@ namespace tleet::echo
             const double inGain = dGain / vc, outGain = vc / dGain;
             const double lt = gLt.next();
             double rec, pre;
-            if (os == 2)
+            if (os == 4)
+            {
+                double a[2], b[2], r[2], q[2];
+                upIn.process (xp, a[0], a[1]);
+                upFb.process (fb, b[0], b[1]);
+                for (int k = 0; k < 2; ++k)
+                {
+                    double a0, a1, b0, b1;
+                    upIn4.process (a[k], a0, a1);
+                    upFb4.process (b[k], b0, b1);
+                    const double p0 = preamp.process (a0, inGain, outGain, even);
+                    const double p1 = preamp.process (a1, inGain, outGain, even);
+                    const double s0 = tapeSat.process (p0 + b0, lt);
+                    const double s1 = tapeSat.process (p1 + b1, lt);
+                    r[k] = downTape4.process (s0, s1);
+                    q[k] = downPre4.process (p0, p1);
+                }
+                rec = downTape.process (r[0], r[1]);
+                pre = downPre.process (q[0], q[1]);
+            }
+            else if (os == 2)
             {
                 double a0, a1, b0, b1;
                 upIn.process (xp, a0, a1);

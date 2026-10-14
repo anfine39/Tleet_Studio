@@ -665,7 +665,8 @@ TEST ("ECHO: self-oscillation at INTENSITY 10 is bounded by the tape saturation 
             in.copyFrom (ch, 0, kick.data(), 4800);
         const auto out = render (*p, in, 512);
         CHECK (allFinite (out));
-        rmsEarly = dbOf (rms (out.getReadPointer (0) + n - (int) (10.0 * fs), (int) (2.0 * fs)));
+        // 8 to 10 s before the end (from the start in runs shorter than 10 s)
+        rmsEarly = dbOf (rms (out.getReadPointer (0) + std::max (0, n - (int) (10.0 * fs)), (int) (2.0 * fs)));
         rmsLate = dbOf (rms (out.getReadPointer (0) + n - (int) (2.0 * fs), (int) (2.0 * fs)));
         peak = out.getMagnitude (0, 0, n);
         int nearRail = 0;
@@ -1628,7 +1629,7 @@ TEST ("ECHO: all sample rates and block sizes, mono / stereo / mono->stereo: fin
                 CHECK_MSG (allocs == 0, tag + ": " + juce::String (allocs) + " allocations in processBlock");
                 CHECK_MSG (rms (io.getReadPointer (0), n) > 0.05f, tag + ": no output");
                 CHECK_MSG (p->getLatencySamples() == 0, tag);
-                CHECK_MSG (p->getEngineForTesting().getRecordOversampling() == (fs < 80000.0 ? 2 : 1), tag);
+                CHECK_MSG (p->getEngineForTesting().getRecordOversampling() == (fs < 50000.0 ? 4 : (fs < 100000.0 ? 2 : 1)), tag);
             }
     // the echo lands on time at every rate (head 1 at 100 ms), through every block size
     for (double fs : { 44100.0, 48000.0, 88200.0, 96000.0, 176400.0, 192000.0 })
@@ -1985,17 +1986,17 @@ TEST ("ECHO: factory presets load, set every parameter, cover the controls and r
     }
 }
 
-TEST ("ECHO: aliasing and intermodulation of the record stage (2x oversampled below 80 kHz; measurement, CSV)")
+TEST ("ECHO: aliasing and intermodulation of the record stage (176.4/192 kHz at every host rate; measurement, CSV)")
 {
     // Largest non-harmonic component in the first echo, re the fundamental. The
-    // record stage runs at 88.2/96 kHz (2x below 80 kHz, 1x above): odd harmonics
-    // of the clipped preamp above the record Nyquist fold back.
+    // record stage runs at 176.4/192 kHz (4x below 50 kHz, 2x below 100 kHz, 1x
+    // above): odd harmonics of the clipped preamp above the record Nyquist fold back.
     struct Case { int character; float drive; double hz, levelDbfs; double limitDbc; const char* name; };
     const Case cases[] = {
         { cOriginal, 3.0f, 5000.0, -6.0, -60.0, "Original DRIVE 3, 5 kHz -6 dBFS (default colour, hot HF)" },
         { cOriginal, 10.0f, 1100.0, -12.0, -50.0, "Original DRIVE 10, 1.1 kHz -12 dBFS" },
-        { cBurn, 10.0f, 1100.0, -12.0, -35.0, "Burn DRIVE 10, 1.1 kHz -12 dBFS (preamp near square)" },
-        { cBurn, 10.0f, 7000.0, -3.0, -15.0, "Burn DRIVE 10, 7 kHz -3 dBFS (worst case)" } };
+        { cBurn, 10.0f, 1100.0, -12.0, -80.0, "Burn DRIVE 10, 1.1 kHz -12 dBFS (preamp near square)" },
+        { cBurn, 10.0f, 7000.0, -3.0, -25.0, "Burn DRIVE 10, 7 kHz -3 dBFS (worst case)" } };
     juce::String csv ("rate,case,worst_nonharmonic_dbc,at_hz\n");
     for (double fs : { 44100.0, 48000.0, 96000.0 })
         for (const auto& c : cases)

@@ -13,10 +13,10 @@
 // The wet engine of ECHO (Roland RE-201 DNA). See plugins/ECHO/RESEARCH.md for
 // the evidence and MODEL_SPEC.md for the provenance of every block.
 //
-//   in L/R ─► mono ─► [PRE filter] ─┐            (record stage, 2x below 80 kHz)
-//                                   ├─► ↑2 ─► preamp (DRIVE, CHARACTER) ─► (+) ─► tape saturation ─► ↓2 ─► + hiss ─► × dropouts ─► TAPE
+//   in L/R ─► mono ─► [PRE filter] ─┐            (record stage at 176.4/192 kHz: 4x / 2x / 1x)
+//                                   ├─► ↑os ─► preamp (DRIVE, CHARACTER) ─► (+) ─► tape saturation ─► ↓os ─► + hiss ─► × dropouts ─► TAPE
 //   feedback ───────────────────────┘                                        ▲
-//       ▲                                                                    └── ↑2 ◄── feedback
+//       ▲                                                                    └── ↑os ◄── feedback
 //       │
 //   TAPE ─► heads 1/2/3 (MODE) ─► playback: LF roll-off, head loss (speed, AGE, condition), BASS, TREBLE
 //            │                       │
@@ -168,7 +168,8 @@ namespace tleet::echo
 
         double fs = 48000.0, recordRate = 96000.0, kGain = 0.1, kCond = 0.01, kSpeed = 0.01;
         double kDuckAtt = 0.1, kDuckRel = 0.01, duckDetRel = 0.999;
-        int os = 2, osLatency = 23;
+        int os = 4;
+        double osLatency = 34.5;
 
         Settings target {};
         ConditionOffsets cond = engine::condition (0); // glided
@@ -197,8 +198,8 @@ namespace tleet::echo
 
         filt::HpLp preFilter, loopFilter, postM, postS;
 
-        Upsampler2x upIn, upFb;
-        Downsampler2x downTape, downPre;
+        Upsampler2x upIn, upFb, upIn4, upFb4;           // host <-> 2x, and 2x <-> 4x (os 4)
+        Downsampler2x downTape, downPre, downTape4, downPre4;
         Preamp preamp;
         TapeSaturation tapeSat;
 

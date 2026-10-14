@@ -23,7 +23,7 @@ ECHO is hardware-informed. It is not a measured 1:1 clone of one unit.
 ## 1. Signal flow
 
 ```
-in L/R ─► sanitise ─┬─► mono ─► [PRE filter] ─┐                    (record stage: 2x below 80 kHz)
+in L/R ─► sanitise ─┬─► mono ─► [PRE filter] ─┐                    (record stage at 176.4/192 kHz)
                     │                         ├─► ↑2 ─► preamp (DRIVE, CHARACTER) ─► (+) ─► tape saturation ─► ↓2 ─► + hiss ─► × dropouts ─► TAPE
                     │      feedback ──────────┘                                       ▲
                     │          ▲                                                      └── ↑2 ◄── feedback
@@ -163,7 +163,7 @@ effective frequency, where the head-loss lowpass delays less). The tape delay
 is shortened by
 
 ```
-comp = record-stage oversampler latency (23 host samples below 80 kHz, else 0)
+comp = record-stage oversampler latency (34.5 host samples at 4x, 23 at 2x, 0 at 1x)
      + group delay of the playback chain at 1 kHz (LF roll-off, head loss, BASS, TREBLE)
 ```
 
@@ -228,21 +228,28 @@ is click-free (tested).
 
 ### 5.4 Oversampling and aliasing [APPROXIMATION: numerical method]
 
-The record stage runs at **2× below 80 kHz** (88.2/96 kHz) and 1× above
-(the record rate is ≥ 88.2 kHz everywhere). Per-sample polyphase half-band
-FIR, 47 taps, Kaiser β 8 (−80 dB stopband), linear phase; up 23 + down 23
-samples at 2× = exactly 23 host samples, taken off the tape delay (4.4).
-Measured largest non-harmonic component in the first echo (dBc):
+The record stage runs at **176.4/192 kHz at every host rate**: 4× below
+50 kHz, 2× below 100 kHz, 1× above (owner question 2026-10-14; raised from
+2× below 80 kHz, which left the record stage at 88.2/96 kHz). Per-sample
+polyphase half-band FIR, 47 taps, Kaiser β 8 (−80 dB stopband), linear
+phase; each 2× stage delays up 23 + down 23 samples at its own rate, so 2× =
+exactly 23 host samples and 4× (two stages in cascade) = 34.5 host samples,
+taken off the tape delay (4.4). Measured largest non-harmonic component in
+the first echo (dBc), before → now:
 
 | case | 44.1 kHz | 48 kHz | 96 kHz |
 |---|---|---|---|
-| Original DRIVE 3, 5 kHz −6 dBFS | −87.5 | −100.2 | −99.9 |
-| Original DRIVE 10, 1.1 kHz −12 dBFS | −125 | −157 | −161 |
-| Burn DRIVE 10, 1.1 kHz −12 dBFS | −75.9 | −81.1 | −81.3 |
-| Burn DRIVE 10, 7 kHz −3 dBFS (worst case) | −22.7 | −23.0 | −22.9 |
+| Original DRIVE 3, 5 kHz −6 dBFS | −87.5 → −87.5 | −100.2 → −139 | −99.9 → −154 |
+| Original DRIVE 10, 1.1 kHz −12 dBFS | −125 → −125 | −157 → −158 | −161 → −160 |
+| Burn DRIVE 10, 1.1 kHz −12 dBFS | −75.9 → −95.5 | −81.1 → −133 | −81.3 → −141 |
+| Burn DRIVE 10, 7 kHz −3 dBFS (worst case) | −22.7 → −30.3 | −23.0 → −30.9 | −22.9 → −30.7 |
+
+(At 44.1 kHz the Original DRIVE 3 figure is a component at 19.1 kHz that the
+record rate does not change.)
 
 The worst case is a near-square preamp (≈ +36 dB into the clipper) on a
-7 kHz tone: its 11th/13th harmonics fold back from above the record Nyquist.
+7 kHz tone: its 25th–29th harmonics (−28 dB re the fundamental for a square
+wave) fold back from above the 192 kHz record Nyquist.
 4× or ADAA would lower it at extra cost (open owner decision, section 15).
 SMPTE IMD (60 Hz + 7 kHz 4:1, Original DRIVE 6): 78 % — the preamp
 compresses strongly at that drive, by design.
@@ -551,7 +558,7 @@ MODE. Original names (master spec 9.4).
 | State | round trip, corrupt and foreign state | identical render |
 | Presets | 14, all parameters, coverage, rejects | |
 | Aliasing / IMD | table 5.4 | |
-| CPU | 44.1–192 kHz, blocks 64/128, MODE 1+2+3 + spring | median 5.0–5.6 % of one core at 44.1/48 kHz; 9.6 % at 96; 19.5 % at 192 |
+| CPU | 44.1–192 kHz, blocks 64/128, MODE 1+2+3 + spring | median 5.8–7.6 % of one core at 44.1/48 kHz (4× record stage; 5.0–5.6 % at 2×); 9.0–12.5 % at 88.2/96 (2×); 18–20 % at 192 |
 
 CSV output (`test-output/`): `ECHO_timing.csv`, `ECHO_head_timing.csv`,
 `ECHO_self_oscillation.csv`, `ECHO_feedback_csd.csv`,
@@ -632,10 +639,11 @@ Each defect was introduced, the named test failed, and the code was restored
   delays, playback response and tone curves, wow/flutter spectrum, THD and
   oscillation onset, spring impulse response and motor ramp from a serviced
   RE-201.
-- **Aliasing at extreme settings** (5.4): Burn DRIVE 10 on a hot 7 kHz tone
-  gives −23 dBc fold-back. Options: 4× record stage (more CPU; not
-  measured), or first-order ADAA in the two saturators (half-sample delay to compensate).
-  Musical program (≤ −12 dBFS, ≤ 1–5 kHz) is at −76 dBc or better.
+- **Aliasing at extreme settings** (5.4): with the record stage at 176.4/192
+  kHz, Burn DRIVE 10 on a hot 7 kHz tone gives −31 dBc fold-back (−23 at
+  2×). Going further needs first-order ADAA in the preamp (a half-sample
+  delay on the input path only, so the first echo would need its own
+  compensation). Musical program (≤ −12 dBFS, ≤ 1–5 kHz) is at −95 dBc or better.
 - **Self-oscillation level of Clean with three heads** (+0.2 dBFS RMS at
   ECHO VOLUME 7, INTENSITY 10): accepted as "the loudest voicing"; lower the
   Clean tape Lt (1.4) if the owner wants it below 0 dBFS.
