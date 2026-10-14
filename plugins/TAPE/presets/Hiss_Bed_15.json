@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Hiss Bed 15",
+  "params": {
+    "input": 0.0,
+    "output": 0.0,
+    "tapeType": 0,
+    "speed": 1,
+    "calibration": 1,
+    "bias": 0.0,
+    "saturation": 42.0,
+    "headBump": 36.0,
+    "lf": 0.0,
+    "hf": 0.0,
+    "age": 30.0,
+    "wow": 8.0,
+    "flutter": 5.0,
+    "noise": 1,
+    "noiseAmount": 60.0,
+    "crosstalk": 10.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

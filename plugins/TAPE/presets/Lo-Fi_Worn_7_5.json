@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Lo-Fi Worn 7.5",
+  "params": {
+    "input": 4.0,
+    "output": 0.0,
+    "tapeType": 0,
+    "speed": 0,
+    "calibration": 3,
+    "bias": -20.0,
+    "saturation": 65.0,
+    "headBump": 50.0,
+    "lf": 0.0,
+    "hf": -20.0,
+    "age": 75.0,
+    "wow": 45.0,
+    "flutter": 35.0,
+    "noise": 1,
+    "noiseAmount": 40.0,
+    "crosstalk": 25.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

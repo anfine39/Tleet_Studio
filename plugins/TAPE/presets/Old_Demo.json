@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Old Demo",
+  "params": {
+    "input": 3.0,
+    "output": 0.0,
+    "tapeType": 0,
+    "speed": 0,
+    "calibration": 1,
+    "bias": -30.0,
+    "saturation": 55.0,
+    "headBump": 40.0,
+    "lf": -5.0,
+    "hf": -30.0,
+    "age": 60.0,
+    "wow": 25.0,
+    "flutter": 20.0,
+    "noise": 1,
+    "noiseAmount": 30.0,
+    "crosstalk": 20.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

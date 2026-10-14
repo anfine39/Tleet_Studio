@@ -8,3 +8,5 @@ test-output/
 *.user
 .DS_Store
 __pycache__/
+dist-mac/
+.deps/

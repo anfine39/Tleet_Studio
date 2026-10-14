@@ -80,11 +80,25 @@ jobs:
             pluginval/pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --validate-in-process --skip-gui-tests --output-dir pluginval-logs "$p"
           done
 
-      - name: Collect plugins
+      - name: Collect and sign (ad hoc)
         run: |
           mkdir -p dist/VST3 dist/Components
           cp -R build/plugins/*/*_artefacts/Release/VST3/*.vst3 dist/VST3/
           cp -R build/plugins/*/*_artefacts/Release/AU/*.component dist/Components/
+          for b in dist/VST3/*.vst3 dist/Components/*.component; do
+            codesign --force --deep --sign - "$b"
+            codesign --verify --deep --strict "$b"
+          done
+
+      - name: auval
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          cp -R dist/Components/*.component ~/Library/Audio/Plug-Ins/Components/
+          killall -9 AudioComponentRegistrar || true
+          for f in plugins/*/CMakeLists.txt; do
+            code=$(sed -n 's/^ *CODE \([A-Za-z0-9]\{4\}\).*/\1/p' "$f" | head -1)
+            if [ -n "$code" ]; then auval -v aufx "$code" Tlet; fi
+          done
 
       - uses: actions/upload-artifact@v4
         with:

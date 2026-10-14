@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Clean 30 IPS Master",
+  "params": {
+    "input": 0.0,
+    "output": 0.0,
+    "tapeType": 1,
+    "speed": 2,
+    "calibration": 0,
+    "bias": 0.0,
+    "saturation": 30.0,
+    "headBump": 30.0,
+    "lf": 0.0,
+    "hf": 0.0,
+    "age": 0.0,
+    "wow": 3.0,
+    "flutter": 2.0,
+    "noise": 0,
+    "noiseAmount": 12.0,
+    "crosstalk": 5.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

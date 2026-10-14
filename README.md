@@ -16,7 +16,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **VOID** | Algorithmic stereo reverb (Room, Plate, Chamber, Hall, Void; freeze, infinite decay) | in progress |
 | **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |
 | **STEEL** | True-peak mastering limiter (Clean, Punch, Dense, Steel; LUFS / LRA metering, delta, level match) | in progress |
-| TAPE | Tape machine | planned |
+| **TAPE** | Multitrack tape machine (3 formulations, 7.5 / 15 / 30 IPS, bias, head bump, wow / flutter, hiss, crosstalk) | in progress |
 
 ## Principles
 

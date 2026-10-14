@@ -31,12 +31,31 @@
 3. Скрипт скачает JUCE, соберёт плагины, прогонит тесты и скопирует `.vst3`
    в `C:\Program Files\Common Files\VST3`. Первая сборка занимает 10–20 минут.
 
+## Сборка на своём компьютере (macOS)
+
+1. Установите инструменты разработчика: в Терминале `xcode-select --install`
+   (полный Xcode не нужен), затем CMake: `brew install cmake` или CMake.app
+   с cmake.org. Git входит в инструменты разработчика.
+2. Склонируйте репозиторий и выполните в его папке:
+   `bash scripts/build-macos.sh`
+3. Скрипт скачает JUCE, соберёт все плагины в форматах VST3 и AU как
+   универсальные (Apple Silicon и Intel), прогонит тесты и подпишет плагины
+   локальной подписью, чтобы macOS их запускала. Готовые плагины лежат в
+   `dist-mac/VST3` и `dist-mac/Components`.
+4. Установка: скопируйте `.vst3` в `~/Library/Audio/Plug-Ins/VST3/`, а
+   `.component` в `~/Library/Audio/Plug-Ins/Components/`. Или запустите
+   скрипт с `--install`: он скопирует их сам и проверит каждый Audio Unit
+   утилитой Apple `auval`.
+
+`--native` собирает только под процессор этого Mac, это примерно вдвое
+быстрее.
+
 ## Сборка из исходников
 
 Нужны CMake 3.22+ и компилятор C++20:
 
 - Windows: Visual Studio 2022 (MSVC). MinGW не поддерживается JUCE 9.
-- macOS: Xcode 15+.
+- macOS: Xcode 15+ или Command Line Tools.
 - Linux (только для тестов): GCC 12+ или Clang 15+, пакеты JUCE
   (`libasound2-dev libfreetype-dev libfontconfig1-dev libx11-dev libxrandr-dev
   libxinerama-dev libxcursor-dev libgl1-mesa-dev libcurl4-openssl-dev`).
