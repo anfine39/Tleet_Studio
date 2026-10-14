@@ -1,0 +1,183 @@
+{
+  "plugin": "WEIGHT",
+  "reference": { "file": "assets/reference/WEIGHT.png", "width": 1448, "height": 1086 },
+  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
+  "notes": "Every knob turns around the centre of its printed dot circle (the artwork's pointers pass through it). Continuous knobs keep their printed dots as scale marks; stepped knobs (attack, release, ratio) have their printed dots erased and get one live dot per real step. Every number printed on a knob scale is removed from the plate and drawn live at the angle where the parameter really has that value. Travel ends are the printed end dots.",
+  "controls": [
+    {
+      "id": "threshold", "type": "ROTARY", "parameter": "threshold",
+      "centre": [173.3, 584.4], "scaleCentre": [173.3, 584.4], "dotRadius": 73.7, "capRadius": 49, "rimRadius": 65,
+      "pointer": { "inner": 15, "outer": 58, "width": 4.5 },
+      "travelDegrees": [-114.4, 115.3], "hitbox": [93, 504, 160, 160],
+      "scaleLabels": { "values": [-20, -10, 0, 10], "gap": 10, "capHeight": 18 },
+      "erase": [[169, 485, 10, 19], [86, 514, 26, 18], [66, 608, 27, 18], [251, 608, 26, 18]],
+      "testId": "weight.knob.threshold"
+    },
+    {
+      "id": "attack", "type": "ROTARY_STEPPED", "parameter": "attack",
+      "centre": [455.8, 584.1], "scaleCentre": [455.8, 584.1], "dotRadius": 72.2, "capRadius": 49, "rimRadius": 65,
+      "pointer": { "inner": 15, "outer": 58, "width": 4.5 },
+      "travelDegrees": [-117.6, 115.5], "hitbox": [376, 504, 160, 160],
+      "scaleLabels": { "values": "steps", "gap": 10, "capHeight": 18 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[448, 485, 13, 19], [504, 503, 10, 19], [391, 504, 15, 18], [536, 551, 17, 18], [361, 552, 14, 18], [533, 609, 18, 18]],
+      "eraseDots": [[391.3, 617.9], [386.2, 593.0], [386.3, 569.7], [396.3, 545.9], [412.3, 526.0], [432.2, 515.4], [455.6, 511.4],
+                    [479.0, 515.0], [498.1, 525.8], [515.8, 545.6], [525.8, 568.8], [526.0, 592.5], [521.3, 615.4]],
+      "testId": "weight.knob.attack"
+    },
+    {
+      "id": "release", "type": "ROTARY_STEPPED", "parameter": "release",
+      "centre": [724.3, 583.9], "scaleCentre": [724.3, 583.9], "dotRadius": 71.9, "capRadius": 49, "rimRadius": 65,
+      "pointer": { "inner": 15, "outer": 58, "width": 4.5 },
+      "travelDegrees": [-117.9, 116.6], "hitbox": [644, 504, 160, 160],
+      "scaleLabels": { "values": "steps", "gap": 10, "capHeight": 18 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[721, 485, 9, 19], [660, 504, 15, 18], [774, 504, 10, 18], [804, 551, 17, 19], [630, 552, 14, 18], [801, 609, 17, 19]],
+      "eraseDots": [[660.2, 617.8], [654.8, 592.9], [655.0, 568.7], [665.0, 545.9], [681.6, 526.2], [701.4, 515.5], [724.6, 511.4],
+                    [747.7, 515.4], [766.8, 526.0], [784.1, 545.6], [793.6, 568.5], [794.2, 592.5], [789.0, 616.3]],
+      "testId": "weight.knob.release"
+    },
+    {
+      "id": "ratio", "type": "ROTARY_STEPPED", "parameter": "ratio",
+      "centre": [990.0, 584.4], "scaleCentre": [990.0, 584.4], "dotRadius": 72.2, "capRadius": 49, "rimRadius": 65,
+      "pointer": { "inner": 15, "outer": 58, "width": 4.5 },
+      "travelDegrees": [-117.3, 116.4], "hitbox": [910, 504, 160, 160],
+      "scaleLabels": { "values": "steps", "gap": 10, "capHeight": 18 },
+      "stepDots": { "radius": 3.2 },
+      "erase": [[984, 485, 11, 19], [921, 503, 22, 19], [1037, 504, 11, 18], [889, 551, 21, 18], [1070, 551, 16, 19], [1068, 612, 28, 14]],
+      "eraseDots": [[925.2, 617.9], [920.4, 593.0], [920.8, 568.6], [930.3, 545.9], [946.3, 527.0], [966.3, 515.8], [989.1, 511.3],
+                    [1012.9, 515.3], [1032.1, 525.8], [1049.8, 545.8], [1059.6, 568.5], [1060.5, 592.5], [1055.0, 616.7]],
+      "note": "The \":1\" under the knob is the unit and stays printed.",
+      "testId": "weight.knob.ratio"
+    },
+    {
+      "id": "makeup", "type": "ROTARY", "parameter": "makeup",
+      "centre": [1275.7, 584.5], "scaleCentre": [1275.7, 584.5], "dotRadius": 71.7, "capRadius": 49, "rimRadius": 65,
+      "pointer": { "inner": 15, "outer": 58, "width": 4.5 },
+      "travelDegrees": [-115.3, 115.4], "hitbox": [1196, 505, 160, 160],
+      "scaleLabels": { "values": [-12, -6, 0, 6, 12, 24], "gap": 10, "capHeight": 18 },
+      "erase": [[1272, 485, 10, 19], [1325, 507, 19, 19], [1207, 511, 17, 18], [1355, 556, 26, 18], [1172, 608, 26, 18], [1352, 611, 28, 18]],
+      "testId": "weight.knob.makeup"
+    },
+    {
+      "id": "thrust", "type": "LAMP_GROUP", "parameter": "thrust",
+      "buttons": [
+        { "label": "CLEAN",   "rect": [111, 790, 38, 23], "hitbox": [92, 748, 76, 80],  "sprite": "lit_thrust" },
+        { "label": "NEUTRAL", "rect": [187, 790, 39, 23], "hitbox": [168, 748, 76, 80], "sprite": "lit_thrust" },
+        { "label": "HARD",    "rect": [260, 790, 39, 23], "hitbox": [244, 748, 76, 80], "sprite": "lit_thrust" }
+      ],
+      "unlit": { "cell": [160, 780, 92, 46], "floor": [[151, 158], [253, 258]], "copyFrom": 0 },
+      "note": "One lamp per position; the lamp of the selected position is lit. A click on a lamp or its caption selects that position. The small mark under the middle lamp is printed artwork (UI_SPEC_CONFLICTS.md).",
+      "testId": "weight.lamps.thrust"
+    },
+    {
+      "id": "detector", "type": "LAMP_GROUP", "parameter": "detector",
+      "buttons": [
+        { "label": "FEED FORWARD", "rect": [460, 793, 40, 20], "hitbox": [398, 748, 140, 80], "sprite": "lit_ff" },
+        { "label": "FEED BACK",    "rect": [564, 789, 47, 24], "hitbox": [538, 748, 120, 80], "sprite": "lit_thrust" }
+      ],
+      "unlit": { "face": [438, 792, 87, 22], "faceFrom": [568, 791, 39, 22] },
+      "note": "FEED FORWARD is a lamp in a wide housing, FEED BACK a plain lamp button (as drawn). The lamp of the selected topology is lit.",
+      "testId": "weight.lamps.detector"
+    },
+    {
+      "id": "tone", "type": "LAMP_GROUP", "parameter": "tone",
+      "buttons": [
+        { "label": "OLD",     "rect": [762, 790, 39, 23], "hitbox": [742, 748, 80, 80], "sprite": "lit_tone" },
+        { "label": "NEUTRAL", "rect": [840, 790, 39, 23], "hitbox": [822, 748, 78, 80], "sprite": "lit_tone" },
+        { "label": "NEW",     "rect": [921, 790, 40, 23], "hitbox": [900, 748, 80, 80], "sprite": "lit_tone" }
+      ],
+      "unlit": { "cell": [813, 780, 94, 46], "floor": [[804, 812], [908, 916]], "copyFrom": 0 },
+      "testId": "weight.lamps.tone"
+    },
+    {
+      "id": "scHpf", "type": "ROTARY", "parameter": "scHpf",
+      "centre": [1131.0, 795.8], "scaleCentre": [1131.0, 795.8], "dotRadius": 45.8, "capRadius": 26, "rimRadius": 36,
+      "pointer": { "inner": 6, "outer": 26, "width": 3.5 },
+      "travelDegrees": [-115.7, 116.2], "hitbox": [1081, 746, 100, 100],
+      "scaleLabels": { "values": [20, 60, 120, 240], "gap": 8, "capHeight": 17 },
+      "erase": [[1094, 738, 16, 15], [1153, 738, 22, 15], [1062, 779, 17, 18], [1183, 779, 24, 18]], "erasePad": 1,
+      "testId": "weight.knob.schpf"
+    },
+    {
+      "id": "scExternal", "type": "LAMP_SWITCH", "parameter": "scExternal",
+      "hitbox": [1278, 748, 62, 82],
+      "lamp": { "rect": [1288, 756, 42, 42] },
+      "note": "A click toggles it. Lit only while the external key is really used (switch on and the host feeds the Sidechain bus); switched on with no key connected it glows faintly and the internal detector stays in use, like GLUE.",
+      "testId": "weight.switch.scexternal"
+    },
+    {
+      "id": "mix", "type": "ROTARY", "parameter": "mix",
+      "centre": [263.6, 972.2], "scaleCentre": [263.6, 972.2], "dotRadius": 56.7, "capRadius": 34, "rimRadius": 46,
+      "pointer": { "inner": 8, "outer": 33, "width": 3.8 },
+      "travelDegrees": [-117.7, 117.8], "hitbox": [208, 917, 112, 112],
+      "scaleLabels": { "values": [0, 50, 100], "gap": 8, "capHeight": 16 },
+      "erase": [[256, 902, 16, 16], [192, 992, 9, 18], [325, 992, 24, 18]],
+      "testId": "weight.knob.mix"
+    },
+    {
+      "id": "output", "type": "ROTARY", "parameter": "output",
+      "centre": [537.6, 973.4], "scaleCentre": [537.6, 973.4], "dotRadius": 54.6, "capRadius": 34, "rimRadius": 46,
+      "pointer": { "inner": 8, "outer": 33, "width": 3.8 },
+      "travelDegrees": [-112.6, 112.6], "hitbox": [482, 918, 112, 112], "mirrorAxisDegrees": 20,
+      "scaleLabels": { "values": [-12, -6, 0, 6, 12], "gap": 8, "capHeight": 16 },
+      "erase": [[534, 902, 9, 16], [470, 923, 18, 18], [586, 923, 19, 18], [448, 979, 25, 18], [601, 979, 26, 18]],
+      "testId": "weight.knob.output"
+    },
+    {
+      "id": "link", "type": "ROTARY", "parameter": "link",
+      "centre": [830.9, 972.5], "scaleCentre": [830.9, 972.5], "dotRadius": 56.3, "capRadius": 34, "rimRadius": 46,
+      "pointer": { "inner": 8, "outer": 33, "width": 3.8 },
+      "travelDegrees": [-117.3, 117.5], "hitbox": [775, 917, 112, 112],
+      "scaleLabels": { "values": [0, 50, 100], "gap": 8, "capHeight": 16 },
+      "erase": [[823, 902, 17, 16], [760, 992, 10, 18], [892, 992, 25, 18]],
+      "testId": "weight.knob.link"
+    },
+    {
+      "id": "grMode", "type": "LAMP_GROUP", "parameter": "grMode",
+      "buttons": [
+        { "label": "PEAK",    "rect": [1086, 981, 38, 23], "hitbox": [1070, 942, 70, 72],  "sprite": "lit_grmode" },
+        { "label": "RMS",     "rect": [1154, 981, 38, 23], "hitbox": [1140, 942, 66, 72],  "sprite": "lit_grmode" },
+        { "label": "AVERAGE", "rect": [1224, 981, 38, 23], "hitbox": [1206, 942, 76, 72],  "sprite": "lit_grmode" }
+      ],
+      "unlit": { "cell": [1131, 974, 84, 40], "floor": [[1127, 1133], [1213, 1220]], "copyFrom": 0 },
+      "note": "Chooses what both meters show (peak, RMS or average of the actual applied gain reduction); it never changes the audio.",
+      "testId": "weight.lamps.grmode"
+    },
+    {
+      "id": "grMeterL", "type": "ARC_LED_METER", "channel": 0, "telemetry": "grLeft (actual applied gain of the left channel)",
+      "arc": { "centre": [428.5, 3049.1], "railRadius": 2740.2, "segmentDepth": [5.2, 19.2] },
+      "scaleDegrees": { "0": 2.032, "1": 1.116, "3": -0.180, "5": -1.216, "7": -2.224, "10": -3.200, "20": -4.736 },
+      "segmentBoundaries": [0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8.5, 10, 13, 16, 20],
+      "unlitDegrees": [[2.032, 2.596], [2.596, 3.160], [3.160, 3.830], [3.830, 4.500], [4.500, 4.988], [4.988, 5.476]],
+      "segmentGap": 3,
+      "clearDegrees": [-5.495, 5.39],
+      "window": [150, 228, 552, 170],
+      "hitbox": [140, 215, 572, 195],
+      "note": "The printed scale reads like a VU scale (-20 ... 0 ... +3). Gain reduction g dB lights the bar from the 0 mark leftwards to the printed -g, as on the API 2500's GR meter. Segments right of 0 never light (gain reduction is never negative); they are drawn unlit so the bar keeps its drawn length (UI_SPEC_CONFLICTS.md).",
+      "testId": "weight.meter.gr.left"
+    },
+    {
+      "id": "grMeterR", "type": "ARC_LED_METER", "channel": 1, "telemetry": "grRight (actual applied gain of the right channel)",
+      "arc": { "centre": [1026.7, 2965.2], "railRadius": 2656.4, "segmentDepth": [5.2, 19.2] },
+      "scaleDegrees": { "0": 2.052, "1": 1.124, "3": -0.164, "5": -1.264, "7": -2.320, "10": -3.348, "20": -4.928 },
+      "segmentBoundaries": [0, 0.5, 1, 2, 3, 4, 5, 6, 7, 8.5, 10, 13, 16, 20],
+      "unlitDegrees": [[2.052, 2.634], [2.634, 3.216], [3.216, 3.914], [3.914, 4.612], [4.612, 5.116], [5.116, 5.620]],
+      "segmentGap": 3,
+      "clearDegrees": [-5.676, 5.454],
+      "window": [747, 228, 552, 170],
+      "hitbox": [737, 215, 572, 195],
+      "testId": "weight.meter.gr.right"
+    },
+    { "id": "sideLamps", "type": "STATIC", "note": "amber slots at the left and right edges of the meter and bottom sections: static artwork, like PUNCH's" },
+    { "id": "screws", "type": "STATIC" },
+    { "id": "title", "type": "STATIC" }
+  ],
+  "sprites": {
+    "lit_thrust": { "rect": [168, 780, 78, 46], "button": [187, 790, 39, 23] },
+    "lit_ff":     { "rect": [446, 783, 68, 40], "button": [460, 793, 40, 20] },
+    "lit_tone":   { "rect": [821, 780, 78, 46], "button": [840, 790, 39, 23] },
+    "lit_grmode": { "rect": [1139, 974, 68, 40], "button": [1154, 981, 38, 23] },
+    "lamp_ext":   { "rect": [1288, 756, 42, 42], "button": [1288, 756, 42, 42] }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Hot Drums",
+  "params": {
+    "input": 6.0,
+    "output": 0.0,
+    "tapeType": 2,
+    "speed": 1,
+    "calibration": 3,
+    "bias": -10.0,
+    "saturation": 70.0,
+    "headBump": 55.0,
+    "lf": 15.0,
+    "hf": 10.0,
+    "age": 10.0,
+    "wow": 4.0,
+    "flutter": 3.0,
+    "noise": 0,
+    "noiseAmount": 12.0,
+    "crosstalk": 6.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

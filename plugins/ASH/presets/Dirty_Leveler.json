@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Dirty Leveler",
+  "params": {
+    "peakReduction": 62,
+    "gain": 64,
+    "mode": 0,
+    "mix": 100,
+    "character": 95,
+    "output": -2
+  }
+}

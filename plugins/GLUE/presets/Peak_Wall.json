@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Peak Wall",
+  "params": {
+    "threshold": -4.0,
+    "attack": 0,
+    "release": 1,
+    "ratio": 4,
+    "makeup": 0.0,
+    "scHpf": 120.0,
+    "mix": 100.0,
+    "character": 0,
+    "dark": 0.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}

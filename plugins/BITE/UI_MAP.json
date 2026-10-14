@@ -1,0 +1,83 @@
+{
+  "plugin": "BITE",
+  "reference": { "file": "assets/reference/BITE.png", "width": 1448, "height": 1086 },
+  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
+  "notes": "Knobs are drawn in perspective: the pointer turns around the cap centre, the printed scale is centred on scaleCentre.",
+  "controls": [
+    {
+      "id": "input", "type": "ROTARY", "parameter": "input",
+      "centre": [219.7, 444.5], "scaleCentre": [227.1, 441.5], "capRadius": 76, "pointer": { "inner": 22, "outer": 80, "width": 7 },
+      "travelDegrees": [-123, 123], "hitbox": [112, 327, 230, 230],
+      "range": [-24, 24], "default": 0, "unit": "dB", "continuous": true, "automation": true, "persistent": true,
+      "testId": "bite.knob.input"
+    },
+    {
+      "id": "output", "type": "ROTARY", "parameter": "output",
+      "centre": [1225.3, 441.7], "scaleCentre": [1216.2, 439.6], "capRadius": 76, "pointer": { "inner": 20, "outer": 79, "width": 7 },
+      "travelDegrees": [-124, 124], "hitbox": [1101, 325, 230, 230],
+      "range": [-24, 24], "default": 0, "unit": "dB", "continuous": true, "automation": true, "persistent": true,
+      "testId": "bite.knob.output"
+    },
+    {
+      "id": "attack", "type": "ROTARY", "parameter": "attack",
+      "centre": [222.0, 728.0], "scaleCentre": [225.6, 731.7], "capRadius": 50, "pointer": { "inner": 9, "outer": 45, "width": 5 },
+      "travelDegrees": [-114, 87], "hitbox": [157, 663, 135, 135],
+      "range": [800, 20], "default": 250, "unit": "us", "continuous": true, "automation": true, "persistent": true,
+      "note": "clockwise = faster; printed .1-10 ms numbers are replaced by live labels",
+      "scaleLabels": { "degrees": [-114, -47, 1, 48.6, 87],
+                       "anchors": [[134, 766], [155, 668], [228, 639.5], [302.5, 668], [324.5, 730]],
+                       "unitAnchor": [229, 806.5], "textHeight": 17 },
+      "erase": [[123, 752, 22, 27], [142, 655, 24, 26], [220, 626, 16, 27], [294, 655, 17, 26], [312, 717, 26, 26], [215, 796, 30, 21]],
+      "testId": "bite.knob.attack"
+    },
+    {
+      "id": "release", "type": "ROTARY", "parameter": "release",
+      "centre": [1224.0, 729.75], "scaleCentre": [1217.1, 733.2], "capRadius": 48, "pointer": { "inner": 11, "outer": 45, "width": 5 },
+      "travelDegrees": [-114, 86], "hitbox": [1152, 662, 135, 135],
+      "range": [1100, 50], "default": 300, "unit": "ms", "continuous": true, "automation": true, "persistent": true,
+      "note": "clockwise = faster; printed .1-10 s numbers are replaced by live labels",
+      "scaleLabels": { "degrees": [-114, -46, 1.5, 47.7, 86],
+                       "anchors": [[1128, 765.5], [1146, 668.5], [1219.5, 639.5], [1291.5, 668], [1313, 730]],
+                       "unitAnchor": [1219, 806.5], "textHeight": 17 },
+      "erase": [[1117, 752, 22, 27], [1135, 655, 22, 27], [1212, 626, 15, 27], [1283, 655, 17, 26], [1301, 717, 25, 26], [1211, 796, 17, 21]],
+      "testId": "bite.knob.release"
+    },
+    {
+      "id": "mix", "type": "ROTARY", "parameter": "mix",
+      "centre": [220.25, 958.5], "scaleCentre": [222.0, 965.4], "capRadius": 42, "pointer": { "inner": 6, "outer": 38, "width": 5 },
+      "travelDegrees": [-106, 106], "hitbox": [160, 898, 122, 122],
+      "range": [0, 100], "default": 100, "unit": "%", "continuous": true, "automation": true, "persistent": true,
+      "testId": "bite.knob.mix"
+    },
+    {
+      "id": "character", "type": "ROTARY_STEPPED", "parameter": "character",
+      "centre": [722.0, 972.0], "capRadius": 49, "pointer": { "inner": 6, "outer": 44, "width": 5 },
+      "travelDegrees": [-65, 65], "hitbox": [660, 910, 124, 124],
+      "states": ["Clean", "TLEET", "Burn"], "default": "TLEET", "continuous": false, "automation": true, "persistent": true,
+      "testId": "bite.knob.character"
+    },
+    {
+      "id": "ratio", "type": "BUTTON_GROUP", "parameter": "ratio",
+      "states": ["4", "8", "12", "20", "ALL"], "default": "4", "continuous": false, "automation": true, "persistent": true,
+      "buttons": [[485, 682, 74, 72], [585, 682, 74, 72], [685, 682, 74, 72], [785, 682, 74, 72], [885, 682, 74, 72]],
+      "hitboxes": [[476, 645, 92, 118], [576, 645, 92, 118], [676, 645, 92, 118], [776, 645, 92, 118], [876, 645, 92, 118]],
+      "leds": [[505, 686, 34, 17], [605, 686, 34, 17], [706, 686, 34, 17], [805, 686, 34, 17], [905, 686, 36, 17]],
+      "cellPitch": 100, "litCell": [872, 662, 100, 116], "offCellSource": [772, 662, 100, 116],
+      "testId": "bite.buttons.ratio"
+    },
+    {
+      "id": "vu", "type": "VU", "telemetry": "grMeter / outputMeter",
+      "face": [461, 263, 978, 490], "pivot": [727.0, 720.0], "needleLength": 395,
+      "bakedNeedle": [[783, 488], [839, 349]],
+      "bandBottomY": 380, "bandTickStep": [36, 8],
+      "scaleDegrees": { "-20": -27.45, "-10": -21.44, "-7": -17.3, "-5": -11.54, "-3": -4.95, "-2": -0.86,
+                        "-1": 3.62, "0": 10.47, "1": 16.93, "2": 22.35, "3": 27.6 },
+      "modes": ["GR", "+4", "+8"], "modeLabelAnchor": [955, 482],
+      "hitbox": [455, 255, 530, 245],
+      "testId": "bite.meter.vu"
+    },
+    { "id": "screws", "type": "STATIC" },
+    { "id": "title",  "type": "STATIC" },
+    { "id": "sideHandles", "type": "STATIC", "note": "slots at the left and right edge" }
+  ]
+}

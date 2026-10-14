@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Snare Crack",
+  "params": {
+    "lfFreq": 3,
+    "lfBoost": 0.0,
+    "lfAtten": 3.0,
+    "hfFreq": 1,
+    "hfBoost": 5.0,
+    "hfBandwidth": 3.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 2.0,
+    "drive": 40.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": -1.0,
+    "eqIn": 1
+  }
+}

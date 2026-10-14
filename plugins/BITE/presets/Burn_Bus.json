@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Burn Bus",
+  "params": {
+    "input": 4.0,
+    "output": -1.0,
+    "attack": 500.0,
+    "release": 600.0,
+    "ratio": 0,
+    "mix": 70.0,
+    "character": 2
+  }
+}

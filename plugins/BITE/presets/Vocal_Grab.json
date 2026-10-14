@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Vocal Grab",
+  "params": {
+    "input": 4.0,
+    "output": -1.5,
+    "attack": 400.0,
+    "release": 120.0,
+    "ratio": 0,
+    "mix": 100.0,
+    "character": 1
+  }
+}

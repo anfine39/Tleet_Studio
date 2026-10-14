@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Room Mic Squash",
+  "params": {
+    "threshold": -12.0,
+    "ratio": 0.9,
+    "overEasy": 0,
+    "grit": 60.0,
+    "mix": 100.0,
+    "output": 4.0
+  }
+}

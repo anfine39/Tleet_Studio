@@ -1,0 +1,15 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "BITE",
+  "name": "Snare Crack",
+  "params": {
+    "input": 8.0,
+    "output": -3.0,
+    "attack": 800.0,
+    "release": 70.0,
+    "ratio": 2,
+    "mix": 100.0,
+    "character": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Peak Stop",
+  "params": {
+    "threshold": 4.0,
+    "ratio": 1.0,
+    "overEasy": 0,
+    "grit": 0.0,
+    "mix": 100.0,
+    "output": 0.0
+  }
+}

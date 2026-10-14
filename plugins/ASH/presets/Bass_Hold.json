@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Bass Hold",
+  "params": {
+    "peakReduction": 55,
+    "gain": 56,
+    "mode": 0,
+    "mix": 100,
+    "character": 60,
+    "output": 0
+  }
+}

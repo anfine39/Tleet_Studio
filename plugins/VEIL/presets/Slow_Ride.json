@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Slow Ride",
+  "params": {
+    "input": 0.0,
+    "threshold": -6.0,
+    "attack": 300.0,
+    "recovery": 2000.0,
+    "compress": 3.5,
+    "mix": 100.0,
+    "output": 1.5,
+    "tubeDrive": 28.0,
+    "harmonics": 42.0,
+    "saturation": 18.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 60.0,
+    "character": 1,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}

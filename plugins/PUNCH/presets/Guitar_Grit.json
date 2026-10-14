@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Guitar Grit",
+  "params": {
+    "threshold": -6.0,
+    "ratio": 0.875,
+    "overEasy": 0,
+    "grit": 80.0,
+    "mix": 100.0,
+    "output": 1.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "ASH",
+  "name": "Drum Room Squash",
+  "params": {
+    "peakReduction": 75,
+    "gain": 62,
+    "mode": 1,
+    "mix": 45,
+    "character": 80,
+    "output": 0
+  }
+}

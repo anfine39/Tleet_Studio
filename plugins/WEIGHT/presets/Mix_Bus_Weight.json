@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Mix Bus Weight",
+  "params": {
+    "threshold": 2.0,
+    "attack": 5,
+    "release": 3,
+    "ratio": 1,
+    "makeup": 1.5,
+    "thrust": 1,
+    "detector": 1,
+    "tone": 1,
+    "scHpf": 20.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 100.0,
+    "grMode": 1,
+    "scExternal": 0
+  }
+}

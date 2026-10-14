@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Slap Double",
+  "params": {
+    "voices": 0,
+    "mode": 0,
+    "detune": 3.0,
+    "delay": 40.0,
+    "humanize": 15.0,
+    "width": 70.0,
+    "hpf": 150.0,
+    "lpf": 7500.0,
+    "monoSafe": 1,
+    "autoLevel": 1,
+    "mix": 35.0,
+    "output": 2.5
+  }
+}

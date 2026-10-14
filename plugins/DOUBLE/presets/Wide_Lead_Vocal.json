@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "DOUBLE",
+  "name": "Wide Lead Vocal",
+  "params": {
+    "voices": 1,
+    "mode": 1,
+    "detune": 9.0,
+    "delay": 19.0,
+    "humanize": 40.0,
+    "width": 140.0,
+    "hpf": 140.0,
+    "lpf": 12000.0,
+    "monoSafe": 1,
+    "autoLevel": 1,
+    "mix": 38.0,
+    "output": 3.0
+  }
+}

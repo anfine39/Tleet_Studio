@@ -6,17 +6,17 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | Plugin | What it is | Status |
 |---|---|---|
 | **ASH** | Optical levelling amplifier (LA-2A family) | in progress |
-| BITE | FET compressor (1176 family) | planned |
-| GLUE | VCA bus compressor | planned |
-| PUNCH | Drum compressor | planned |
-| WEIGHT | Variable-mu compressor | planned |
-| VEIL | Vintage stereo compressor | planned |
-| SHAPE | Passive program EQ | planned |
-| ECHO | Tape echo | planned |
-| VOID | Reverb | planned |
-| DOUBLE | Doubler / chorus | planned |
-| STEEL | Mastering limiter | planned |
-| TAPE | Tape machine | planned |
+| **BITE** | FET limiting amplifier (1176 family) | in progress |
+| **GLUE** | VCA bus compressor (G-bus family) | in progress |
+| **PUNCH** | VCA compressor (dbx 160A family) | in progress |
+| **WEIGHT** | Stereo bus compressor (API 2500 family) | in progress |
+| **VEIL** | Variable-mu tube compressor (Manley Variable Mu family) | in progress |
+| **SHAPE** | Passive program EQ (Pultec EQP-1A family) | in progress |
+| **ECHO** | Multi-head tape echo with spring reverb (Roland RE-201 family) | in progress |
+| **VOID** | Algorithmic stereo reverb (Room, Plate, Chamber, Hall, Void; freeze, infinite decay) | in progress |
+| **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |
+| **STEEL** | True-peak mastering limiter (Clean, Punch, Dense, Steel; LUFS / LRA metering, delta, level match) | in progress |
+| **TAPE** | Multitrack tape machine (3 formulations, 7.5 / 15 / 30 IPS, bias, head bump, wow / flutter, hiss, crosstalk) | in progress |
 
 ## Principles
 

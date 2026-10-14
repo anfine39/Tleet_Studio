@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Vocal OverEasy",
+  "params": {
+    "threshold": -8.0,
+    "ratio": 0.6667,
+    "overEasy": 1,
+    "grit": 10.0,
+    "mix": 100.0,
+    "output": 2.0
+  }
+}

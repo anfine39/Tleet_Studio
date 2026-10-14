@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VOID",
+  "name": "Eternal Room",
+  "params": {
+    "algorithm": 0,
+    "color": 0,
+    "preDelay": 10.0,
+    "size": 45.0,
+    "decay": 60.0,
+    "diffusion": 80.0,
+    "drown": 0.0,
+    "modRate": 0.3,
+    "modDepth": 20.0,
+    "width": 100.0,
+    "hpf": 90.0,
+    "lpf": 11000.0,
+    "filterMode": 1,
+    "duck": 0.0,
+    "mix": 35.0,
+    "freeze": 0,
+    "output": -2.0
+  }
+}

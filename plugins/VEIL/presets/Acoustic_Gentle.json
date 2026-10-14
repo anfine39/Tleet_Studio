@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VEIL",
+  "name": "Acoustic Gentle",
+  "params": {
+    "input": 0.0,
+    "threshold": -6.0,
+    "attack": 100.0,
+    "recovery": 800.0,
+    "compress": 2.0,
+    "mix": 100.0,
+    "output": 1.0,
+    "tubeDrive": 10.0,
+    "harmonics": 20.0,
+    "saturation": 5.0,
+    "dryWet": 100.0,
+    "hpf": 20.0,
+    "scHpf": 100.0,
+    "character": 0,
+    "scExternal": 0,
+    "stereoLink": 1,
+    "meterMode": 0
+  }
+}

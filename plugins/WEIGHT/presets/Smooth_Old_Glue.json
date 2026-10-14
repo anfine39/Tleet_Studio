@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Smooth Old Glue",
+  "params": {
+    "threshold": -6.0,
+    "attack": 6,
+    "release": 5,
+    "ratio": 4,
+    "makeup": 4.5,
+    "thrust": 2,
+    "detector": 1,
+    "tone": 0,
+    "scHpf": 40.0,
+    "mix": 100.0,
+    "output": 0.0,
+    "link": 80.0,
+    "grMode": 2,
+    "scExternal": 0
+  }
+}

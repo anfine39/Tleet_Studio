@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Gentle Vocal Peak Catch",
+  "params": {
+    "input": 0.0,
+    "ceiling": -3.0,
+    "mode": 0,
+    "releaseMode": 1,
+    "release": 80.0,
+    "lookahead": 1.5,
+    "truePeak": 0,
+    "oversampling": 1,
+    "stereoLink": 100.0,
+    "softClip": 0,
+    "softClipAmount": 30.0,
+    "subFilter": 0,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

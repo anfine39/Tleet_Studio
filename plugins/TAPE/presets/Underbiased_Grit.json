@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Underbiased Grit",
+  "params": {
+    "input": 3.0,
+    "output": 0.0,
+    "tapeType": 2,
+    "speed": 0,
+    "calibration": 2,
+    "bias": -60.0,
+    "saturation": 55.0,
+    "headBump": 36.0,
+    "lf": 0.0,
+    "hf": -10.0,
+    "age": 25.0,
+    "wow": 8.0,
+    "flutter": 6.0,
+    "noise": 0,
+    "noiseAmount": 12.0,
+    "crosstalk": 8.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

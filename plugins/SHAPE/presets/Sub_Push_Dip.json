@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Sub Push Dip",
+  "params": {
+    "lfFreq": 0,
+    "lfBoost": 8.0,
+    "lfAtten": 5.0,
+    "hfFreq": 4,
+    "hfBoost": 0.0,
+    "hfBandwidth": 5.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 0.0,
+    "drive": 25.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": -2.0,
+    "eqIn": 1
+  }
+}

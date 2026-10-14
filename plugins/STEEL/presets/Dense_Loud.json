@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Dense Loud",
+  "params": {
+    "input": 9.0,
+    "ceiling": -1.0,
+    "mode": 2,
+    "releaseMode": 0,
+    "release": 180.0,
+    "lookahead": 3.0,
+    "truePeak": 1,
+    "oversampling": 2,
+    "stereoLink": 100.0,
+    "softClip": 1,
+    "softClipAmount": 50.0,
+    "subFilter": 2,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Burnt Drums",
+  "params": {
+    "lfFreq": 2,
+    "lfBoost": 5.0,
+    "lfAtten": 2.0,
+    "hfFreq": 3,
+    "hfBoost": 4.0,
+    "hfBandwidth": 5.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 1.0,
+    "drive": 60.0,
+    "character": 2,
+    "mix": 70.0,
+    "output": -2.0,
+    "eqIn": 1
+  }
+}

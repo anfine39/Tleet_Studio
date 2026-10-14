@@ -1,0 +1,20 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "GLUE",
+  "name": "Drum Bus Punch",
+  "params": {
+    "threshold": -14.0,
+    "attack": 5,
+    "release": 0,
+    "ratio": 2,
+    "makeup": 3.0,
+    "scHpf": 80.0,
+    "mix": 100.0,
+    "character": 1,
+    "dark": 0.0,
+    "crush": 0.0,
+    "output": 0.0,
+    "scExternal": 0
+  }
+}

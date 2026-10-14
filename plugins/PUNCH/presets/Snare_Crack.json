@@ -1,0 +1,14 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "PUNCH",
+  "name": "Snare Crack",
+  "params": {
+    "threshold": -4.0,
+    "ratio": 0.8333,
+    "overEasy": 0,
+    "grit": 40.0,
+    "mix": 100.0,
+    "output": 1.5
+  }
+}

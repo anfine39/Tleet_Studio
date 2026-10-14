@@ -1,0 +1,75 @@
+{
+  "plugin": "PUNCH",
+  "reference": { "file": "assets/reference/PUNCH.png", "width": 1448, "height": 1086 },
+  "coordinateSpace": "reference pixels; the editor panel draws the reference at 0.75 (1086 x 815 at 100 %)",
+  "notes": "Knobs are drawn in slight perspective: the pointer turns around the cap centre, the printed scale dots sit on a circle around scaleCentre. The printed dots stay (scale marks); every number printed on a knob scale is removed from the plate and drawn live at the angle where the parameter really has that value. Travel ends are the printed end dots seen from the cap centre.",
+  "controls": [
+    {
+      "id": "threshold", "type": "ROTARY", "parameter": "threshold",
+      "centre": [175.6, 783.5], "scaleCentre": [181.0, 777.2], "dotRadius": 97.7, "capRadius": 64, "rimRadius": 92,
+      "pointer": { "inner": 26, "outer": 86, "width": 6.5 },
+      "travelDegrees": [-127.1, 124.2], "hitbox": [91, 699, 170, 170],
+      "scaleLabels": { "values": [-20, -10, 0, 10], "gap": 11, "capHeight": 18 },
+      "erase": [[171, 644, 19, 28], [61, 692, 40, 28], [55, 831, 41, 28], [262, 831, 41, 28]],
+      "testId": "punch.knob.threshold"
+    },
+    {
+      "id": "ratio", "type": "ROTARY", "parameter": "ratio",
+      "centre": [462.2, 783.3], "scaleCentre": [462.5, 775.3], "dotRadius": 93.4, "capRadius": 65, "rimRadius": 92,
+      "pointer": { "inner": 24, "outer": 81, "width": 6.5 },
+      "travelDegrees": [-125.0, 125.0], "hitbox": [377, 698, 170, 170],
+      "scaleLabels": { "ratios": [1, 2, 4, 8, "inf"], "gap": 11, "capHeight": 18 },
+      "erase": [[452, 644, 20, 28], [351, 710, 20, 29], [554, 710, 19, 29], [359, 831, 18, 28], [546, 831, 31, 28]],
+      "testId": "punch.knob.ratio"
+    },
+    {
+      "id": "overEasy", "type": "LAMP_SWITCH", "parameter": "overEasy",
+      "hitbox": [648, 632, 152, 100],
+      "lamp": { "rect": [703, 647, 42, 36], "core": [716, 665, 17, 9] },
+      "states": ["OFF", "ON"],
+      "note": "Rocker with a lamp in its upper half: the printed lamp (lit on the artwork) is darkened on the plate and drawn lit, from the artwork, only while OverEasy is on. A click anywhere on the switch or its OFF/ON captions toggles it.",
+      "testId": "punch.switch.overeasy"
+    },
+    {
+      "id": "grit", "type": "ROTARY", "parameter": "grit",
+      "centre": [723.5, 881.0], "scaleCentre": [722.2, 878.5], "dotRadius": 56.9, "capRadius": 36, "rimRadius": 47,
+      "pointer": { "inner": 11, "outer": 39, "width": 4.5 },
+      "travelDegrees": [-116.7, 117.8], "hitbox": [673, 831, 100, 100],
+      "note": "CLEAN / PUNCH are the names of the travel ends, not values: they stay printed.",
+      "testId": "punch.knob.grit"
+    },
+    {
+      "id": "mix", "type": "ROTARY", "parameter": "mix",
+      "centre": [986.3, 786.4], "scaleCentre": [984.2, 777.9], "dotRadius": 91.2, "capRadius": 59.5, "rimRadius": 87,
+      "pointer": { "inner": 25, "outer": 80, "width": 6.5 },
+      "travelDegrees": [-112.0, 113.1], "hitbox": [901, 701, 170, 170],
+      "scaleLabels": { "values": [0, 50, 100], "gap": 11, "capHeight": 18 },
+      "erase": [[971, 648, 30, 29], [883, 836, 18, 29], [1057, 836, 41, 29]],
+      "testId": "punch.knob.mix"
+    },
+    {
+      "id": "output", "type": "ROTARY", "parameter": "output",
+      "centre": [1268.6, 785.6], "scaleCentre": [1263.8, 776.8], "dotRadius": 93.8, "capRadius": 61.7, "rimRadius": 89,
+      "pointer": { "inner": 26, "outer": 82, "width": 6.5 },
+      "travelDegrees": [-124.7, 127.4], "hitbox": [1183, 700, 170, 170],
+      "scaleLabels": { "values": [-20, -10, 0, 10, 20], "gap": 11, "capHeight": 18 },
+      "erase": [[1255, 644, 19, 28], [1144, 705, 40, 28], [1343, 699, 43, 28], [1145, 836, 41, 28], [1343, 833, 43, 28]],
+      "testId": "punch.knob.output"
+    },
+    {
+      "id": "grMeter", "type": "LED_METER", "telemetry": "grMeter (actual applied VCA gain)",
+      "scale": { "0": 404.4, "1": 451.5, "2": 497.4, "3": 548.5, "4": 599.8, "6": 652.5, "8": 705.5,
+                 "10": 754.5, "12": 804.8, "14": 858.2, "16": 910.4, "18": 972.1, "20": 1034.9 },
+      "majorTicks": [0, 2, 4, 8, 12, 16, 20],
+      "segmentBoundaries": [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "segmentRow": [440, 455], "segmentGap": 3,
+      "window": [348, 322, 752, 196],
+      "hitbox": [345, 320, 760, 200],
+      "note": "The printed scale is expanded below 4 dB (1 dB per tick) and 2 dB per tick above. Segments follow it: 0.5 dB each up to 4 dB, 1 dB each up to 20 dB, so the lit bar ends at the printed value of the actual reduction.",
+      "testId": "punch.meter.gr"
+    },
+    { "id": "sideLamps", "type": "STATIC", "note": "amber slots left and right of the meter and the bar at the window's right edge: static artwork (UI_SPEC_CONFLICTS.md)" },
+    { "id": "screws", "type": "STATIC" },
+    { "id": "title", "type": "STATIC" }
+  ]
+}

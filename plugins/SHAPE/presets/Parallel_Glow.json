@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Parallel Glow",
+  "params": {
+    "lfFreq": 2,
+    "lfBoost": 3.0,
+    "lfAtten": 0.0,
+    "hfFreq": 4,
+    "hfBoost": 3.0,
+    "hfBandwidth": 6.0,
+    "hfAttenFreq": 2,
+    "hfAtten": 0.0,
+    "drive": 70.0,
+    "character": 2,
+    "mix": 40.0,
+    "output": 0.0,
+    "eqIn": 1
+  }
+}

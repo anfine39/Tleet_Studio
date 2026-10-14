@@ -1,0 +1,22 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "WEIGHT",
+  "name": "Room Pump",
+  "params": {
+    "threshold": -10.0,
+    "attack": 4,
+    "release": 1,
+    "ratio": 5,
+    "makeup": 8.0,
+    "thrust": 0,
+    "detector": 0,
+    "tone": 2,
+    "scHpf": 20.0,
+    "mix": 60.0,
+    "output": 0.0,
+    "link": 100.0,
+    "grMode": 1,
+    "scExternal": 0
+  }
+}

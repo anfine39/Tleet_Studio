@@ -1,0 +1,1117 @@
+{
+ "plugin": "STEEL",
+ "reference": {
+  "file": "ui/UI_REFERENCE.png",
+  "width": 1536,
+  "height": 1024
+ },
+ "units": "reference pixels (1536x1024 mockup); the editor shows the panel at 0.75 at 100 %",
+ "controls": [
+  {
+   "id": "input",
+   "type": "ROTARY",
+   "parameter": "input",
+   "centre": [
+    140.9,
+    342.6
+   ],
+   "scaleCentre": [
+    140.9,
+    342.6
+   ],
+   "dotRadius": 93.3,
+   "capRadius": 74,
+   "rimRadius": 84,
+   "pointer": {
+    "inner": 27,
+    "outer": 74,
+    "width": 5.0
+   },
+   "travelDegrees": [
+    -136.7,
+    136.7
+   ],
+   "hitbox": [
+    41,
+    243,
+    200,
+    200
+   ],
+   "stepDots": {
+    "radius": 2.6,
+    "count": 13
+   },
+   "readout": [
+    80,
+    435,
+    119,
+    41
+   ],
+   "readoutCapHeight": 15.0,
+   "eraseReadout": [
+    85,
+    439,
+    109,
+    33
+   ],
+   "testId": "steel.knob.input"
+  },
+  {
+   "id": "ceiling",
+   "type": "ROTARY",
+   "parameter": "ceiling",
+   "centre": [
+    1398.3,
+    342.7
+   ],
+   "scaleCentre": [
+    1398.3,
+    342.7
+   ],
+   "dotRadius": 93.4,
+   "capRadius": 74,
+   "rimRadius": 84,
+   "pointer": {
+    "inner": 27,
+    "outer": 74,
+    "width": 5.0
+   },
+   "travelDegrees": [
+    -136.7,
+    136.7
+   ],
+   "hitbox": [
+    1298,
+    243,
+    200,
+    200
+   ],
+   "stepDots": {
+    "radius": 2.6,
+    "count": 13
+   },
+   "readout": [
+    1340,
+    435,
+    119,
+    40
+   ],
+   "readoutCapHeight": 15.0,
+   "eraseReadout": [
+    1345,
+    439,
+    109,
+    32
+   ],
+   "testId": "steel.knob.ceiling"
+  },
+  {
+   "id": "release",
+   "type": "ROTARY",
+   "parameter": "release",
+   "centre": [
+    802.7,
+    584.0
+   ],
+   "scaleCentre": [
+    802.7,
+    584.0
+   ],
+   "dotRadius": 38.9,
+   "capRadius": 28,
+   "rimRadius": 33,
+   "pointer": {
+    "inner": 8,
+    "outer": 25,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -135.3,
+    135.3
+   ],
+   "hitbox": [
+    757,
+    538,
+    92,
+    92
+   ],
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    758,
+    630,
+    90,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "eraseReadout": [
+    763,
+    634,
+    80,
+    19
+   ],
+   "testId": "steel.knob.release",
+   "scaleLabels": {
+    "values": [
+     20,
+     250,
+     1000
+    ],
+    "gap": 11,
+    "capHeight": 12
+   },
+   "erase": [
+    [
+     753,
+     609,
+     18,
+     15
+    ],
+    [
+     834,
+     609,
+     20,
+     15
+    ],
+    [
+     788,
+     521,
+     29,
+     17
+    ]
+   ]
+  },
+  {
+   "id": "lookahead",
+   "type": "ROTARY",
+   "parameter": "lookahead",
+   "centre": [
+    946.7,
+    583.9
+   ],
+   "scaleCentre": [
+    946.7,
+    583.9
+   ],
+   "dotRadius": 38.9,
+   "capRadius": 28,
+   "rimRadius": 33,
+   "pointer": {
+    "inner": 8,
+    "outer": 25,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -135.3,
+    135.3
+   ],
+   "hitbox": [
+    901,
+    538,
+    92,
+    92
+   ],
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    902,
+    630,
+    90,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "eraseReadout": [
+    907,
+    634,
+    80,
+    19
+   ],
+   "testId": "steel.knob.lookahead",
+   "scaleLabels": {
+    "values": [
+     0,
+     10
+    ],
+    "gap": 11,
+    "capHeight": 12
+   },
+   "erase": [
+    [
+     899,
+     609,
+     13,
+     15
+    ],
+    [
+     978,
+     609,
+     19,
+     15
+    ]
+   ]
+  },
+  {
+   "id": "stereoLink",
+   "type": "ROTARY",
+   "parameter": "stereoLink",
+   "centre": [
+    1428.9,
+    584.4
+   ],
+   "scaleCentre": [
+    1428.9,
+    584.4
+   ],
+   "dotRadius": 39.3,
+   "capRadius": 28,
+   "rimRadius": 33,
+   "pointer": {
+    "inner": 8,
+    "outer": 25,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -135.3,
+    135.3
+   ],
+   "hitbox": [
+    1383,
+    538,
+    92,
+    92
+   ],
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    1385,
+    631,
+    87,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "eraseReadout": [
+    1390,
+    635,
+    77,
+    19
+   ],
+   "testId": "steel.knob.stereolink",
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 11,
+    "capHeight": 12
+   },
+   "erase": [
+    [
+     1381,
+     610,
+     13,
+     16
+    ],
+    [
+     1460,
+     610,
+     24,
+     16
+    ]
+   ]
+  },
+  {
+   "id": "softClipAmount",
+   "type": "ROTARY",
+   "parameter": "softClipAmount",
+   "centre": [
+    201.8,
+    743.3
+   ],
+   "scaleCentre": [
+    201.8,
+    743.3
+   ],
+   "dotRadius": 42.3,
+   "capRadius": 28,
+   "rimRadius": 33,
+   "pointer": {
+    "inner": 8,
+    "outer": 25,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -135.3,
+    135.3
+   ],
+   "hitbox": [
+    156,
+    697,
+    92,
+    92
+   ],
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    156,
+    795,
+    91,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "eraseReadout": [
+    161,
+    799,
+    81,
+    19
+   ],
+   "testId": "steel.knob.softclipamount",
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 11,
+    "capHeight": 12
+   },
+   "erase": [
+    [
+     152,
+     772,
+     14,
+     17
+    ],
+    [
+     233,
+     772,
+     25,
+     17
+    ]
+   ]
+  },
+  {
+   "id": "output",
+   "type": "ROTARY",
+   "parameter": "output",
+   "centre": [
+    1429.1,
+    749.8
+   ],
+   "scaleCentre": [
+    1429.1,
+    749.8
+   ],
+   "dotRadius": 40.0,
+   "capRadius": 28,
+   "rimRadius": 33,
+   "pointer": {
+    "inner": 8,
+    "outer": 25,
+    "width": 3.6
+   },
+   "travelDegrees": [
+    -135.3,
+    135.3
+   ],
+   "hitbox": [
+    1383,
+    704,
+    92,
+    92
+   ],
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    1386,
+    799,
+    86,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "eraseReadout": [
+    1391,
+    803,
+    76,
+    19
+   ],
+   "testId": "steel.knob.output",
+   "scaleLabels": {
+    "values": [
+     -12,
+     12
+    ],
+    "gap": 11,
+    "capHeight": 12
+   },
+   "erase": [
+    [
+     1373,
+     775,
+     24,
+     18
+    ],
+    [
+     1460,
+     775,
+     25,
+     18
+    ]
+   ]
+  },
+  {
+   "id": "mode",
+   "type": "BUTTON_GROUP",
+   "parameter": "mode",
+   "litInArtwork": 3,
+   "copyFrom": 2,
+   "buttons": [
+    {
+     "label": "CLEAN",
+     "body": [
+      62,
+      573,
+      87,
+      49
+     ],
+     "hitbox": [
+      60,
+      571,
+      91,
+      53
+     ]
+    },
+    {
+     "label": "PUNCH",
+     "body": [
+      171,
+      573,
+      89,
+      49
+     ],
+     "hitbox": [
+      169,
+      571,
+      93,
+      53
+     ]
+    },
+    {
+     "label": "DENSE",
+     "body": [
+      281,
+      573,
+      90,
+      49
+     ],
+     "hitbox": [
+      279,
+      571,
+      94,
+      53
+     ]
+    },
+    {
+     "label": "STEEL",
+     "body": [
+      391,
+      573,
+      91,
+      49
+     ],
+     "hitbox": [
+      389,
+      571,
+      95,
+      53
+     ]
+    }
+   ],
+   "testId": "steel.buttons.mode"
+  },
+  {
+   "id": "releaseMode",
+   "type": "BUTTON_GROUP",
+   "parameter": "releaseMode",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "AUTO",
+     "body": [
+      549,
+      572,
+      91,
+      50
+     ],
+     "hitbox": [
+      547,
+      570,
+      95,
+      54
+     ]
+    },
+    {
+     "label": "MANUAL",
+     "body": [
+      649,
+      572,
+      91,
+      50
+     ],
+     "hitbox": [
+      647,
+      570,
+      95,
+      54
+     ]
+    }
+   ],
+   "testId": "steel.buttons.releasemode"
+  },
+  {
+   "id": "oversampling",
+   "type": "BUTTON_GROUP",
+   "parameter": "oversampling",
+   "litInArtwork": 2,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "1x",
+     "body": [
+      1152,
+      568,
+      42,
+      53
+     ],
+     "hitbox": [
+      1150,
+      566,
+      46,
+      57
+     ]
+    },
+    {
+     "label": "2x",
+     "body": [
+      1199,
+      568,
+      42,
+      53
+     ],
+     "hitbox": [
+      1197,
+      566,
+      46,
+      57
+     ]
+    },
+    {
+     "label": "4x",
+     "body": [
+      1247,
+      568,
+      43,
+      53
+     ],
+     "hitbox": [
+      1245,
+      566,
+      47,
+      57
+     ]
+    },
+    {
+     "label": "8x",
+     "body": [
+      1296,
+      568,
+      43,
+      53
+     ],
+     "hitbox": [
+      1294,
+      566,
+      47,
+      57
+     ]
+    }
+   ],
+   "testId": "steel.buttons.oversampling"
+  },
+  {
+   "id": "subFilter",
+   "type": "BUTTON_GROUP",
+   "parameter": "subFilter",
+   "litInArtwork": 1,
+   "copyFrom": 2,
+   "buttons": [
+    {
+     "label": "OFF",
+     "body": [
+      298,
+      731,
+      37,
+      54
+     ],
+     "hitbox": [
+      296,
+      729,
+      41,
+      58
+     ]
+    },
+    {
+     "label": "20",
+     "body": [
+      341,
+      731,
+      37,
+      54
+     ],
+     "hitbox": [
+      339,
+      729,
+      41,
+      58
+     ]
+    },
+    {
+     "label": "25",
+     "body": [
+      384,
+      731,
+      37,
+      54
+     ],
+     "hitbox": [
+      382,
+      729,
+      41,
+      58
+     ]
+    },
+    {
+     "label": "30",
+     "body": [
+      426,
+      731,
+      38,
+      54
+     ],
+     "hitbox": [
+      424,
+      729,
+      42,
+      58
+     ]
+    }
+   ],
+   "testId": "steel.buttons.subfilter"
+  },
+  {
+   "id": "truePeak",
+   "type": "TOGGLE",
+   "parameter": "truePeak",
+   "body": [
+    1050,
+    576,
+    47,
+    45
+   ],
+   "litInArtwork": true,
+   "darkDonor": [
+    1199,
+    568,
+    42,
+    53
+   ],
+   "glyph": "ON",
+   "hitbox": [
+    1046,
+    572,
+    55,
+    53
+   ],
+   "testId": "steel.button.truepeak"
+  },
+  {
+   "id": "softClip",
+   "type": "TOGGLE",
+   "parameter": "softClip",
+   "body": [
+    68,
+    734,
+    57,
+    45
+   ],
+   "litInArtwork": true,
+   "darkDonor": [
+    384,
+    731,
+    37,
+    54
+   ],
+   "glyph": "ON",
+   "hitbox": [
+    64,
+    730,
+    65,
+    53
+   ],
+   "testId": "steel.button.softclip"
+  },
+  {
+   "id": "delta",
+   "type": "TOGGLE",
+   "parameter": "delta",
+   "body": [
+    1149,
+    735,
+    67,
+    53
+   ],
+   "litInArtwork": false,
+   "darkDonor": null,
+   "glyph": "phase",
+   "hitbox": [
+    1145,
+    731,
+    75,
+    61
+   ],
+   "testId": "steel.button.delta"
+  },
+  {
+   "id": "levelMatch",
+   "type": "TOGGLE",
+   "parameter": "levelMatch",
+   "body": [
+    1258,
+    735,
+    72,
+    53
+   ],
+   "litInArtwork": false,
+   "darkDonor": null,
+   "glyph": "speaker",
+   "hitbox": [
+    1254,
+    731,
+    80,
+    61
+   ],
+   "testId": "steel.button.levelmatch"
+  },
+  {
+   "id": "history",
+   "type": "HISTORY",
+   "plot": [
+    400,
+    251,
+    720,
+    201
+   ],
+   "grStrip": [
+    400,
+    214,
+    720,
+    30
+   ],
+   "erase": [
+    [
+     397,
+     212,
+     727,
+     244
+    ]
+   ],
+   "scale": {
+    "0": 251.0,
+    "-6": 276.125,
+    "-12": 301.25,
+    "-18": 326.375,
+    "-24": 351.5,
+    "-30": 376.625,
+    "-36": 401.75,
+    "-42": 426.875,
+    "-48": 452.0
+   },
+   "eraseScale": [
+    [
+     349,
+     240,
+     48,
+     220
+    ],
+    [
+     1128,
+     240,
+     16,
+     220
+    ],
+    [
+     1194,
+     240,
+     62,
+     220
+    ]
+   ],
+   "scaleX": [
+    [
+     352,
+     382
+    ],
+    [
+     1222,
+     1252
+    ]
+   ],
+   "timeLabels": {
+    "y": 461.5,
+    "x": [
+     400.0,
+     580.0,
+     760.0,
+     940.0,
+     1120.0
+    ]
+   },
+   "eraseTime": [
+    [
+     380,
+     452,
+     750,
+     20
+    ]
+   ],
+   "seconds": 10.0,
+   "hitbox": [
+    400,
+    212,
+    720,
+    244
+   ],
+   "testId": "steel.display.history"
+  },
+  {
+   "id": "meters",
+   "type": "BAR_METERS",
+   "in": [
+    [
+     291,
+     249,
+     5,
+     208
+    ],
+    [
+     299,
+     249,
+     5,
+     208
+    ],
+    [
+     315,
+     249,
+     5,
+     208
+    ],
+    [
+     323,
+     249,
+     5,
+     208
+    ]
+   ],
+   "out": [
+    [
+     1153,
+     249,
+     6,
+     208
+    ],
+    [
+     1161,
+     249,
+     6,
+     208
+    ],
+    [
+     1177,
+     249,
+     6,
+     208
+    ],
+    [
+     1185,
+     249,
+     6,
+     208
+    ]
+   ],
+   "litTopArt": {
+    "in": [
+     272,
+     272,
+     272,
+     272
+    ],
+    "out": [
+     272,
+     272,
+     272,
+     272
+    ]
+   },
+   "scale": {
+    "0": 251.0,
+    "-6": 276.125,
+    "-12": 301.25,
+    "-18": 326.375,
+    "-24": 351.5,
+    "-30": 376.625,
+    "-36": 401.75,
+    "-42": 426.875,
+    "-48": 452.0
+   },
+   "hitboxIn": [
+    286,
+    240,
+    48,
+    222
+   ],
+   "hitboxOut": [
+    1148,
+    240,
+    48,
+    222
+   ],
+   "testId": "steel.meters"
+  },
+  {
+   "id": "loudness",
+   "type": "READOUT_PANEL",
+   "frame": [
+    484,
+    683,
+    620,
+    140
+   ],
+   "values": [
+    {
+     "id": "lufsI",
+     "rect": [
+      490,
+      706,
+      109,
+      48
+     ]
+    },
+    {
+     "id": "lufsS",
+     "rect": [
+      611,
+      706,
+      105,
+      48
+     ]
+    },
+    {
+     "id": "lra",
+     "rect": [
+      728,
+      706,
+      104,
+      48
+     ]
+    },
+    {
+     "id": "truePeak",
+     "rect": [
+      844,
+      706,
+      111,
+      48
+     ]
+    },
+    {
+     "id": "gainReduction",
+     "rect": [
+      967,
+      706,
+      131,
+      48
+     ]
+    }
+   ],
+   "valueCapHeight": 30.0,
+   "hitbox": [
+    486,
+    685,
+    616,
+    136
+   ],
+   "testId": "steel.display.loudness"
+  },
+  {
+   "id": "spectrum",
+   "type": "SPECTRUM",
+   "screen": [
+    251,
+    871,
+    615,
+    83
+   ],
+   "labelStrip": [
+    240,
+    961,
+    640,
+    17
+   ],
+   "erase": [
+    [
+     252,
+     872,
+     613,
+     81
+    ]
+   ],
+   "eraseLabels": [
+    [
+     238,
+     960,
+     644,
+     19
+    ]
+   ],
+   "inset": 0,
+   "frequencies": [
+    20,
+    50,
+    100,
+    200,
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000
+   ],
+   "hitbox": [
+    251,
+    871,
+    615,
+    83
+   ],
+   "testId": "steel.display.spectrum"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "TAPE",
+  "name": "Mix Bus Sheen",
+  "params": {
+    "input": 0.0,
+    "output": 0.0,
+    "tapeType": 2,
+    "speed": 2,
+    "calibration": 2,
+    "bias": 15.0,
+    "saturation": 35.0,
+    "headBump": 30.0,
+    "lf": 0.0,
+    "hf": 15.0,
+    "age": 0.0,
+    "wow": 2.0,
+    "flutter": 2.0,
+    "noise": 0,
+    "noiseAmount": 12.0,
+    "crosstalk": 4.0,
+    "mix": 100.0,
+    "autoGain": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Guitar Polish",
+  "params": {
+    "lfFreq": 3,
+    "lfBoost": 2.0,
+    "lfAtten": 4.0,
+    "hfFreq": 2,
+    "hfBoost": 3.0,
+    "hfBandwidth": 3.0,
+    "hfAttenFreq": 1,
+    "hfAtten": 2.0,
+    "drive": 30.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": 0.0,
+    "eqIn": 1
+  }
+}

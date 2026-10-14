@@ -1,0 +1,21 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "SHAPE",
+  "name": "Warm Roll-Off",
+  "params": {
+    "lfFreq": 2,
+    "lfBoost": 3.0,
+    "lfAtten": 0.0,
+    "hfFreq": 4,
+    "hfBoost": 0.0,
+    "hfBandwidth": 5.0,
+    "hfAttenFreq": 0,
+    "hfAtten": 4.0,
+    "drive": 35.0,
+    "character": 1,
+    "mix": 100.0,
+    "output": 0.5,
+    "eqIn": 1
+  }
+}
