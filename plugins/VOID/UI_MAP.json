@@ -1,0 +1,1422 @@
+{
+ "plugin": "VOID",
+ "reference": {
+  "file": "ui/UI_REFERENCE.png",
+  "width": 1536,
+  "height": 1024
+ },
+ "units": "reference pixels (1536x1024 mockup); the editor shows the panel at 0.75 at 100 %",
+ "controls": [
+  {
+   "id": "algorithm",
+   "type": "ROTARY_STEPPED",
+   "parameter": "algorithm",
+   "centre": [
+    137.8,
+    317.6
+   ],
+   "scaleCentre": [
+    137.8,
+    317.6
+   ],
+   "dotRadius": 76.6,
+   "capRadius": 62,
+   "rimRadius": 70,
+   "pointer": {
+    "inner": 22,
+    "outer": 64,
+    "width": 4.6
+   },
+   "travelDegrees": [
+    -120.0,
+    120.0
+   ],
+   "hitbox": [
+    60,
+    240,
+    156,
+    156
+   ],
+   "stepDots": {
+    "radius": 2.6
+   },
+   "testId": "void.knob.algorithm"
+  },
+  {
+   "id": "colorKnob",
+   "type": "ROTARY_STEPPED",
+   "parameter": "color",
+   "centre": [
+    1422.6,
+    317.5
+   ],
+   "scaleCentre": [
+    1422.6,
+    317.5
+   ],
+   "dotRadius": 72.3,
+   "capRadius": 58,
+   "rimRadius": 64,
+   "pointer": {
+    "inner": 21,
+    "outer": 61,
+    "width": 4.4
+   },
+   "travelDegrees": [
+    -60.0,
+    60.0
+   ],
+   "hitbox": [
+    1351,
+    246,
+    144,
+    144
+   ],
+   "stepDots": {
+    "radius": 2.6
+   },
+   "testId": "void.knob.color"
+  },
+  {
+   "id": "preDelay",
+   "type": "ROTARY",
+   "parameter": "preDelay",
+   "centre": [
+    117.6,
+    564.4
+   ],
+   "scaleCentre": [
+    117.6,
+    564.4
+   ],
+   "dotRadius": 54.5,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    68,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     250
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    73,
+    636,
+    82,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     57,
+     623,
+     13,
+     13
+    ],
+    [
+     147,
+     623,
+     27,
+     13
+    ],
+    [
+     100,
+     642,
+     50,
+     16
+    ]
+   ],
+   "testId": "void.knob.predelay"
+  },
+  {
+   "id": "size",
+   "type": "ROTARY",
+   "parameter": "size",
+   "centre": [
+    267.8,
+    564.3
+   ],
+   "scaleCentre": [
+    267.8,
+    564.3
+   ],
+   "dotRadius": 54.7,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    218,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    230,
+    636,
+    77,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     214,
+     623,
+     12,
+     13
+    ],
+    [
+     302,
+     623,
+     26,
+     13
+    ],
+    [
+     252,
+     642,
+     40,
+     16
+    ]
+   ],
+   "testId": "void.knob.size"
+  },
+  {
+   "id": "decay",
+   "type": "ROTARY",
+   "parameter": "decay",
+   "centre": [
+    421.1,
+    564.0
+   ],
+   "scaleCentre": [
+    421.1,
+    564.0
+   ],
+   "dotRadius": 54.5,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    371,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0.1,
+     60
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    383,
+    636,
+    75,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     359,
+     623,
+     25,
+     13
+    ],
+    [
+     459,
+     624,
+     24,
+     10
+    ],
+    [
+     402,
+     642,
+     46,
+     16
+    ]
+   ],
+   "testId": "void.knob.decay"
+  },
+  {
+   "id": "diffusion",
+   "type": "ROTARY",
+   "parameter": "diffusion",
+   "centre": [
+    578.9,
+    564.2
+   ],
+   "scaleCentre": [
+    578.9,
+    564.2
+   ],
+   "dotRadius": 54.5,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    529,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    540,
+    636,
+    75,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     521,
+     623,
+     13,
+     13
+    ],
+    [
+     612,
+     623,
+     27,
+     13
+    ],
+    [
+     563,
+     642,
+     40,
+     16
+    ]
+   ],
+   "testId": "void.knob.diffusion"
+  },
+  {
+   "id": "modRate",
+   "type": "ROTARY",
+   "parameter": "modRate",
+   "centre": [
+    1018.9,
+    564.3
+   ],
+   "scaleCentre": [
+    1018.9,
+    564.3
+   ],
+   "dotRadius": 56.4,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    969,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0.01,
+     5
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    980,
+    636,
+    85,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     950,
+     623,
+     31,
+     13
+    ],
+    [
+     1068,
+     623,
+     13,
+     13
+    ],
+    [
+     996,
+     643,
+     65,
+     16
+    ]
+   ],
+   "testId": "void.knob.modrate"
+  },
+  {
+   "id": "modDepth",
+   "type": "ROTARY",
+   "parameter": "modDepth",
+   "centre": [
+    1207.7,
+    564.2
+   ],
+   "scaleCentre": [
+    1207.7,
+    564.2
+   ],
+   "dotRadius": 54.3,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    1158,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    1170,
+    636,
+    75,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     1149,
+     623,
+     13,
+     13
+    ],
+    [
+     1245,
+     623,
+     27,
+     13
+    ],
+    [
+     1193,
+     643,
+     40,
+     16
+    ]
+   ],
+   "testId": "void.knob.moddepth"
+  },
+  {
+   "id": "width",
+   "type": "ROTARY",
+   "parameter": "width",
+   "centre": [
+    1398.0,
+    564.4
+   ],
+   "scaleCentre": [
+    1398.0,
+    564.4
+   ],
+   "dotRadius": 55.6,
+   "capRadius": 42,
+   "rimRadius": 47,
+   "pointer": {
+    "inner": 12,
+    "outer": 43,
+    "width": 4.2
+   },
+   "travelDegrees": [
+    -144.0,
+    144.0
+   ],
+   "hitbox": [
+    1348,
+    514,
+    100,
+    100
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     200
+    ],
+    "gap": 17,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.4,
+    "count": 11
+   },
+   "readout": [
+    1360,
+    636,
+    76,
+    27
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     1334,
+     623,
+     13,
+     13
+    ],
+    [
+     1441,
+     623,
+     27,
+     13
+    ],
+    [
+     1379,
+     643,
+     46,
+     16
+    ]
+   ],
+   "testId": "void.knob.width"
+  },
+  {
+   "id": "hpf",
+   "type": "ROTARY",
+   "parameter": "hpf",
+   "centre": [
+    109.2,
+    789.2
+   ],
+   "scaleCentre": [
+    109.2,
+    789.2
+   ],
+   "dotRadius": 46.8,
+   "capRadius": 36,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 8,
+    "outer": 34,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -140.5,
+    140.5
+   ],
+   "hitbox": [
+    65,
+    745,
+    88,
+    88
+   ],
+   "scaleLabels": {
+    "values": [
+     20,
+     1000
+    ],
+    "gap": 12,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    72,
+    848,
+    78,
+    25
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     54,
+     824,
+     19,
+     13
+    ],
+    [
+     146,
+     824,
+     19,
+     13
+    ],
+    [
+     85,
+     852,
+     56,
+     15
+    ]
+   ],
+   "testId": "void.knob.hpf"
+  },
+  {
+   "id": "lpf",
+   "type": "ROTARY",
+   "parameter": "lpf",
+   "centre": [
+    248.9,
+    789.5
+   ],
+   "scaleCentre": [
+    248.9,
+    789.5
+   ],
+   "dotRadius": 46.6,
+   "capRadius": 36,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 8,
+    "outer": 34,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -140.5,
+    140.5
+   ],
+   "hitbox": [
+    205,
+    746,
+    88,
+    88
+   ],
+   "scaleLabels": {
+    "values": [
+     1000,
+     20000
+    ],
+    "gap": 12,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    210,
+    848,
+    78,
+    25
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     193,
+     824,
+     19,
+     13
+    ],
+    [
+     282,
+     824,
+     26,
+     13
+    ],
+    [
+     223,
+     852,
+     60,
+     16
+    ]
+   ],
+   "testId": "void.knob.lpf"
+  },
+  {
+   "id": "duck",
+   "type": "ROTARY",
+   "parameter": "duck",
+   "centre": [
+    992.0,
+    790.6
+   ],
+   "scaleCentre": [
+    992.0,
+    790.6
+   ],
+   "dotRadius": 47.6,
+   "capRadius": 36,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 8,
+    "outer": 34,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -140.5,
+    140.5
+   ],
+   "hitbox": [
+    948,
+    747,
+    88,
+    88
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 12,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    957,
+    850,
+    71,
+    26
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     938,
+     839,
+     13,
+     13
+    ],
+    [
+     1026,
+     839,
+     26,
+     13
+    ],
+    [
+     975,
+     855,
+     40,
+     16
+    ]
+   ],
+   "testId": "void.knob.duck"
+  },
+  {
+   "id": "mix",
+   "type": "ROTARY",
+   "parameter": "mix",
+   "centre": [
+    1149.1,
+    790.4
+   ],
+   "scaleCentre": [
+    1149.1,
+    790.4
+   ],
+   "dotRadius": 47.5,
+   "capRadius": 36,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 8,
+    "outer": 34,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -140.5,
+    140.5
+   ],
+   "hitbox": [
+    1105,
+    746,
+    88,
+    88
+   ],
+   "scaleLabels": {
+    "values": [
+     0,
+     100
+    ],
+    "gap": 12,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    1115,
+    850,
+    70,
+    26
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     1097,
+     839,
+     12,
+     13
+    ],
+    [
+     1182,
+     839,
+     27,
+     13
+    ],
+    [
+     1130,
+     855,
+     45,
+     16
+    ]
+   ],
+   "testId": "void.knob.mix"
+  },
+  {
+   "id": "output",
+   "type": "ROTARY",
+   "parameter": "output",
+   "centre": [
+    1428.0,
+    790.4
+   ],
+   "scaleCentre": [
+    1428.0,
+    790.4
+   ],
+   "dotRadius": 46.7,
+   "capRadius": 36,
+   "rimRadius": 41,
+   "pointer": {
+    "inner": 8,
+    "outer": 34,
+    "width": 3.8
+   },
+   "travelDegrees": [
+    -140.5,
+    140.5
+   ],
+   "hitbox": [
+    1384,
+    746,
+    88,
+    88
+   ],
+   "scaleLabels": {
+    "values": [
+     -12,
+     12
+    ],
+    "gap": 12,
+    "capHeight": 13
+   },
+   "stepDots": {
+    "radius": 2.2,
+    "count": 11
+   },
+   "readout": [
+    1390,
+    850,
+    78,
+    26
+   ],
+   "readoutCapHeight": 12.5,
+   "erase": [
+    [
+     1368,
+     824,
+     35,
+     13
+    ],
+    [
+     1465,
+     824,
+     26,
+     13
+    ],
+    [
+     1407,
+     852,
+     49,
+     16
+    ]
+   ],
+   "testId": "void.knob.output"
+  },
+  {
+   "id": "algorithmLamps",
+   "type": "LAMP_LIST",
+   "parameter": "algorithm",
+   "lampX": 232.0,
+   "rows": [
+    254.8,
+    290.5,
+    326.25,
+    361.75,
+    397.5
+   ],
+   "lampRadius": 7.0,
+   "litInArtwork": 0,
+   "artLamp": [
+    228.0,
+    252.5
+   ],
+   "artCaption": [
+    246,
+    245,
+    42,
+    16
+   ],
+   "captions": [
+    [
+     250,
+     247,
+     42,
+     16
+    ],
+    [
+     250,
+     283,
+     44,
+     16
+    ],
+    [
+     250,
+     319,
+     67,
+     16
+    ],
+    [
+     250,
+     355,
+     36,
+     15
+    ],
+    [
+     249,
+     390,
+     36,
+     16
+    ]
+   ],
+   "lines": [
+    [
+     208,
+     236,
+     103,
+     3
+    ],
+    [
+     238,
+     267,
+     64,
+     3
+    ]
+   ],
+   "labels": [
+    "ROOM",
+    "PLATE",
+    "CHAMBER",
+    "HALL",
+    "VOID"
+   ],
+   "hitboxes": [
+    [
+     218,
+     239,
+     104,
+     32
+    ],
+    [
+     218,
+     274,
+     104,
+     32
+    ],
+    [
+     218,
+     310,
+     104,
+     32
+    ],
+    [
+     218,
+     346,
+     104,
+     32
+    ],
+    [
+     218,
+     382,
+     104,
+     32
+    ]
+   ],
+   "testId": "void.lamps.algorithm"
+  },
+  {
+   "id": "color",
+   "type": "BUTTON_GROUP",
+   "parameter": "color",
+   "litInArtwork": 0,
+   "copyFrom": 1,
+   "buttons": [
+    {
+     "label": "CLEAN",
+     "body": [
+      1254,
+      244,
+      82,
+      45
+     ],
+     "hitbox": [
+      1252,
+      242,
+      86,
+      49
+     ]
+    },
+    {
+     "label": "DARK",
+     "body": [
+      1255,
+      301,
+      82,
+      45
+     ],
+     "hitbox": [
+      1253,
+      299,
+      86,
+      49
+     ]
+    },
+    {
+     "label": "RUIN",
+     "body": [
+      1255,
+      359,
+      82,
+      46
+     ],
+     "hitbox": [
+      1253,
+      357,
+      86,
+      50
+     ]
+    }
+   ],
+   "testId": "void.buttons.color"
+  },
+  {
+   "id": "filterMode",
+   "type": "BUTTON_GROUP",
+   "parameter": "filterMode",
+   "litInArtwork": 1,
+   "copyFrom": 0,
+   "buttons": [
+    {
+     "label": "PRE",
+     "body": [
+      340,
+      741,
+      70,
+      31
+     ],
+     "hitbox": [
+      338,
+      739,
+      74,
+      35
+     ]
+    },
+    {
+     "label": "LOOP",
+     "body": [
+      340,
+      778,
+      70,
+      31
+     ],
+     "hitbox": [
+      338,
+      776,
+      74,
+      35
+     ]
+    },
+    {
+     "label": "POST",
+     "body": [
+      340,
+      815,
+      70,
+      31
+     ],
+     "hitbox": [
+      338,
+      813,
+      74,
+      35
+     ]
+    }
+   ],
+   "testId": "void.buttons.filtermode"
+  },
+  {
+   "id": "drown",
+   "type": "ARC_KNOB",
+   "parameter": "drown",
+   "centre": [
+    781.7,
+    620.0
+   ],
+   "arc": {
+    "inner": 106.5,
+    "outer": 115.5,
+    "glow": 10.0
+   },
+   "travelDegrees": [
+    -130.5,
+    130.5
+   ],
+   "litFromArt": [
+    5.0,
+    128.0
+   ],
+   "darkFromArt": [
+    -128.0,
+    -5.0
+   ],
+   "hitbox": [
+    656.7,
+    495.0,
+    250,
+    250
+   ],
+   "testId": "void.knob.drown"
+  },
+  {
+   "id": "freeze",
+   "type": "TOGGLE",
+   "parameter": "freeze",
+   "face": [
+    1268,
+    762,
+    54,
+    60
+   ],
+   "body": [
+    1258,
+    750,
+    74,
+    82
+   ],
+   "hitbox": [
+    1256,
+    748,
+    78,
+    86
+   ],
+   "testId": "void.button.freeze"
+  },
+  {
+   "id": "spectrum",
+   "type": "SPECTRUM",
+   "screen": [
+    386,
+    218,
+    661,
+    174
+   ],
+   "labelStrip": [
+    386,
+    397,
+    661,
+    20
+   ],
+   "inset": 17,
+   "eraseAxis": [
+    388,
+    391,
+    658,
+    28
+   ],
+   "hitbox": [
+    386,
+    218,
+    661,
+    199
+   ],
+   "testId": "void.display.spectrum"
+  },
+  {
+   "id": "earlyLate",
+   "type": "LEVEL_BARS",
+   "early": {
+    "track": [
+     455,
+     206,
+     76,
+     6
+    ],
+    "lit": [
+     455,
+     206,
+     35,
+     6
+    ]
+   },
+   "late": {
+    "track": [
+     919,
+     206,
+     76,
+     6
+    ],
+    "lit": [
+     919,
+     206,
+     40,
+     6
+    ]
+   },
+   "rangeDb": [
+    -48,
+    0
+   ],
+   "hitbox": [
+    390,
+    198,
+    645,
+    20
+   ],
+   "testId": "void.display.earlylate"
+  },
+  {
+   "id": "meters",
+   "type": "BAR_METERS",
+   "bars": [
+    [
+     1078,
+     230,
+     7,
+     172
+    ],
+    [
+     1087,
+     230,
+     7,
+     172
+    ],
+    [
+     1136,
+     230,
+     7,
+     172
+    ],
+    [
+     1145,
+     230,
+     7,
+     172
+    ]
+   ],
+   "litTop": 294,
+   "scale": {
+    "0": 243.5,
+    "-6": 285.5,
+    "-12": 327.5,
+    "-24": 366.5,
+    "-48": 399.5
+   },
+   "hitbox": [
+    1070,
+    225,
+    90,
+    182
+   ],
+   "testId": "void.meters"
+  },
+  {
+   "id": "filterGraph",
+   "type": "FILTER_GRAPH",
+   "plot": [
+    439,
+    728,
+    202,
+    109
+   ],
+   "labelStrip": [
+    425,
+    841,
+    230,
+    15
+   ],
+   "erase": [
+    [
+     440,
+     729,
+     200,
+     107
+    ]
+   ],
+   "eraseLabels": [
+    [
+     428,
+     841,
+     230,
+     14
+    ]
+   ],
+   "rangeDb": [
+    -24,
+    6
+   ],
+   "hitbox": [
+    439,
+    728,
+    202,
+    109
+   ],
+   "testId": "void.display.filter"
+  },
+  {
+   "id": "presetBar",
+   "type": "PRESET_BAR",
+   "frame": [
+    553,
+    72,
+    435,
+    41
+   ],
+   "prev": [
+    556,
+    74,
+    35,
+    38
+   ],
+   "name": [
+    594,
+    76,
+    258,
+    34
+   ],
+   "next": [
+    855,
+    74,
+    36,
+    38
+   ],
+   "save": [
+    902,
+    74,
+    35,
+    38
+   ],
+   "delete": [
+    947,
+    74,
+    35,
+    38
+   ],
+   "eraseName": [
+    [
+     636,
+     86,
+     155,
+     18
+    ]
+   ],
+   "textCapHeight": 12.0,
+   "testId": "void.presets"
+  }
+ ]
+}

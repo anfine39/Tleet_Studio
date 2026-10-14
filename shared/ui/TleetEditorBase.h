@@ -33,6 +33,7 @@ namespace tleet::ui
         void addToPanel (juce::Component& c) { content.addAndMakeVisible (c); }
         void addToToolbar (juce::Component& c, int width) { toolbar.addExtra (c, width); }
         void finishSetup(); // call at the end of the derived constructor
+        Toolbar& getToolbar() noexcept { return toolbar; }
 
         TleetProcessorBase& baseProcessor;
 

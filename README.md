@@ -13,7 +13,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 | **VEIL** | Variable-mu tube compressor (Manley Variable Mu family) | in progress |
 | **SHAPE** | Passive program EQ (Pultec EQP-1A family) | in progress |
 | **ECHO** | Multi-head tape echo with spring reverb (Roland RE-201 family) | in progress |
-| VOID | Reverb | planned |
+| **VOID** | Algorithmic stereo reverb (Room, Plate, Chamber, Hall, Void; freeze, infinite decay) | in progress |
 | **DOUBLE** | Stereo doubler / micro-pitch / ADT | in progress |
 | STEEL | Mastering limiter | planned |
 | TAPE | Tape machine | planned |

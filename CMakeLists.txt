@@ -58,6 +58,7 @@ add_subdirectory(plugins/WEIGHT)
 add_subdirectory(plugins/VEIL)
 add_subdirectory(plugins/SHAPE)
 add_subdirectory(plugins/ECHO)
+add_subdirectory(plugins/VOID)
 
 if(TLEET_BUILD_TESTS)
     enable_testing()

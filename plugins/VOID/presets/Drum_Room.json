@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VOID",
+  "name": "Drum Room",
+  "params": {
+    "algorithm": 0,
+    "color": 2,
+    "preDelay": 0.0,
+    "size": 35.0,
+    "decay": 0.9,
+    "diffusion": 55.0,
+    "drown": 0.0,
+    "modRate": 0.5,
+    "modDepth": 10.0,
+    "width": 120.0,
+    "hpf": 100.0,
+    "lpf": 9000.0,
+    "filterMode": 2,
+    "duck": 30.0,
+    "mix": 25.0,
+    "freeze": 0,
+    "output": -1.0
+  }
+}
