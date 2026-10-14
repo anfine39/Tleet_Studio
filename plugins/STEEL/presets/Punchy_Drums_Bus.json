@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Punchy Drums Bus",
+  "params": {
+    "input": 6.0,
+    "ceiling": -0.5,
+    "mode": 1,
+    "releaseMode": 1,
+    "release": 60.0,
+    "lookahead": 1.0,
+    "truePeak": 0,
+    "oversampling": 1,
+    "stereoLink": 80.0,
+    "softClip": 1,
+    "softClipAmount": 40.0,
+    "subFilter": 0,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

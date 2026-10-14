@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Wide Mix Independent",
+  "params": {
+    "input": 4.0,
+    "ceiling": -1.0,
+    "mode": 3,
+    "releaseMode": 0,
+    "release": 180.0,
+    "lookahead": 3.0,
+    "truePeak": 1,
+    "oversampling": 2,
+    "stereoLink": 50.0,
+    "softClip": 0,
+    "softClipAmount": 30.0,
+    "subFilter": 0,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

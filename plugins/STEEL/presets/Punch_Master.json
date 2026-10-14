@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Punch Master",
+  "params": {
+    "input": 5.0,
+    "ceiling": -1.0,
+    "mode": 1,
+    "releaseMode": 0,
+    "release": 120.0,
+    "lookahead": 2.0,
+    "truePeak": 1,
+    "oversampling": 2,
+    "stereoLink": 100.0,
+    "softClip": 0,
+    "softClipAmount": 30.0,
+    "subFilter": 0,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

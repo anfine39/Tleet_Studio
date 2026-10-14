@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Loud Club",
+  "params": {
+    "input": 10.0,
+    "ceiling": -0.3,
+    "mode": 2,
+    "releaseMode": 1,
+    "release": 90.0,
+    "lookahead": 2.0,
+    "truePeak": 1,
+    "oversampling": 2,
+    "stereoLink": 100.0,
+    "softClip": 1,
+    "softClipAmount": 60.0,
+    "subFilter": 3,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Broadcast -2 dBTP",
+  "params": {
+    "input": 3.0,
+    "ceiling": -2.0,
+    "mode": 0,
+    "releaseMode": 0,
+    "release": 300.0,
+    "lookahead": 5.0,
+    "truePeak": 1,
+    "oversampling": 2,
+    "stereoLink": 100.0,
+    "softClip": 0,
+    "softClipAmount": 30.0,
+    "subFilter": 1,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}
