@@ -1,6 +1,7 @@
 #include "TestFramework.h"
 #include <juce_events/juce_events.h>
 #include <juce_gui_basics/juce_gui_basics.h>
+#include <cstdio>
 #include <cstdlib>
 #include <new>
 
@@ -60,6 +61,9 @@ void operator delete[] (void* p, std::size_t) noexcept { std::free (p); }
 int main (int argc, char** argv)
 {
     using namespace tleet::test;
+    // Unbuffered: a crash must not swallow the last lines (stdout to a pipe is
+    // fully buffered on Windows, so the log would stop tests before the crash).
+    std::setvbuf (stdout, nullptr, _IONBF, 0);
     juce::ScopedJuceInitialiser_GUI gui;
 
     const juce::String filter = argc > 1 ? juce::String (argv[1]) : juce::String();
