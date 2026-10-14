@@ -22,6 +22,7 @@ target_sources(tleet_tests PRIVATE
     EchoGuiTests.cpp
     VoidTests.cpp
     VoidGuiTests.cpp
+    SteelTests.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/ASH/dsp/AshModel.cpp
@@ -54,7 +55,9 @@ target_sources(tleet_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/VOID/PluginProcessor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/VOID/PluginEditor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/VOID/dsp/VoidEngine.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/VOID/dsp/Networks.cpp)
+    ${CMAKE_SOURCE_DIR}/plugins/VOID/dsp/Networks.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/STEEL/PluginProcessor.cpp
+    ${CMAKE_SOURCE_DIR}/plugins/STEEL/dsp/SteelEngine.cpp)
 
 target_include_directories(tleet_tests PRIVATE ${CMAKE_SOURCE_DIR}/plugins/ASH ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -88,6 +91,7 @@ target_link_libraries(tleet_tests PRIVATE
     ECHO_Skin
     VOID_Presets
     VOID_Skin
+    STEEL_Presets
     juce::juce_recommended_config_flags
     juce::juce_recommended_warning_flags)
 

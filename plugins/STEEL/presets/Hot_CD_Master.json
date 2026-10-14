@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Hot CD Master",
+  "params": {
+    "input": 8.0,
+    "ceiling": -0.3,
+    "mode": 2,
+    "releaseMode": 0,
+    "release": 180.0,
+    "lookahead": 3.0,
+    "truePeak": 1,
+    "oversampling": 3,
+    "stereoLink": 100.0,
+    "softClip": 1,
+    "softClipAmount": 35.0,
+    "subFilter": 1,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}

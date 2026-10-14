@@ -248,7 +248,7 @@ def caption_alpha(face, col0):
     return a
 
 
-def button_group(img, plate, grp, col0, g=14):
+def button_group(img, plate, grp, col0, g=14, frame=0):
     """Every button of a group dark on the plate, and a lit image of every
     button. The artwork has one lit button L (lit face, lit lamp, glowing
     caption); the others are dark.
@@ -257,7 +257,9 @@ def button_group(img, plate, grp, col0, g=14):
                the panel around it removed;
       lit b:   L's lit body (caption inpainted, lit lamp kept) fitted to b's
                body, the light L throws around itself, and b's caption in
-               L's lit ink with a rose glow."""
+               L's lit ink with a rose glow.
+    `frame`: width of a lit outline inside L's body edge (STEEL), kept out
+    of L's caption."""
     buttons = grp["buttons"]
     L = buttons[grp["litInArtwork"]]
     D = buttons[grp["copyFrom"]]
@@ -270,6 +272,8 @@ def button_group(img, plate, grp, col0, g=14):
     hsv = cv2.cvtColor(img[ly:ly + lh, lx:lx + lw], cv2.COLOR_BGR2HSV).astype(np.float32)
     white = (255.0 - hsv[..., 1]) * np.clip((hsv[..., 2] - 120.0) / 60.0, 0.0, 1.0)
     white[:, :col0] = 0
+    if frame:
+        white[:frame, :] = 0; white[-frame:, :] = 0; white[:, :frame] = 0; white[:, -frame:] = 0
     per_letter = np.mean([(alphas[b["label"]] > 0.5).sum() / len(b["label"]) for b in buttons if b is not L])
     want = int(1.2 * per_letter * len(L["label"]))
     level = np.sort(white.ravel())[::-1][want]

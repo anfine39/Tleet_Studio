@@ -1,0 +1,23 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "STEEL",
+  "name": "Streaming -14 Gentle",
+  "params": {
+    "input": 4.0,
+    "ceiling": -1.0,
+    "mode": 3,
+    "releaseMode": 0,
+    "release": 250.0,
+    "lookahead": 4.0,
+    "truePeak": 1,
+    "oversampling": 3,
+    "stereoLink": 100.0,
+    "softClip": 0,
+    "softClipAmount": 30.0,
+    "subFilter": 1,
+    "delta": 0,
+    "levelMatch": 0,
+    "output": 0.0
+  }
+}
