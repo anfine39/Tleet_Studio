@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VOID",
+  "name": "Vocal Plate Duck",
+  "params": {
+    "algorithm": 1,
+    "color": 0,
+    "preDelay": 60.0,
+    "size": 45.0,
+    "decay": 2.2,
+    "diffusion": 75.0,
+    "drown": 0.0,
+    "modRate": 0.6,
+    "modDepth": 20.0,
+    "width": 110.0,
+    "hpf": 200.0,
+    "lpf": 12000.0,
+    "filterMode": 0,
+    "duck": 45.0,
+    "mix": 30.0,
+    "freeze": 0,
+    "output": 0.0
+  }
+}

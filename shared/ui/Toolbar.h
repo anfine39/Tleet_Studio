@@ -25,13 +25,19 @@ namespace tleet::ui
         void paint (juce::Graphics&) override;
         void resized() override;
 
+        // The preset menus, anchored to `target` (default: the toolbar's own
+        // button). A skin with its own preset bar opens the same menus.
+        void showPresetMenu (juce::Component* target = nullptr);
+        void showSaveMenu (juce::Component* target = nullptr);
+        // Deletes the current user preset after a confirmation (factory
+        // presets cannot be deleted).
+        void deleteCurrentPreset();
+
     private:
         void changeListenerCallback (juce::ChangeBroadcaster*) override;
         void timerCallback() override;
         void refresh();
 
-        void showPresetMenu();
-        void showSaveMenu();
         void showScaleMenu();
         void askForName (const juce::String& title, const juce::String& initial,
                          std::function<void (const juce::String&)> onOk);

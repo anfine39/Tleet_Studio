@@ -130,7 +130,7 @@ namespace tleet::ui
 
     // ------------------------------------------------------------------ menus
 
-    void Toolbar::showPresetMenu()
+    void Toolbar::showPresetMenu (juce::Component* target)
     {
         juce::PopupMenu m;
         const auto& list = processor.presets.getPresets();
@@ -153,7 +153,7 @@ namespace tleet::ui
         if (! anyUser)
             m.addItem (2, "(no user presets yet)", false);
 
-        m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (presetButton),
+        m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (target != nullptr ? target : &presetButton),
                          [safe = juce::Component::SafePointer<Toolbar> (this)] (int result)
         {
             auto* self = safe.getComponent();
@@ -167,7 +167,7 @@ namespace tleet::ui
         });
     }
 
-    void Toolbar::showSaveMenu()
+    void Toolbar::showSaveMenu (juce::Component* target)
     {
         const int current = processor.presets.getCurrentIndex();
         const bool userCurrent = current >= 0 && ! processor.presets.isCurrentFactory();
@@ -183,7 +183,7 @@ namespace tleet::ui
         m.addSeparator();
         m.addItem (7, "Open user preset folder");
 
-        m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (saveButton),
+        m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (target != nullptr ? target : &saveButton),
                          [safe = juce::Component::SafePointer<Toolbar> (this), current] (int result)
         {
             auto* self = safe.getComponent();
@@ -252,6 +252,32 @@ namespace tleet::ui
         {
             if (auto* self = safe.getComponent(); self != nullptr && result > 0 && self->onScaleChosen)
                 self->onScaleChosen ((float) result / 100.0f);
+        });
+    }
+
+    void Toolbar::deleteCurrentPreset()
+    {
+        const int current = processor.presets.getCurrentIndex();
+        if (current < 0 || processor.presets.isCurrentFactory())
+            return;
+        juce::AlertWindow::showAsync (juce::MessageBoxOptions()
+                                          .withIconType (juce::MessageBoxIconType::QuestionIcon)
+                                          .withTitle ("Delete preset")
+                                          .withMessage ("Delete \"" + processor.presets.getCurrentName() + "\"?")
+                                          .withButton ("Delete")
+                                          .withButton ("Cancel")
+                                          .withAssociatedComponent (this),
+                                      [safe = juce::Component::SafePointer<Toolbar> (this), current] (int result)
+        {
+            auto* self = safe.getComponent();
+            if (self == nullptr || result != 1)
+                return;
+            auto& proc = self->processor;
+            if (auto r = proc.presets.deleteUserPreset (current); r.failed())
+                self->showError (r.getErrorMessage());
+            else
+                proc.presets.setCurrentToInit (state::capture (proc.apvts));
+            self->refresh();
         });
     }
 

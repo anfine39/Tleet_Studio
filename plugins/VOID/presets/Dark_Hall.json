@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VOID",
+  "name": "Dark Hall",
+  "params": {
+    "algorithm": 3,
+    "color": 1,
+    "preDelay": 30.0,
+    "size": 70.0,
+    "decay": 3.8,
+    "diffusion": 75.0,
+    "drown": 10.0,
+    "modRate": 0.3,
+    "modDepth": 30.0,
+    "width": 110.0,
+    "hpf": 40.0,
+    "lpf": 9000.0,
+    "filterMode": 1,
+    "duck": 0.0,
+    "mix": 30.0,
+    "freeze": 0,
+    "output": 0.0
+  }
+}

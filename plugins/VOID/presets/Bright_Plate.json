@@ -1,0 +1,25 @@
+{
+  "format": "tleet-preset",
+  "version": 1,
+  "plugin": "VOID",
+  "name": "Bright Plate",
+  "params": {
+    "algorithm": 1,
+    "color": 0,
+    "preDelay": 10.0,
+    "size": 50.0,
+    "decay": 1.8,
+    "diffusion": 80.0,
+    "drown": 0.0,
+    "modRate": 0.8,
+    "modDepth": 25.0,
+    "width": 120.0,
+    "hpf": 150.0,
+    "lpf": 18000.0,
+    "filterMode": 2,
+    "duck": 0.0,
+    "mix": 25.0,
+    "freeze": 0,
+    "output": 0.0
+  }
+}
