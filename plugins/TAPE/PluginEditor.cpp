@@ -8,17 +8,17 @@ namespace tleet::tape
     namespace
     {
         // Ink measured on the artwork.
-        const juce::Colour dotInk { 0xffeee0d6 };          // knob scale dots
-        const juce::Colour knobLabelInk { 0xffcdb9a9 };    // knob scale numbers
-        const juce::Colour bigReadoutInk { 0xfff2d4c4 };   // INPUT / OUTPUT windows
-        const juce::Colour smallReadoutInk { 0xffefd6c8 }; // small knob windows
-        const juce::Colour pointerCore { 0xfffffafa };     // pointers: white core
-        const juce::Colour pointerGlow { 0xffe0a4a6 };     // in a faint rose glow
-        const juce::Colour needleLeft { 0xff1e1710 };      // VU needles: L the dark one,
-        const juce::Colour needleRight { 0xff74604e };     // R the lighter one (as printed)
-        const juce::Colour responseCore { 0xfff9e5ec };    // TAPE CONDITION response line
-        const juce::Colour responseGlow { 0xffd05a6a };
-        const juce::Colour zeroLineInk { 0xff6f5a5a };
+        const juce::Colour dotInk { 0xffe1dbd5 };          // knob scale dots
+        const juce::Colour knobLabelInk { 0xffb9b6b3 };    // knob scale numbers
+        const juce::Colour bigReadoutInk { 0xffd7d2cd };   // INPUT / OUTPUT windows
+        const juce::Colour smallReadoutInk { 0xffd8d3ce }; // small knob windows
+        const juce::Colour pointerCore { 0xfffbf5ed };     // pointers: white core
+        const juce::Colour pointerGlow { 0xffadaba9 };     // in a faint rose glow
+        const juce::Colour needleLeft { 0xff151515 };      // VU needles: L the dark one,
+        const juce::Colour needleRight { 0xff5d5d5d };     // R the lighter one (as printed)
+        const juce::Colour responseCore { 0xffe9e3dc };    // TAPE CONDITION response line
+        const juce::Colour responseGlow { 0xffc63338 };
+        const juce::Colour zeroLineInk { 0xff595959 };
 
         juce::Rectangle<float> local (juce::Rectangle<float> r, juce::Rectangle<float> bounds, float s)
         {
@@ -441,11 +441,11 @@ namespace tleet::tape
             st.inset = 0.0f;
             st.labelCapHeight = (float) (*c)["labelCapHeight"] * s;
             st.lineWidth = 1.0f;
-            st.line = juce::Colour (0xffb98f97);
+            st.line = juce::Colour (0xff949393);
             st.glow = juce::Colour (0x00000000);
-            st.fill = juce::Colour (0xff9c6f78);
-            st.grid = juce::Colour (0xff3e2f31);
-            st.labelInk = juce::Colour (0xffa08b7f);
+            st.fill = juce::Colour (0xff747474);
+            st.grid = juce::Colour (0xff2e2e2e);
+            st.labelInk = juce::Colour (0xff8a8989);
             spectrum = std::make_unique<ui::SpectrumDisplay> (p.outputSpectrum, st);
             spectrum->setTooltip ("TAPE CONDITION: the line is the machine's frequency response as set now (TAPE SPEED, "
                                   "HEAD BUMP, LF, HF, BIAS, AGE; +-12 dB around the dashed 0 dB line); the shaded area is "

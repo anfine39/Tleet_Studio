@@ -8,8 +8,8 @@ namespace tleet::shape
     {
         // Printed ink measured on the artwork: black on the cream EQ panel,
         // warm cream on the dark bottom panel.
-        const juce::Colour darkInk { 0xff16110c };
-        const juce::Colour lightInk { 0xfff0d6b0 };
+        const juce::Colour darkInk { 0xff0f0f0f };
+        const juce::Colour lightInk { 0xffd7d2cc };
     }
 
     using namespace ui::skin;
@@ -98,8 +98,8 @@ namespace tleet::shape
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a near-white core in an amber glow
-            sp.core = juce::Colour (0xfffff0c0);
-            sp.glow = juce::Colour (0xfff59a33);
+            sp.core = juce::Colour (0xffefe9e2);
+            sp.glow = juce::Colour (0xffda4045);
             knob->setSkinPointer (sp);
             knob->setTooltip (tip);
             knob->onEditFinished = onEdit;

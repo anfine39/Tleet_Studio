@@ -3,21 +3,25 @@
 ## Установка готового плагина (Windows)
 
 1. Откройте вкладку **Actions** репозитория, выберите последний зелёный запуск
-   **Build** и скачайте артефакт `TLEET-windows-VST3`.
-2. Распакуйте архив. Внутри папки `TLEET ASH.vst3`, `TLEET BITE.vst3` и т. д.
+   **Build** и скачайте артефакт `Realie-windows-VST3`.
+2. Распакуйте архив. Внутри папки `Realie ASH.vst3`, `Realie BITE.vst3` и т. д.
 3. Скопируйте каждую папку `.vst3` целиком в
    `C:\Program Files\Common Files\VST3\` (нужны права администратора).
 4. В Studio Pro: **Studio Pro → Options → Locations → VST Plug-ins** →
    **Reset Blacklist** и **Scan at startup**, затем перезапустите программу.
-   Плагин появится в браузере эффектов в разделе **TLEET Audio**.
+   Плагин появится в браузере эффектов в разделе **Realie Studio Plugins**.
+5. Если раньше стояли сборки TLEET (`TLEET ASH.vst3` и т. д.), удалите их:
+   новые плагины имеют те же внутренние ID, и две копии будут конфликтовать.
+   Старые проекты откроются с новыми плагинами. Пользовательские пресеты
+   из папки `TLEET Audio` копируются в `Realie Studio Plugins` при первом запуске.
 
 ## Установка готового плагина (macOS)
 
-1. Скачайте артефакт `TLEET-macOS`.
-2. Папки `TLEET <ИМЯ>.vst3` скопируйте в `~/Library/Audio/Plug-Ins/VST3/`,
-   `TLEET <ИМЯ>.component` в `~/Library/Audio/Plug-Ins/Components/`.
+1. Скачайте артефакт `Realie-macOS`.
+2. Папки `Realie <ИМЯ>.vst3` скопируйте в `~/Library/Audio/Plug-Ins/VST3/`,
+   `Realie <ИМЯ>.component` в `~/Library/Audio/Plug-Ins/Components/`.
 3. Сборки пока не подписаны. Если macOS блокирует плагин, выполните в Терминале:
-   `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"TLEET ASH.vst3"` (и так для каждого плагина)
+   `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"Realie ASH.vst3"` (и так для каждого плагина)
    (и то же для `.component`).
 
 ## Сборка на своём компьютере (Windows)

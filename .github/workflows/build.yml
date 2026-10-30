@@ -45,7 +45,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: TLEET-windows-VST3
+          name: Realie-windows-VST3
           path: dist
 
       - uses: actions/upload-artifact@v4
@@ -102,7 +102,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: TLEET-macOS
+          name: Realie-macOS
           path: dist
 
       - uses: actions/upload-artifact@v4

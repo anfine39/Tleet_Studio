@@ -34,14 +34,14 @@ namespace tleet::ui
             float startAngle = 0, endAngle = 0;
 
             // Lit pointer colours: a hot core in a coloured glow.
-            juce::Colour core { 0xffffd59a }, glow { 0xffe8a14a };
+            juce::Colour core { 0xffd8d3cd }, glow { 0xffb48585 };
 
             // Optional readout window printed on the panel (component
             // coordinates): the live value is always shown there, and a
             // double-click on it opens the value entry.
             juce::Rectangle<float> readout;
             float readoutTextHeight = 13.0f;
-            juce::Colour readoutColour { 0xfff2d6ca };
+            juce::Colour readoutColour { 0xffd9d4ce };
         };
         void setSkinPointer (SkinPointer p) { skin = p; hasSkin = true; resized(); repaint(); }
 

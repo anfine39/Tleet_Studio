@@ -221,7 +221,7 @@ TEST ("BITE: parameter IDs, ranges, defaults and knob direction match the regist
     auto* ratio = dynamic_cast<juce::AudioParameterChoice*> (p.apvts.getParameter ("ratio"));
     auto* chr = dynamic_cast<juce::AudioParameterChoice*> (p.apvts.getParameter ("character"));
     CHECK (ratio != nullptr && ratio->choices == juce::StringArray ({ "4", "8", "12", "20", "ALL" }));
-    CHECK (chr != nullptr && chr->choices == juce::StringArray ({ "Clean", "TLEET", "Burn" }));
+    CHECK (chr != nullptr && chr->choices == juce::StringArray ({ "Clean", "Realie", "Burn" }));
 
     CHECK_NEAR (p.apvts.getParameter ("input")->convertFrom0to1 (0.0f), -24.0f, 1e-4);
     CHECK_NEAR (p.apvts.getParameter ("input")->convertFrom0to1 (1.0f), 24.0f, 1e-4);

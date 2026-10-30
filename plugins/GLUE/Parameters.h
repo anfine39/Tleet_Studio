@@ -34,7 +34,7 @@ namespace tleet::glue::params
     inline const juce::StringArray attackNames { "0.1 ms", "0.3 ms", "1 ms", "3 ms", "10 ms", "30 ms" };
     inline const juce::StringArray releaseNames { "0.1 s", "0.3 s", "0.6 s", "1.2 s", "Auto" };
     inline const juce::StringArray ratioNames { "1.5", "2", "4", "10", juce::String::fromUTF8 ("\xe2\x88\x9e") };
-    inline const juce::StringArray characterNames { "Clean", "TLEET", "Burn" };
+    inline const juce::StringArray characterNames { "Clean", "Realie", "Burn" };
 
     // Threshold knob (dB) and its calibration: knob 0 dB = -10 dBFS peak at
     // the detector, so -20..+10 covers -30..0 dBFS peak (MODEL_SPEC 2.4).

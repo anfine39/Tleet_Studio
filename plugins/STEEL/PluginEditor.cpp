@@ -8,21 +8,21 @@ namespace tleet::steel
     namespace
     {
         // Ink measured on the artwork.
-        const juce::Colour dotInk { 0xffc9b7a6 };         // knob scale dots
-        const juce::Colour knobLabelInk { 0xffcfbdab };   // knob scale numbers
-        const juce::Colour bigReadoutInk { 0xfff2c2b7 };  // INPUT / CEILING windows
-        const juce::Colour smallReadoutInk { 0xffeedccb }; // small knob windows
-        const juce::Colour pointerCore { 0xfffff6f2 };    // pointers: white core
-        const juce::Colour pointerGlow { 0xffd98a8a };    // in a faint rose glow
-        const juce::Colour scaleInk { 0xffb1a197 };       // display scales
-        const juce::Colour gridInk { 0xff3a2e2e };
-        const juce::Colour waveInk { 0xffcfb7ba };        // output envelope
-        const juce::Colour grCore { 0xfff8938b };         // gain-reduction trace
-        const juce::Colour grGlow { 0xffd04848 };
-        const juce::Colour warnInk { 0xffff6a5e };
-        const juce::Colour valueInk { 0xfff59b99 };       // loudness values
-        const juce::Colour barCool { 0xffebcdc9 };        // lit bars below -12 dB
-        const juce::Colour barHot { 0xffed9b9c };         // lit bars above -12 dB
+        const juce::Colour dotInk { 0xffb6b4b1 };         // knob scale dots
+        const juce::Colour knobLabelInk { 0xffbcb9b6 };   // knob scale numbers
+        const juce::Colour bigReadoutInk { 0xffc9c5c0 };  // INPUT / CEILING windows
+        const juce::Colour smallReadoutInk { 0xffddd8d2 }; // small knob windows
+        const juce::Colour pointerCore { 0xfff7f1ea };    // pointers: white core
+        const juce::Colour pointerGlow { 0xffa48283 };    // in a faint rose glow
+        const juce::Colour scaleInk { 0xff9f9e9d };       // display scales
+        const juce::Colour gridInk { 0xff2c2c2c };
+        const juce::Colour waveInk { 0xffb9b6b3 };        // output envelope
+        const juce::Colour grCore { 0xffe7b0ae };         // gain-reduction trace
+        const juce::Colour grGlow { 0xffc62c31 };
+        const juce::Colour warnInk { 0xfffbb2b0 };
+        const juce::Colour valueInk { 0xffc2a3a1 };       // loudness values
+        const juce::Colour barCool { 0xffd1ccc7 };        // lit bars below -12 dB
+        const juce::Colour barHot { 0xffb09c9b };         // lit bars above -12 dB
         constexpr float hotDb = -12.0f;
         constexpr float releaseDimmedAlpha = 0.4f;
 
@@ -236,7 +236,7 @@ namespace tleet::steel
                     continue;
                 // on a patch of the display's glass, so the traces under it do not hide it
                 const float w = juce::GlyphArrangement::getStringWidth (font, text) + 8.0f;
-                g.setColour (juce::Colour (0xff0b0909).withAlpha (0.8f));
+                g.setColour (juce::Colour (0xff080808).withAlpha (0.8f));
                 g.fillRoundedRectangle (row.withLeft (row.getRight() - w).expanded (0.0f, -1.0f), 2.0f);
                 g.setColour (warnInk);
                 g.drawText (text, row.withTrimmedRight (4.0f), juce::Justification::centredRight, false);
@@ -623,11 +623,11 @@ namespace tleet::steel
             st.inset = (float) (*c)["inset"] * s;
             st.labelCapHeight = 9.5f * s;
             st.lineWidth = 1.4f;
-            st.line = juce::Colour (0xfff3d9dd);
-            st.glow = juce::Colour (0xffd05a6a);
-            st.fill = juce::Colour (0xffb89b97);
-            st.grid = juce::Colour (0xff4e3c3c);
-            st.labelInk = juce::Colour (0xffae9d91);
+            st.line = juce::Colour (0xffddd8d2);
+            st.glow = juce::Colour (0xffc63338);
+            st.fill = juce::Colour (0xff9c9c9a);
+            st.grid = juce::Colour (0xff3b3b3b);
+            st.labelInk = juce::Colour (0xff9b9a99);
             spectrum = std::make_unique<ui::SpectrumDisplay> (p.outputSpectrum, st);
             spectrum->setTooltip ("Spectrum of the output (level per 1/6 octave; a full-scale sine reads 0 dB)");
             spectrum->setQuality ((ui::SpectrumDisplay::Quality) juce::jlimit (0, 3, (int) p.getUiProperty ("analyzerQuality", 2)));

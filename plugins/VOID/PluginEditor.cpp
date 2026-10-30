@@ -8,16 +8,16 @@ namespace tleet::voidrev
     namespace
     {
         // Ink measured on the artwork.
-        const juce::Colour dotInk { 0xffc7b0a0 };       // scale dots
-        const juce::Colour topLabelInk { 0xffaa9c92 };  // scale numbers, upper knob row
-        const juce::Colour lowLabelInk { 0xff8e847c };  // scale numbers, lower knob row
-        const juce::Colour readoutInk { 0xffdbb2a5 };   // readout windows
-        const juce::Colour pointerCore { 0xfffff6f8 };  // lit pointers: white core
-        const juce::Colour pointerGlow { 0xffeb78af };  // in a rose glow
-        const juce::Colour litRose { 0xfff9deea };      // filter curve, lit bars
-        const juce::Colour graphGrid { 0xff4a3434 };
-        const juce::Colour graphLabelInk { 0xff8a807a };
-        const juce::Colour presetInk { 0xffcdbfb4 };
+        const juce::Colour dotInk { 0xffb0aeab };       // scale dots
+        const juce::Colour topLabelInk { 0xff9a9998 };  // scale numbers, upper knob row
+        const juce::Colour lowLabelInk { 0xff808080 };  // scale numbers, lower knob row
+        const juce::Colour readoutInk { 0xffb6b4b1 };   // readout windows
+        const juce::Colour pointerCore { 0xfff8f1ea };  // lit pointers: white core
+        const juce::Colour pointerGlow { 0xff908f8f };  // in a rose glow
+        const juce::Colour litRose { 0xffe3ded7 };      // filter curve, lit bars
+        const juce::Colour graphGrid { 0xff343434 };
+        const juce::Colour graphLabelInk { 0xff7d7c7c };
+        const juce::Colour presetInk { 0xffbebbb7 };
 
         juce::Rectangle<float> local (juce::Rectangle<float> r, juce::Rectangle<float> bounds, float s)
         {
@@ -100,7 +100,7 @@ namespace tleet::voidrev
         // the artwork's lit bar: a rose-white core in a soft glow
         g.setColour (pointerGlow.withAlpha (0.28f));
         g.fillRoundedRectangle (lit.expanded (1.5f, 1.5f), 2.5f);
-        g.setGradientFill (juce::ColourGradient (juce::Colour (0xffd9a8b0), lit.getX(), 0.0f, litRose, lit.getRight(), 0.0f, false));
+        g.setGradientFill (juce::ColourGradient (juce::Colour (0xffafadab), lit.getX(), 0.0f, litRose, lit.getRight(), 0.0f, false));
         g.fillRoundedRectangle (lit.reduced (0.0f, 0.5f), 1.5f);
     }
 
@@ -154,8 +154,8 @@ namespace tleet::voidrev
             const auto b = bars[i];
             const auto lit = juce::Rectangle<float> (b.getX() + 1.0f, top, b.getWidth() - 2.0f, bottom - top);
             // measured on the artwork's lit bars: bright rose at the foot, deeper towards the top
-            g.setGradientFill (juce::ColourGradient (juce::Colour (0xffa06162), 0.0f, yForDb (0.0f),
-                                                     juce::Colour (0xfff4bdb7), 0.0f, bottom, false));
+            g.setGradientFill (juce::ColourGradient (juce::Colour (0xff7e5052), 0.0f, yForDb (0.0f),
+                                                     juce::Colour (0xffc5c2be), 0.0f, bottom, false));
             g.fillRect (lit);
             g.setColour (pointerGlow.withAlpha (0.18f));
             g.fillRect (lit.expanded (1.0f, 0.0f));
@@ -336,7 +336,7 @@ namespace tleet::voidrev
         // the printed delete icon is dimmed while there is nothing to delete
         if (! canDelete)
         {
-            g.setColour (juce::Colour (0xff0d0b0b).withAlpha (0.55f));
+            g.setColour (juce::Colour (0xff090909).withAlpha (0.55f));
             g.fillRect (remove.reduced (4.0f));
         }
         if (hover != Part::none && ! (hover == Part::remove && ! canDelete))
@@ -572,11 +572,11 @@ namespace tleet::voidrev
             st.inset = (float) (*c)["inset"] * s;
             st.labelCapHeight = 10.0f * s;
             st.lineWidth = 1.5f;
-            st.line = juce::Colour (0xfffbe3ee);
+            st.line = juce::Colour (0xffe8e2db);
             st.glow = pointerGlow;
-            st.fill = juce::Colour (0xffe8b6c8);
-            st.grid = juce::Colour (0xff7a6066);
-            st.labelInk = juce::Colour (0xffb8aaa0);
+            st.fill = juce::Colour (0xffbfbcb8);
+            st.grid = juce::Colour (0xff616161);
+            st.labelInk = juce::Colour (0xffa8a7a5);
             spectrum = std::make_unique<ui::SpectrumDisplay> (p.wetSpectrum, st);
             spectrum->setTooltip ("Spectrum of the reverb signal (level per 1/6 octave; a full-scale sine reads 0 dB)");
             spectrum->setQuality ((ui::SpectrumDisplay::Quality) juce::jlimit (0, 3, (int) p.getUiProperty ("analyzerQuality", 2)));

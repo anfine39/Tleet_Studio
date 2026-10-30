@@ -7,8 +7,8 @@ namespace tleet::weight
     namespace
     {
         // Printed text and scale dots on the panel: warm cream, measured on the artwork.
-        const juce::Colour panelInk { 0xffe9d3b4 };
-        const juce::Colour dotInk { 0xffe6cfa8 };
+        const juce::Colour panelInk { 0xffd3cfc9 };
+        const juce::Colour dotInk { 0xffcfcac5 };
     }
 
     using namespace ui::skin;
@@ -117,8 +117,8 @@ namespace tleet::weight
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a near-white core in an amber glow
-            sp.core = juce::Colour (0xfffff0c0);
-            sp.glow = juce::Colour (0xfff59a33);
+            sp.core = juce::Colour (0xffefe9e2);
+            sp.glow = juce::Colour (0xffda4045);
             knob->setSkinPointer (sp);
             knob->onEditFinished = onEdit;
             addToPanel (*knob);

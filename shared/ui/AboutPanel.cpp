@@ -55,8 +55,29 @@ namespace tleet::ui
         g.drawRoundedRectangle (card.toFloat(), 8.0f, 1.5f);
 
         auto r = card.reduced (24);
-        g.setFont (TleetLookAndFeel::labelFont (26.0f));
-        g.drawText ("TLEET // " + pluginName, r.removeFromTop (34), juce::Justification::centredLeft);
+        {
+            // Logo lockup: emblem, the РИЛАЙ wordmark, then "// NAME".
+            auto head = r.removeFromTop (44);
+            const auto emblem = brandEmblem();
+            const auto word = brandWordmark();
+            if (emblem.isValid())
+            {
+                const auto w = 44.0f * (float) emblem.getWidth() / (float) emblem.getHeight();
+                g.drawImage (emblem, head.removeFromLeft (juce::roundToInt (w)).toFloat(), juce::RectanglePlacement::centred);
+                head.removeFromLeft (12);
+            }
+            if (word.isValid())
+            {
+                const auto w = 28.0f * (float) word.getWidth() / (float) word.getHeight();
+                g.drawImage (word, head.removeFromLeft (juce::roundToInt (w)).withSizeKeepingCentre (juce::roundToInt (w), 28).toFloat(),
+                             juce::RectanglePlacement::centred);
+                head.removeFromLeft (10);
+            }
+            g.setFont (TleetLookAndFeel::labelFont (26.0f));
+            g.drawText ((word.isValid() ? juce::String() : brandName() + " ") + "// " + pluginName, head,
+                        juce::Justification::centredLeft);
+            r.removeFromTop (6);
+        }
 
         g.setColour (colours::text);
         g.setFont (TleetLookAndFeel::labelFont (14.0f, false));
@@ -69,15 +90,15 @@ namespace tleet::ui
         g.setColour (colours::text);
         g.setFont (TleetLookAndFeel::labelFont (13.0f, false));
         const juce::String notices =
-            "TLEET Audio plugins are free software under the GNU AGPL v3.\n"
+            juce::String (config::companyName) + " are free software under the GNU AGPL v3.\n"
             "Built with JUCE (AGPLv3). VST is a registered trademark of Steinberg Media Technologies GmbH.\n"
             "Hardware names mentioned in documentation belong to their owners and are used only to "
-            "describe the sound being modelled; TLEET is not affiliated with them.";
+            "describe the sound being modelled; " + config::brandNameLatin + " is not affiliated with them.";
         g.drawFittedText (notices, r.removeFromTop (110), juce::Justification::topLeft, 8);
 
         g.setColour (colours::accent);
         g.setFont (TleetLookAndFeel::labelFont (15.0f));
-        g.drawText ("SUPPORT TLEET AUDIO", r.removeFromTop (24), juce::Justification::centredLeft);
+        g.drawText ("SUPPORT " + brandName() + " STUDIO", r.removeFromTop (24), juce::Justification::centredLeft);
     }
 
     void AboutPanel::mouseUp (const juce::MouseEvent& e)

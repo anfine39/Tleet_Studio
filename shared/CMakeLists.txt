@@ -25,6 +25,17 @@ target_sources(tleet_shared INTERFACE
 
 target_include_directories(tleet_shared INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 
+# Brand artwork drawn by the shared UI (toolbar, About panel), cut from the
+# РИЛАЙ logo by tools/rebrand/extract_logo.py.
+juce_add_binary_data(realie_brand
+    NAMESPACE RealieBrand
+    HEADER_NAME RealieBrand.h
+    SOURCES
+        ${CMAKE_SOURCE_DIR}/assets/brand/emblem_small.png
+        ${CMAKE_SOURCE_DIR}/assets/brand/wordmark_small.png)
+set_target_properties(realie_brand PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(tleet_shared INTERFACE realie_brand)
+
 target_link_libraries(tleet_shared INTERFACE
     juce::juce_audio_utils
     juce::juce_dsp)

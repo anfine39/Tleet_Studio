@@ -37,8 +37,8 @@ namespace tleet::ui
             float inset = 6.0f;                    // left/right margin of the axis inside the screen
             float labelCapHeight = 11.0f;
             float lineWidth = 1.6f;
-            juce::Colour line { 0xfff4c4c8 }, glow { 0xffd0405a }, fill { 0xffb9a09a };
-            juce::Colour grid { 0xff6a5650 }, labelInk { 0xffd9c3b0 };
+            juce::Colour line { 0xffccc8c3 }, glow { 0xffc5292f }, fill { 0xffa19f9e };
+            juce::Colour grid { 0xff545454 }, labelInk { 0xffc3c0bc };
         };
 
         SpectrumDisplay (dsp::SpectrumTap&, Style);

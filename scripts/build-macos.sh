@@ -1,5 +1,5 @@
 #!/bin/bash
-# Builds every TLEET plugin on macOS (VST3 + AU, universal arm64 + x86_64),
+# Builds every Realie (formerly TLEET) plugin on macOS (VST3 + AU, universal arm64 + x86_64),
 # runs the tests and signs the bundles ad hoc, so macOS loads them on this
 # Mac without a developer certificate.
 # Needs: Xcode or the Command Line Tools (xcode-select --install),

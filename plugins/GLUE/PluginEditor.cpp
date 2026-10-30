@@ -7,8 +7,8 @@ namespace tleet::glue
     namespace
     {
         // Printed text on the panel: warm cream, measured on the artwork.
-        const juce::Colour panelInk { 0xffd9bea0 };
-        const juce::Colour dotInk { 0xffb89a78 };
+        const juce::Colour panelInk { 0xffbebbb8 };
+        const juce::Colour dotInk { 0xff999998 };
     }
 
     using namespace ui::skin;
@@ -39,9 +39,9 @@ namespace tleet::glue
     {
         const auto p = getLampCentre();
         const float glowR = 17.0f * s;
-        juce::ColourGradient glow (juce::Colour (0xffffc46a).withAlpha (0.85f), p.x, p.y,
-                                   juce::Colour (0xffff9a2e).withAlpha (0.0f), p.x + glowR, p.y, true);
-        glow.addColour (0.35, juce::Colour (0xffffa63a).withAlpha (0.45f));
+        juce::ColourGradient glow (juce::Colour (0xffc7c4bf).withAlpha (0.85f), p.x, p.y,
+                                   juce::Colour (0xffea3339).withAlpha (0.0f), p.x + glowR, p.y, true);
+        glow.addColour (0.35, juce::Colour (0xffde5458).withAlpha (0.45f));
         g.setGradientFill (glow);
         g.fillEllipse (juce::Rectangle<float> (glowR * 2.0f, glowR * 2.0f).withCentre (p));
 
@@ -49,7 +49,7 @@ namespace tleet::glue
         const float a = juce::degreesToRadians (getLampAngleDegrees());
         juce::Path cell;
         cell.addRoundedRectangle (-5.0f * s, -3.0f * s, 10.0f * s, 6.0f * s, 2.0f * s);
-        g.setColour (juce::Colour (0xfffff3d6));
+        g.setColour (juce::Colour (0xfff3ede5));
         g.fillPath (cell, juce::AffineTransform::rotation (a).translated (p));
     }
 
@@ -85,16 +85,16 @@ namespace tleet::glue
         const auto lamp = juce::Rectangle<float> (7.0f, 7.0f).withCentre ({ r.getX() + 11.0f, r.getCentreY() });
         if (lampLit)
         {
-            g.setColour (juce::Colour (0xffffa63a).withAlpha (0.35f));
+            g.setColour (juce::Colour (0xffde5458).withAlpha (0.35f));
             g.fillEllipse (lamp.expanded (3.0f));
-            g.setColour (juce::Colour (0xffffd27a));
+            g.setColour (juce::Colour (0xffd3cec9));
             g.fillEllipse (lamp);
         }
         else
         {
-            g.setColour (juce::Colour (0xff2a1e15));
+            g.setColour (juce::Colour (0xff1c1c1c));
             g.fillEllipse (lamp);
-            g.setColour (getToggleState() ? juce::Colour (0xffc98a3c) : juce::Colour (0xff5a4636));
+            g.setColour (getToggleState() ? juce::Colour (0xff9f686a) : juce::Colour (0xff444444));
             g.drawEllipse (lamp, 1.0f);
         }
 
@@ -165,8 +165,8 @@ namespace tleet::glue
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a near-white core in an amber glow
-            sp.core = juce::Colour (0xfffff2c4);
-            sp.glow = juce::Colour (0xfff59a33);
+            sp.core = juce::Colour (0xfff1ebe3);
+            sp.glow = juce::Colour (0xffda4045);
             knob->setSkinPointer (sp);
             knob->onEditFinished = onEdit;
             addToPanel (*knob);

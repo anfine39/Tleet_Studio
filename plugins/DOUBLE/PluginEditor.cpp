@@ -39,7 +39,7 @@ namespace tleet::dbl
     }
 
     // Lit ink of the artwork: white-hot pointer cores in a rose glow, readouts in warm rose-white.
-    static const juce::Colour pointerCore { 0xfffff6f4 }, pointerGlow { 0xffe8899a }, readoutInk { 0xfff4d7ca };
+    static const juce::Colour pointerCore { 0xfff7f1ea }, pointerGlow { 0xffc06b6d }, readoutInk { 0xffdad5cf };
 
     DoubleEditor::DoubleEditor (DoubleProcessor& p)
         : ui::TleetEditorBase (p, baseWidth, toolbarHeight + panelHeight),

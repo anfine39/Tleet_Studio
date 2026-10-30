@@ -43,6 +43,8 @@ namespace tleet::ui
                          std::function<void (const juce::String&)> onOk);
         void showError (const juce::String& message);
 
+        static constexpr int titleWidth = 180;
+
         TleetProcessorBase& processor;
 
         juce::TextButton prevButton { "<" }, nextButton { ">" }, presetButton, saveButton { "SAVE" },

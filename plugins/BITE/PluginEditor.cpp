@@ -40,7 +40,7 @@ namespace tleet::bite
     }
 
     // Printed text on the panel: warm cream, measured on the artwork.
-    static const juce::Colour panelInk { 0xffe5d4b4 };
+    static const juce::Colour panelInk { 0xffd3cfc9 };
 
     std::vector<ScaleLabel> BiteEditor::makeScaleLabels (const juce::var& c, juce::RangedAudioParameter& param)
     {
@@ -159,11 +159,11 @@ namespace tleet::bite
             g.modeLabelAnchor = (pointFrom ((*c)["modeLabelAnchor"]) - origin) * s;
             g.inkScale = s * 1.33f;
             // the artwork's needle is lit: near-white core in an amber halo, no shadow
-            g.needleColour = juce::Colour (0xfffffbe6);
-            g.glowColour = juce::Colour (0xfff4a422);
+            g.needleColour = juce::Colour (0xfffaf4ec);
+            g.glowColour = juce::Colour (0xffe72228);
             g.needleWidth = 2.0f;
             g.shadow = false;
-            g.captionColour = juce::Colour (0xff2a1a0c);
+            g.captionColour = juce::Colour (0xff191919);
 
             vu = std::make_unique<ui::SkinVU> (std::move (g));
             vu->onClick = [this] { setMeterMode ((MeterMode) (((int) meterMode + 1) % 3)); };

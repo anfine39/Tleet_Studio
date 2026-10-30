@@ -203,7 +203,7 @@ namespace tleet::ui::skin
             auto bar = getSegmentBounds (0).getUnion (getSegmentBounds (lit - 1));
             for (int i = 4; i >= 1; --i)
             {
-                g.setColour (juce::Colour (0xffffa63a).withAlpha (0.045f * (float) (5 - i)));
+                g.setColour (juce::Colour (0xffde5458).withAlpha (0.045f * (float) (5 - i)));
                 g.fillRoundedRectangle (bar.expanded (h * 0.28f * (float) i, h * 0.32f * (float) i), h * 0.4f * (float) i);
             }
         }
@@ -213,21 +213,21 @@ namespace tleet::ui::skin
             const auto r = getSegmentBounds (k);
             if (k < lit)
             {
-                juce::ColourGradient grad (juce::Colour (0xffd8913a), r.getX(), r.getY(),
-                                           juce::Colour (0xffd8913a), r.getX(), r.getBottom(), false);
-                grad.addColour (0.5, juce::Colour (0xfffff0a0));
+                juce::ColourGradient grad (juce::Colour (0xffb25d5f), r.getX(), r.getY(),
+                                           juce::Colour (0xffb25d5f), r.getX(), r.getBottom(), false);
+                grad.addColour (0.5, juce::Colour (0xffece7df));
                 g.setGradientFill (grad);
                 g.fillRect (r);
-                g.setColour (juce::Colour (0xfffffbe0).withAlpha (0.55f));
+                g.setColour (juce::Colour (0xfffaf3ec).withAlpha (0.55f));
                 g.fillRect (r.reduced (r.getWidth() * 0.18f, h * 0.36f));
             }
             else
             {
-                juce::ColourGradient grad (juce::Colour (0xff5e3a16), r.getX(), r.getY(),
-                                           juce::Colour (0xff3a240d), r.getX(), r.getBottom(), false);
+                juce::ColourGradient grad (juce::Colour (0xff442d2e), r.getX(), r.getY(),
+                                           juce::Colour (0xff232323), r.getX(), r.getBottom(), false);
                 g.setGradientFill (grad);
                 g.fillRect (r);
-                g.setColour (juce::Colour (0xff120b05).withAlpha (0.7f));
+                g.setColour (juce::Colour (0xff0a0a0a).withAlpha (0.7f));
                 g.drawRect (r, 0.6f);
             }
         }
@@ -339,7 +339,7 @@ namespace tleet::ui::skin
                     bar.addPath (getSegmentPath ((int) i));
             for (int i = 4; i >= 1; --i)
             {
-                g.setColour (juce::Colour (0xffffa63a).withAlpha (0.05f * (float) (5 - i)));
+                g.setColour (juce::Colour (0xffde5458).withAlpha (0.05f * (float) (5 - i)));
                 g.strokePath (bar, juce::PathStrokeType (depth * 0.55f * (float) i, juce::PathStrokeType::curved,
                                                          juce::PathStrokeType::rounded));
             }
@@ -352,22 +352,22 @@ namespace tleet::ui::skin
             if (isLit[i])
             {
                 // measured on the artwork's lit segments: warm top, hot middle, amber lower edge
-                juce::ColourGradient grad (juce::Colour (0xfffcd96a), r.getX(), r.getY(),
-                                           juce::Colour (0xffcf7f1f), r.getX(), r.getBottom(), false);
-                grad.addColour (0.45, juce::Colour (0xffffeea2));
-                grad.addColour (0.85, juce::Colour (0xfffde68e));
+                juce::ColourGradient grad (juce::Colour (0xffd6d2cc), r.getX(), r.getY(),
+                                           juce::Colour (0xffc31f24), r.getX(), r.getBottom(), false);
+                grad.addColour (0.45, juce::Colour (0xffebe5de));
+                grad.addColour (0.85, juce::Colour (0xffe3ded7));
                 g.setGradientFill (grad);
                 g.fillPath (path);
             }
             else
             {
                 // the artwork's unlit segments: dull amber glass, lighter lower edge
-                juce::ColourGradient grad (juce::Colour (0xff4b2a0e), r.getX(), r.getY(),
-                                           juce::Colour (0xff7e4a17), r.getX(), r.getBottom(), false);
-                grad.addColour (0.75, juce::Colour (0xff6b3f14));
+                juce::ColourGradient grad (juce::Colour (0xff2d2828), r.getX(), r.getY(),
+                                           juce::Colour (0xff73191c), r.getX(), r.getBottom(), false);
+                grad.addColour (0.75, juce::Colour (0xff592022));
                 g.setGradientFill (grad);
                 g.fillPath (path);
-                g.setColour (juce::Colour (0xff120b05).withAlpha (0.6f));
+                g.setColour (juce::Colour (0xff0a0a0a).withAlpha (0.6f));
                 g.strokePath (path, juce::PathStrokeType (0.6f));
             }
         }

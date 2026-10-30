@@ -1,4 +1,4 @@
-# Builds every TLEET plugin on Windows, runs the tests and installs the VST3s.
+# Builds every Realie (formerly TLEET) plugin on Windows, runs the tests and installs the VST3s.
 # Needs: Visual Studio 2022 Build Tools ("Desktop development with C++"),
 # CMake 3.22+ and Git. Run from the repository root in PowerShell:
 #   (in "Developer PowerShell for VS 2022", so cmake is on PATH)

@@ -1,5 +1,6 @@
 #include "Toolbar.h"
 #include "TleetLookAndFeel.h"
+#include "core/Config.h"
 
 namespace tleet::ui
 {
@@ -20,7 +21,7 @@ namespace tleet::ui
         redoButton.setTooltip ("Redo");
         bypassButton.setTooltip ("Bypass the whole plugin (latency-compensated)");
         scaleButton.setTooltip ("Window size");
-        aboutButton.setTooltip ("About TLEET Audio");
+        aboutButton.setTooltip (juce::String ("About ") + config::companyName);
 
         aButton.setClickingTogglesState (false);
         bButton.setClickingTogglesState (false);
@@ -82,16 +83,25 @@ namespace tleet::ui
         g.setColour (colours::edge);
         g.drawHorizontalLine (getHeight() - 1, 0.0f, (float) getWidth());
 
+        auto title = getLocalBounds().removeFromLeft (titleWidth).withTrimmedLeft (8);
+        const auto emblem = brandEmblem();
+        if (emblem.isValid())
+        {
+            const auto h = (float) getHeight() - 10.0f;
+            const auto w = h * (float) emblem.getWidth() / (float) emblem.getHeight();
+            g.drawImage (emblem, juce::Rectangle<float> ((float) title.getX(), 5.0f, w, h), juce::RectanglePlacement::centred);
+            title.removeFromLeft (juce::roundToInt (w) + 6);
+        }
+
         g.setColour (colours::accent);
         g.setFont (TleetLookAndFeel::labelFont (15.0f));
-        g.drawText ("TLEET // " + processor.getPluginId(), getLocalBounds().removeFromLeft (150).withTrimmedLeft (12),
-                    juce::Justification::centredLeft);
+        g.drawText (brandName() + " // " + processor.getPluginId(), title, juce::Justification::centredLeft);
     }
 
     void Toolbar::resized()
     {
         auto r = getLocalBounds().reduced (6, 5);
-        r.removeFromLeft (150);
+        r.removeFromLeft (titleWidth);
 
         auto place = [&r] (juce::Component& c, int w, int gapAfter = 4)
         {
@@ -307,7 +317,7 @@ namespace tleet::ui
     {
         juce::AlertWindow::showAsync (juce::MessageBoxOptions()
                                           .withIconType (juce::MessageBoxIconType::WarningIcon)
-                                          .withTitle ("TLEET " + processor.getPluginId())
+                                          .withTitle (juce::String (config::brandNameLatin) + " " + processor.getPluginId())
                                           .withMessage (message)
                                           .withButton ("OK")
                                           .withAssociatedComponent (this),
