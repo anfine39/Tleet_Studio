@@ -8,9 +8,9 @@ namespace tleet::veil
     {
         // Printed text on the dark panel (warm cream) and on the light
         // meter-bridge panel (dark ink), measured on the artwork.
-        const juce::Colour panelInk { 0xffe4d0bd };
-        const juce::Colour darkInk { 0xff2a221c };
-        const juce::Colour readoutInk { 0xfff0e2dc };
+        const juce::Colour panelInk { 0xffd0ccc7 };
+        const juce::Colour darkInk { 0xff1f1f1f };
+        const juce::Colour readoutInk { 0xffe3ded7 };
     }
 
     using namespace ui::skin;
@@ -135,8 +135,8 @@ namespace tleet::veil
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a white core in a red glow
-            sp.core = juce::Colour (0xfffff4f4);
-            sp.glow = juce::Colour (0xffd8606e);
+            sp.core = juce::Colour (0xfff6f0e8);
+            sp.glow = juce::Colour (0xffcd363b);
             if ((*c).hasProperty ("readout"))
             {
                 sp.readout = (rectFrom ((*c)["readout"]) - hitbox.getPosition()) * s;

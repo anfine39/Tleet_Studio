@@ -25,7 +25,7 @@ namespace tleet::bite::params
     enum class Character { clean = 0, tleet, burn };
 
     inline const juce::StringArray ratioNames { "4", "8", "12", "20", "ALL" };
-    inline const juce::StringArray characterNames { "Clean", "TLEET", "Burn" };
+    inline const juce::StringArray characterNames { "Clean", "Realie", "Burn" };
 
     // Like the hardware, turning clockwise makes attack and release FASTER.
     // The plain value is the time; the normalised value (knob position, host

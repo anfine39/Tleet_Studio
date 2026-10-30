@@ -406,7 +406,7 @@ TEST ("GLUE GUI: Character lamp and the EXT SC lamp follow the real state")
     const auto& ch = control (map, "character");
     const float t0 = (float) ch["travelDegrees"][0], t1 = (float) ch["travelDegrees"][1];
 
-    const char* names[] = { "Clean", "TLEET", "Burn" };
+    const char* names[] = { "Clean", "Realie", "Burn" };
     for (int i = 0; i < 3; ++i)
     {
         setChoice (*p, glue::params::character, names[i]);

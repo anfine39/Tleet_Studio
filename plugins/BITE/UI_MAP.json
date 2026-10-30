@@ -53,7 +53,7 @@
       "id": "character", "type": "ROTARY_STEPPED", "parameter": "character",
       "centre": [722.0, 972.0], "capRadius": 49, "pointer": { "inner": 6, "outer": 44, "width": 5 },
       "travelDegrees": [-65, 65], "hitbox": [660, 910, 124, 124],
-      "states": ["Clean", "TLEET", "Burn"], "default": "TLEET", "continuous": false, "automation": true, "persistent": true,
+      "states": ["Clean", "Realie", "Burn"], "default": "Realie", "continuous": false, "automation": true, "persistent": true,
       "testId": "bite.knob.character"
     },
     {

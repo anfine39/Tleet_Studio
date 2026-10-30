@@ -10,9 +10,14 @@
 #     [VST3_CATEGORIES <categories>]   (default: Fx Dynamics)
 #     [SIDECHAIN])
 
+# Brand: РИЛАЙ / Realie Studio Plugins (renamed from TLEET Audio on
+# 2026-10-30). The manufacturer and plugin codes are the plugins' identity in
+# hosts and stay as they were, so projects saved with the TLEET builds still
+# find their plugins; only the visible names changed.
 set(TLEET_MANUFACTURER_CODE "Tlet")
-set(TLEET_COMPANY_NAME "TLEET Audio")
-set(TLEET_BUNDLE_PREFIX "audio.tleet")
+set(TLEET_COMPANY_NAME "Realie Studio Plugins")
+set(TLEET_PRODUCT_PREFIX "Realie")
+set(TLEET_BUNDLE_PREFIX "studio.realie.plugins")
 
 if(APPLE)
     set(TLEET_FORMATS VST3 AU)
@@ -36,7 +41,7 @@ function(tleet_add_plugin name)
         PLUGIN_MANUFACTURER_CODE ${TLEET_MANUFACTURER_CODE}
         PLUGIN_CODE ${ARG_CODE}
         FORMATS ${TLEET_FORMATS}
-        PRODUCT_NAME "TLEET ${name}"
+        PRODUCT_NAME "${TLEET_PRODUCT_PREFIX} ${name}"
         DESCRIPTION "${ARG_DISPLAY_NAME}"
         IS_SYNTH FALSE
         NEEDS_MIDI_INPUT FALSE

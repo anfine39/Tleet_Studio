@@ -8,18 +8,23 @@ namespace tleet::ui
     // Every colour lives here so the skin pass only touches one file.
     namespace colours
     {
-        inline const juce::Colour background   { 0xff0f0f10 };
-        inline const juce::Colour panel        { 0xff1b1b1d };
-        inline const juce::Colour panelLight   { 0xff2a2a2d };
-        inline const juce::Colour edge         { 0xff3a3a3e };
-        inline const juce::Colour text         { 0xffddd6c8 };
-        inline const juce::Colour textDim      { 0xff8b857b };
-        inline const juce::Colour accent       { 0xffff7a1a };
-        inline const juce::Colour accentDim    { 0xff7a3a0c };
-        inline const juce::Colour meterFace    { 0xfff1d9a0 };
-        inline const juce::Colour meterInk     { 0xff201a12 };
-        inline const juce::Colour warning      { 0xffe0402a };
+        inline const juce::Colour background   { 0xff0d0d0d };
+        inline const juce::Colour panel        { 0xff181818 };
+        inline const juce::Colour panelLight   { 0xff262626 };
+        inline const juce::Colour edge         { 0xff353535 };
+        inline const juce::Colour text         { 0xffd4d0ca };
+        inline const juce::Colour textDim      { 0xff808080 };
+        inline const juce::Colour accent       { 0xfff21e25 };
+        inline const juce::Colour accentDim    { 0xff730f12 };
+        inline const juce::Colour meterFace    { 0xffd8d3cd };
+        inline const juce::Colour meterInk     { 0xff171717 };
+        inline const juce::Colour warning      { 0xffff3a2e };
     }
+
+    // "РИЛАЙ" as a juce::String, and the emblem from the logo (RGBA).
+    juce::String brandName();
+    juce::Image brandEmblem();
+    juce::Image brandWordmark();
 
     class TleetLookAndFeel : public juce::LookAndFeel_V4
     {

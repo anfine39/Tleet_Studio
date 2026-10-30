@@ -1,7 +1,24 @@
 #include "TleetLookAndFeel.h"
+#include "core/Config.h"
+#include "RealieBrand.h"
 
 namespace tleet::ui
 {
+    juce::String brandName()
+    {
+        return juce::String (juce::CharPointer_UTF8 (config::brandNameUtf8));
+    }
+
+    juce::Image brandEmblem()
+    {
+        return juce::ImageCache::getFromMemory (RealieBrand::emblem_small_png, RealieBrand::emblem_small_pngSize);
+    }
+
+    juce::Image brandWordmark()
+    {
+        return juce::ImageCache::getFromMemory (RealieBrand::wordmark_small_png, RealieBrand::wordmark_small_pngSize);
+    }
+
     TleetLookAndFeel::TleetLookAndFeel()
     {
         setColour (juce::PopupMenu::backgroundColourId, colours::panel);

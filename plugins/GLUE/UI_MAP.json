@@ -83,7 +83,7 @@
       "pointer": { "inner": 10, "outer": 48, "width": 5.5 },
       "travelDegrees": [-74, 74], "hitbox": [631, 837, 120, 120],
       "arcLamp": { "radius": 68.0, "sectorDegrees": 22, "sectorRadii": [56, 84] },
-      "states": ["Clean", "TLEET", "Burn"],
+      "states": ["Clean", "Realie", "Burn"],
       "testId": "glue.knob.character"
     },
     {

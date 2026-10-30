@@ -1,0 +1,264 @@
+{
+ "ASH": {
+  "patches": [
+   {
+    "box": [
+     1225,
+     130,
+     170,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     665,
+     385,
+     115,
+     52
+    ],
+    "text": "РИЛАЙ",
+    "ink": "dark",
+    "align": "centre",
+    "old": "TLEET"
+   }
+  ]
+ },
+ "BITE": {
+  "patches": [
+   {
+    "box": [
+     1195,
+     165,
+     200,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     1222,
+     950,
+     170,
+     24
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     688,
+     866,
+     66,
+     32
+    ],
+    "text": "РИЛАЙ",
+    "align": "centre",
+    "old": "TLEET"
+   }
+  ]
+ },
+ "DOUBLE": {
+  "patches": [
+   {
+    "box": [
+     58,
+     896,
+     150,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ]
+ },
+ "ECHO": {
+  "patches": [
+   {
+    "box": [
+     1345,
+     134,
+     135,
+     24
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ]
+ },
+ "GLUE": {
+  "patches": [
+   {
+    "box": [
+     1213,
+     156,
+     200,
+     28
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     658,
+     784,
+     70,
+     36
+    ],
+    "text": "РИЛАЙ",
+    "align": "centre",
+    "old": "TLEET"
+   }
+  ]
+ },
+ "PUNCH": {
+  "patches": [
+   {
+    "box": [
+     1130,
+     190,
+     230,
+     34
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ],
+  "header": {
+   "pad": 10,
+   "pad_below": 14,
+   "delta": 18,
+   "pad_right": 24
+  }
+ },
+ "SHAPE": {
+  "patches": [
+   {
+    "box": [
+     1225,
+     140,
+     200,
+     24
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ]
+ },
+ "STEEL": {
+  "patches": [
+   {
+    "box": [
+     1244,
+     104,
+     125,
+     20
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     58,
+     876,
+     150,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ],
+  "header": {
+   "word_scale": 0.84
+  }
+ },
+ "TAPE": {
+  "patches": [
+   {
+    "box": [
+     55,
+     901,
+     150,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ],
+  "sprites": {
+   "reelRight.png": [
+    {
+     "box": [
+      166,
+      198,
+      92,
+      30
+     ],
+     "text": "РИЛАЙ",
+     "align": "centre",
+     "ink": "dark",
+     "delta": 18,
+     "cap": 15,
+     "angle": -6.5
+    }
+   ]
+  }
+ },
+ "VEIL": {
+  "patches": [
+   {
+    "box": [
+     1350,
+     98,
+     125,
+     20
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   },
+   {
+    "box": [
+     62,
+     895,
+     150,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ]
+ },
+ "VOID": {
+  "patches": [
+   {
+    "box": [
+     55,
+     910,
+     150,
+     32
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ],
+  "header": {
+   "word_scale": 0.78
+  }
+ },
+ "WEIGHT": {
+  "patches": [
+   {
+    "box": [
+     1217,
+     142,
+     175,
+     26
+    ],
+    "text": "REALIE STUDIO",
+    "old": "TLEET AUDIO"
+   }
+  ]
+ }
+}

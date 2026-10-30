@@ -7,7 +7,7 @@ namespace tleet::punch
     namespace
     {
         // Printed text on the panel: warm cream, measured on the artwork.
-        const juce::Colour panelInk { 0xffd9bea0 };
+        const juce::Colour panelInk { 0xffbebbb8 };
     }
 
     using namespace ui::skin;
@@ -101,8 +101,8 @@ namespace tleet::punch
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a near-white core in an amber glow
-            sp.core = juce::Colour (0xfffff2c4);
-            sp.glow = juce::Colour (0xfff59a33);
+            sp.core = juce::Colour (0xfff1ebe3);
+            sp.glow = juce::Colour (0xffda4045);
             knob->setSkinPointer (sp);
             knob->onEditFinished = onEdit;
             addToPanel (*knob);

@@ -10,10 +10,16 @@ namespace tleet
 
     juce::File PresetManager::defaultUserDirectory (const juce::String& id)
     {
-        return juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
-                   .getChildFile (config::companyName)
-                   .getChildFile (id)
-                   .getChildFile ("Presets");
+        const auto appData = juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory);
+        const auto dir = appData.getChildFile (config::companyName).getChildFile (id).getChildFile ("Presets");
+
+        // First run after the rebrand: copy presets saved under the old
+        // company folder, so nothing the user saved disappears.
+        const auto legacy = appData.getChildFile (config::legacyCompanyName).getChildFile (id).getChildFile ("Presets");
+        if (! dir.exists() && legacy.isDirectory())
+            legacy.copyDirectoryTo (dir);
+
+        return dir;
     }
 
     juce::String PresetManager::toJson (const juce::String& name, const ParamSnapshot& params,
@@ -37,14 +43,14 @@ namespace tleet
             return juce::Result::fail ("Preset is not valid JSON: " + r.getErrorMessage());
 
         if (root.getProperty ("format", {}).toString() != "tleet-preset")
-            return juce::Result::fail ("Not a TLEET preset file");
+            return juce::Result::fail ("Not a Realie preset file");
 
         const auto plugin = root.getProperty ("plugin", {}).toString();
         if (plugin != pluginId)
-            return juce::Result::fail ("This preset belongs to TLEET " + plugin + ", not TLEET " + pluginId);
+            return juce::Result::fail ("This preset belongs to Realie " + plugin + ", not Realie " + pluginId);
 
         if ((int) root.getProperty ("version", 0) > config::presetFormatVersion)
-            return juce::Result::fail ("Preset was saved by a newer TLEET version");
+            return juce::Result::fail ("Preset was saved by a newer Realie version");
 
         out.name = root.getProperty ("name", "Untitled").toString();
         out.params = ParamSnapshot::fromVar (root.getProperty ("params", {}));

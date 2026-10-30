@@ -311,7 +311,7 @@ TEST ("GLUE: parameter IDs, ranges, steps and defaults match the registry")
     CHECK (choices ("attack") == juce::StringArray ({ "0.1 ms", "0.3 ms", "1 ms", "3 ms", "10 ms", "30 ms" }));
     CHECK (choices ("release") == juce::StringArray ({ "0.1 s", "0.3 s", "0.6 s", "1.2 s", "Auto" }));
     CHECK (choices ("ratio").size() == 5 && choices ("ratio")[0] == "1.5" && choices ("ratio")[3] == "10");
-    CHECK (choices ("character") == juce::StringArray ({ "Clean", "TLEET", "Burn" }));
+    CHECK (choices ("character") == juce::StringArray ({ "Clean", "Realie", "Burn" }));
 
     // The model's tables agree with the registry's labels.
     const double nominal[] = { 0.0001, 0.0003, 0.001, 0.003, 0.010, 0.030 };

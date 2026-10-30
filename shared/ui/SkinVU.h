@@ -25,11 +25,11 @@ namespace tleet::ui
 
             // Needle look. A dark ink needle casts a shadow on the face; a
             // lamp-lit needle (light core with a halo) does not.
-            juce::Colour needleColour { 0xff1e1710 };
+            juce::Colour needleColour { 0xff151515 };
             juce::Colour glowColour = juce::Colours::transparentBlack;
             float needleWidth = 2.0f;           // in ink units
             bool shadow = true;
-            juce::Colour captionColour { 0xff2a1f14 };
+            juce::Colour captionColour { 0xff1d1d1d };
         };
 
         // Returns the target in VU units, or NaN when no new data arrived.

@@ -1,4 +1,4 @@
-# TLEET Audio
+# РИЛАЙ — Realie Studio Plugins
 
 Free, open-source audio plugins modelled on classic studio hardware.
 VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
@@ -29,7 +29,7 @@ VST3 for Windows, VST3 and AU for macOS. Built with [JUCE](https://juce.com).
 ## Install
 
 Download the latest build from the repository's **Actions** tab (artifact
-`TLEET-windows-VST3` or `TLEET-macOS`). Installation steps are in
+`Realie-windows-VST3` or `Realie-macOS`). Installation steps are in
 [BUILDING.md](BUILDING.md).
 
 ## Building from source
@@ -38,10 +38,10 @@ See [BUILDING.md](BUILDING.md).
 
 ## Licence
 
-TLEET Audio is free software under the GNU Affero General Public License v3
+Realie Studio Plugins (formerly TLEET Audio) are free software under the GNU Affero General Public License v3
 (see [LICENSE](LICENSE)). It uses JUCE under its AGPLv3 option; see
 [docs/THIRD_PARTY.md](docs/THIRD_PARTY.md).
 
 Product names of hardware mentioned in the documentation belong to their
-owners and are used only to describe the sound being modelled. TLEET Audio is
+owners and are used only to describe the sound being modelled. Realie Studio is
 not affiliated with any of them.

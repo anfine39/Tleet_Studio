@@ -8,12 +8,12 @@ namespace tleet::echo
     {
         // Printed ink measured on the artwork: the large captions of the top
         // row, and the smaller, dimmer numbers of the lower rows.
-        const juce::Colour topInk { 0xffedd9be };
-        const juce::Colour bottomInk { 0xffdcc3a4 };
+        const juce::Colour topInk { 0xffd9d4cf };
+        const juce::Colour bottomInk { 0xffc3c0bc };
 
         // The artwork's lit amber: a near-white core in an orange glow.
-        const juce::Colour ledCore { 0xffffe6a6 };
-        const juce::Colour ledGlow { 0xffff8a1e };
+        const juce::Colour ledCore { 0xffe5e0d9 };
+        const juce::Colour ledGlow { 0xfff21f26 };
 
         juce::Rectangle<float> local (juce::Rectangle<float> r, juce::Rectangle<float> bounds, float s)
         {
@@ -380,8 +380,8 @@ namespace tleet::echo
             const auto r = juce::Rectangle<float> (segments[(size_t) k], top, segments[(size_t) k + 1] - segments[(size_t) k], h)
                                .reduced (h * 0.12f, h * 0.1f);
             // measured on the artwork's lit segments: amber edges, hot middle
-            juce::ColourGradient grad (juce::Colour (0xffd17a1c), r.getX(), r.getY(), juce::Colour (0xffc86a12), r.getX(), r.getBottom(), false);
-            grad.addColour (0.5, juce::Colour (0xffffc45a));
+            juce::ColourGradient grad (juce::Colour (0xffc61c21), r.getX(), r.getY(), juce::Colour (0xffbe161c), r.getX(), r.getBottom(), false);
+            grad.addColour (0.5, juce::Colour (0xffcdbfbb));
             g.setGradientFill (grad);
             g.fillRect (r);
         }
@@ -493,8 +493,8 @@ namespace tleet::echo
             sp.startAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][0]);
             sp.endAngle = juce::degreesToRadians ((float) (*c)["travelDegrees"][1]);
             // the artwork's lit pointers: a near-white core in an amber glow
-            sp.core = juce::Colour (0xfffff0c0);
-            sp.glow = juce::Colour (0xfff59a33);
+            sp.core = juce::Colour (0xffefe9e2);
+            sp.glow = juce::Colour (0xffda4045);
             knob->setSkinPointer (sp);
             knob->setTooltip (tip);
             knob->onEditFinished = onEdit;
